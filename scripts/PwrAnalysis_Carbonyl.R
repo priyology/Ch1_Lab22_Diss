@@ -2,7 +2,7 @@
 
 library(pwr)
 # calculate minimal sample size
-pwr.anova.test(k = 16,            # 4 groups (MHW treatment) are compared
+pwr.anova.test(k = 16,            # 16 groups (MHW x SH_Temp x SH_Tide) are compared
                f = .25,          # moderate effect size
                sig.level = .05,  # alpha/sig. level = .05
                n = 15)          # n of participants
@@ -11,7 +11,7 @@ pwr.anova.test(k = 16,            # 4 groups (MHW treatment) are compared
 
 
 
-pwr.anova.test(k = 16,            # 4 groups (MHW treatment) are compared
+pwr.anova.test(k = 16,            # 16 groups (MHW x SH_Temp x SH_Tide) are compared
                f = .25,          # moderate effect size
                sig.level = .05,  # alpha/sig. level = .05
                power = 0.8)     # desired power level 
