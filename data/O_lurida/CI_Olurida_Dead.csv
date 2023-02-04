@@ -1,0 +1,6 @@
+Species,Bag_Color,Tank,MHW,SH_Tide,SH_Temp,Rep,Well_Plate,Slot,Weigh_Boat_g,B_S_T_g,B_S_g,Shell_g,Tissue_g,Shell.mg,Tissue.mg,CI,Notes
+Ostrea lurida,Yellow,11,24,Tide,15,8,5,B12,0.0129,0.0316,0.0316,0.0187,0,18.7,0,0,*DEAD*
+Ostrea lurida,Yellow,12,24,No Tide,21,10,5,H12,0.0131,0.0187,0.0131,0,0.0056,0,5.6,#DIV/0!,*DEAD*
+Ostrea lurida,Yellow,16,21,Tide,15,10,5,C10,0.0182,0.0183,0.0182,0,1e-4,0,0.1,#DIV/0!,*DEAD*
+Ostrea lurida,Yellow,17,21,Tide,15,10,5,G2,0.0177,0.0177,0.0177,0,0,0,0,#DIV/0!,*DEAD*
+Ostrea lurida,Yellow,18,21,No Tide,21,10,6,D12,0.021,0.021,0.0209,1e-4,1e-4,0.1,0.1,100,*DEAD*
