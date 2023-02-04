@@ -201,11 +201,13 @@ ggplot(Olurida_CI4, aes(x=MHW, y=CI, fill = MHW)) +
   geom_boxplot() +
   facet_grid(SH_Tide ~ SH_Temp) +
   theme_classic() +
-  scale_fill_brewer(palette = "RdYlBu", direction = -1)
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title =expression(paste("Condition Indices of ", italic("O. lurida"))), x = "Marine Heatwave (°C)", y = "Condition Index") #, fill = " Marine Heatwave")
 
 ## CSV for Mean, SD, SE: Stats_SH_TideTemp_MHW (folder: data_output)
 write_csv(Stats_SH_TideTemp_MHW , file = "data_output/O_lurida/Olurida_CI_MeanSDSE.csv")
 
-#### STATITISTICAL ANALYSES ===============
+#### STATISTICAL ANALYSES ===============
 
 
