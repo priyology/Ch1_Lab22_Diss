@@ -205,6 +205,8 @@ ggplot(Olurida_CI4, aes(x=MHW, y=CI, fill = MHW)) +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
   labs(title =expression(paste("Condition Indices of ", italic("O. lurida"))), x = "Marine Heatwave (°C)", y = "Condition Index") #, fill = " Marine Heatwave")
 
+ggsave(filename = "fig_output/Olurida_CI.png",width = 5.10, height = 5.77, dpi = 300)
+
 ## CSV for Mean, SD, SE: Stats_SH_TideTemp_MHW (folder: data_output)
 write_csv(Stats_SH_TideTemp_MHW , file = "data_output/O_lurida/Olurida_CI_MeanSDSE.csv")
 
