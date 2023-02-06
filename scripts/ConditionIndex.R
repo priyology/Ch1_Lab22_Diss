@@ -2,8 +2,11 @@
 
 ## load libraries
 library(tidyverse)
+library(sjPlot)
+library(lme4)
+library(lmerTest)
 
-#### O. lurida Condition Index =====
+#### ~ O. LURIDA CONDITION INDEX ~ =====
 
 ### load data sheet
 Olurida_CI_og <- read_csv("data/O_lurida/CI_Olurida.csv")
@@ -72,7 +75,7 @@ ggplot(Olurida_CI4, aes(x = MHW, y = CI)) +
   geom_point() +
   theme_classic()
 
-#### Summary Statistics =====
+#### Figures, Mean, SD, SE =====
 
 #### No Grouping ====
 Stats_ALL <- Olurida_CI4 %>%
@@ -88,6 +91,15 @@ Stats_ALL <- Olurida_CI4 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_ALL
+
+ggplot(Olurida_CI4, aes(CI)) +                           # Modify title & axis labels
+  geom_histogram(
+    stat_bin(binwidth = 0.05)) +
+  theme_classic() +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = "CI Histogram",
+       x = "CI",
+       y = "Counts of CI")
 
 #### Grouped by MHW ====
 Stats_MHW <- Olurida_CI4 %>%
@@ -203,13 +215,65 @@ ggplot(Olurida_CI4, aes(x=MHW, y=CI, fill = MHW)) +
   theme_classic() +
   theme(legend.position = "none") +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title =expression(paste("Condition Indices of ", italic("O. lurida"))), x = "Marine Heatwave (°C)", y = "Condition Index") #, fill = " Marine Heatwave")
+  labs(title =expression(paste("Condition Indices of ", italic("O. lurida"))), 
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index") #, fill = " Marine Heatwave")
 
 ggsave(filename = "fig_output/Olurida_CI.png",width = 5.10, height = 5.77, dpi = 300)
 
 ## CSV for Mean, SD, SE: Stats_SH_TideTemp_MHW (folder: data_output)
 write_csv(Stats_SH_TideTemp_MHW , file = "data_output/O_lurida/Olurida_CI_MeanSDSE.csv")
 
-#### STATISTICAL ANALYSES ===============
+#### O. LURIDA STATS ===============
+summary(Olurida_CI4)
+
+### set factors
+Olurida_CI4$fSH_Temp <- as.factor(Olurida_CI4$SH_Temp)
+is.factor(Olurida_CI4$fSH_Temp)
+Olurida_CI4$fSH_Tide <- as.factor(Olurida_CI4$SH_Tide)
+is.factor(Olurida_CI4$fSH_Tide)
+Olurida_CI4$fMHW <- as.factor(Olurida_CI4$MHW)
+is.factor(Olurida_CI4$fMHW)
+
+
+### 
+
+## All Factors
+
+## Fixed Factors: SH_Temp, SH_Tide, MHW
+m.SHtemp <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI4)
+summary(m.SHtemp) #AIC: 3659.7
+
+m.SHtide <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI4)
+summary(m.SHtide) #AIC: 3665.6
+
+m.MHW <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI4)
+summary(m.MHW) #AIC: 3649.4
+
+
+## Fixed + Random (Tank) Factors
+m.all <- lmer(CI ~ SH_Temp + SH_Tide + MHW + (1|Tank), data = Olurida_CI4)
+summary(m.all) #model output
+anova(m.all)
+AIC(m.all, m.SHtemp, m.SHtide, m.MHW) #m.all has LOWEST AIC: 3647.2
+tab_model(m.all)
+
+## Plot of Residuals
+plot(fitted(m.all), resid(m.all))
+abline(0,0)
+
+#plot(m.all)
+
+## Q-Q plot of Residuals
+qqnorm(resid(m.all))
+qqline(resid(m.all)) 
+
+## Density Plot of Residuals
+plot(density(resid(m.all)))
+
+#### ~ C. SIKAMEA CONDITION INDEX ~ =====
+
+#### ~ M GIGAS CONDITION INDEX ~ =====
+
 
 
