@@ -5,6 +5,7 @@ library(tidyverse)
 library(sjPlot) ## manuscript-quality tables
 library(lme4) ##glm
 library(lmerTest) ##p-values
+install.packages("emmeans")
 
 ### load data sheet
 Olurida_CI_og <- read_csv("data/O_lurida/CI_Olurida.csv")
@@ -87,8 +88,8 @@ ggplot(Olurida_CI2, aes(CI)) +
        x = "CI",
        y = "Counts of CI")
 
-Olurida_HighCI <- filter(Olurida_CI2, CI > 20)
-nrow(Olurida_HighCI) #19
+Olurida_HighCI <- filter(Olurida_CI2, CI > 10)
+nrow(Olurida_HighCI) #76
 
 #### Outlier RESOLVED Feb 6, 2023 ========
 ## filter out CI > 50
@@ -245,39 +246,120 @@ write_csv(Stats_SH_TideTemp_MHW , file = "data_output/O_lurida/Olurida_CI_MeanSD
 
 #### O. LURIDA STATS ===============
 
-## All Factors
+#### Gaussian Distribution ========
 
 ## Fixed Factors: SH_Temp, SH_Tide, MHW
-m.SHtemp <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.SHtemp) #AIC: 4225.4
-tab_model(m.SHtemp)
+m.SHtemp_gauss <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI2)
+summary(m.SHtemp_gauss) #AIC: 4243.9
+tab_model(m.SHtemp_gauss) # p = 0.098
 
-m.SHtide <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.SHtide) #AIC: 4225.8
-tab_model(m.SHtide)
+m.SHtemp_gauss <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI2)
+summary(m.SHtemp_gauss) #AIC: 4245
+tab_model(m.SHtemp_gauss) # p = 0.202
 
-m.MHW <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.MHW) #AIC: 4206.1
-tab_model(m.MHW)
+m.MHW_gauss <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI2)
+summary(m.MHW_gauss) #AIC: 4231.8
+tab_model(m.MHW_gauss) #18: p = 0.001 | 21: p = 0.003 | p = 0.016 
 
-## Fixed + Random (Tank) Factors
-m.MHW.Tank <- lmer(CI ~ MHW + (1|Tank), data = Olurida_CI2)
-summary(m.MHW.Tank) #model output
-tab_model(m.MHW.Tank)
-AIC(m.MHW.Tank, m.SHtemp, m.SHtide, m.MHW) #m.MHW.TANK has LOWEST AIC: 4183.983
+m.SH_Temp.MHW_gauss <- glm(CI ~ SH_Temp * MHW, family = gaussian(link = "identity"), data = Olurida_CI2)
+summary(m.SH_Temp.MHW_gauss) #AIC: 4231.7
+tab_model(m.SH_Temp.MHW_gauss) # SH Temp 21: p = 0.097 | SH Temp 15 x MHW 18: p = 0.002 | SH Temp 15 x MHW 18: p = 0.099 | SH Temp 21 x MHW 24: p = 0.059
 
+
+## Fixed + Random (1|Tank) Factors
+
+#SH_Temp + (1|Tank)
+m.SH_Temp.Tank_gauss <- lmer(CI ~ SH_Temp + (1|Tank), data = Olurida_CI2)
+summary(m.SH_Temp.Tank_gauss) #model output
+tab_model(m.SH_Temp.Tank_gauss) #p = 0.082
+AIC(m.SH_Temp.Tank_gauss) #AIC: 4213.099
+
+#MHW + (1|Tank)
+m.MHW.Tank_gauss <- lmer(CI ~ MHW + (1|Tank), data = Olurida_CI2)
+summary(m.MHW.Tank_gauss) #model output
+tab_model(m.MHW.Tank_gauss) #18: p = 0.033
+AIC(m.MHW.Tank_gauss) #AIC: 4211.142
+
+#SH_Temp * MHW + (1|Tank)
+m.SH_Temp.MHW.Tank_gauss <- lmer(CI ~ SH_Temp * MHW + (1|Tank), data = Olurida_CI2)
+summary(m.SH_Temp.MHW.Tank_gauss) #model output
+tab_model(m.SH_Temp.MHW.Tank_gauss)
+AIC(m.SH_Temp.MHW.Tank_gauss) #AIC: 4207.719
+
+AIC(m.SH_Temp.MHW.Tank_gauss, m.SH_Temp.Tank, m.MHW.Tank, m.SHtemp, m.SHtide, m.MHW) #AIC: 4207.719
+#m.SH_Temp.MHW.TANK has LOWEST AIC: 4207.719
 
 ## Plot of Residuals
-plot(fitted(m.MHW.Tank), resid(m.MHW.Tank))
+plot(fitted(m.SH_Temp.MHW.Tank_gauss), resid(m.SH_Temp.MHW.Tank_gauss))
 abline(0,0)
 
 #plot(m.all)
 
 ## Q-Q plot of Residuals
-qqnorm(resid(m.MHW.Tank))
-qqline(resid(m.MHW.Tank)) 
+qqnorm(resid(m.SH_Temp.MHW.Tank_gauss))
+qqline(resid(m.SH_Temp.MHW.Tank_gauss))
 
 ## Density Plot of Residuals
-plot(density(resid(m.MHW.Tank)))
+plot(density(resid(m.SH_Temp.MHW.Tank_gauss)))
 
+#### Gamma Distribution ========
+
+## Fixed Factors: SH_Temp, SH_Tide, MHW
+m.SHtemp_gamma <- glm(CI ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.SHtemp_gamma) #AIC: 3779.8
+tab_model(m.SHtemp_gamma) # p = 0.099
+
+m.SHtide_gamma <- glm(CI ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.SHtide_gamma) #AIC: 3781.6
+tab_model(m.SHtide_gamma) # p = 0.199
+
+m.MHW_gamma <- glm(CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.MHW_gamma) #AIC: 3756
+tab_model(m.MHW_gamma) #18: p = 0.001 | 21: p = 0.001 | p = 0.007
+
+m.SH_Temp.MHW_gamma <- glm(CI ~ SH_Temp * MHW, family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.SH_Temp.MHW_gamma) #AIC: 3750
+tab_model(m.SH_Temp.MHW_gamma) # SH Temp 21: p = 0.043 | SH Temp 15 x MHW 18: p = 0.002 | SH Temp 15 x MHW 21: p = 0.080 | SH Temp 21 x MHW 24: p = 0.032
+
+## Fixed + Random (1|Tank) Factors
+
+#SH_Temp + (1|Tank)
+m.SH_Temp.Tank_gamma <- glmer(CI ~ SH_Temp + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.SH_Temp.Tank_gamma) #model output
+tab_model(m.SH_Temp.Tank_gamma) #p = 0.008
+AIC(m.SH_Temp.Tank_gamma) #AIC: 3698.456
+
+#MHW + (1|Tank)
+m.MHW.Tank_gamma <- glmer(CI ~ MHW + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.MHW.Tank_gamma) #model output
+tab_model(m.MHW.Tank_gamma) #18: p = 0.062
+AIC(m.MHW.Tank_gamma) #AIC: 3706.057
+
+#SH_Temp * MHW + (1|Tank)
+m.SH_Temp.MHW.Tank_gamma <- glmer(CI ~ SH_Temp * MHW + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
+summary(m.SH_Temp.MHW.Tank_gamma) #model output
+tab_model(m.SH_Temp.MHW.Tank_gamma) #SH Temp: p = 0.013, # SH Temp 15 x MHW 18: 0.013, SH Temp 21 x 0.019
+AIC(m.SH_Temp.MHW.Tank_gamma) # AIC:3699.464
+AIC(m.SH_Temp.MHW.Tank_gamma, m.SH_Temp.MHW_gamma, m.SH_Temp.Tank, m.MHW.Tank, m.SHtemp, m.SHtide, m.MHW) #AIC: 3699.464
+#m.SH_Temp.MHW.TANK has LOWEST AIC: 3699.464
+
+## Plot of Residuals
+plot(fitted(m.SH_Temp.MHW.Tank_gamma), resid(m.SH_Temp.MHW.Tank_gamma))
+abline(0,0)
+
+#plot(m.all)
+
+## Q-Q plot of Residuals
+qqnorm(resid(m.SH_Temp.MHW.Tank_gamma))
+qqline(resid(m.SH_Temp.MHW.Tank_gamma))
+
+## Density Plot of Residuals
+plot(density(resid(m.SH_Temp.MHW.Tank)))
+
+### plot model ## DOESN'T WORK FOR CATEOGRICAL VARIABLES
+#ggplot(Olurida_CI2, aes(x = MHW, y = CI)) + 
+#  geom_point(color = "red", size = 6) +
+#  geom_smooth(method = lm, level = 0.9) +
+#  xlab("X") +
+#  ylab("Y")
 
