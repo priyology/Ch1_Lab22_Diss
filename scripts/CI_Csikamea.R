@@ -72,8 +72,6 @@ nrow(Csikamea_HighCI)
 Csikamea_LowCI <- filter(Csikamea_CI2, CI < 0)
 nrow(Csikamea_LowCI)
 
-#Csikamea_CI2
-
 #### Figures, Mean, SD, SE =====
 
 #### No Grouping ====
@@ -180,6 +178,7 @@ ggplot(Csikamea_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
   facet_wrap(~SH_Tide) +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
+
 #### Grouped by SH_Tide, SH_Temp, MHW ====
 Stats_SH_TideTemp_MHW <- Csikamea_CI2 %>%
   group_by(SH_Tide, SH_Temp, MHW) %>% 
@@ -242,8 +241,8 @@ tab_model(m.MHW.Tank)
 AIC(m.MHW.Tank) # AIC: 2432.903
 
 m.SHtemp.MHW.Tank <- lmer(CI ~ SH_Temp * MHW + (1|Tank), data = Csikamea_CI2)
-summary(m.MHW.Tank) #model output
-tab_model(m.MHW.Tank)
+summary(m.SHtemp.MHW.Tank) #model output
+tab_model(m.SHtemp.MHW.Tank)
 AIC(m.SHtemp.MHW.Tank) # AIC: 2438.098
 
 AIC(m.SHtemp.MHW.Tank, m.SHtemp.Tank, m.MHW.Tank, m.SHtemp, m.SHtide, m.MHW)

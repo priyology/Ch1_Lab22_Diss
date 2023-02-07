@@ -1,0 +1,11 @@
+Species,Bag_Color,Tank,MHW,SH_Tide,SH_Temp,Rep,WeighBoat,Weigh_Boat_g...9,Weigh_Boat_g...10,B_S_T_g,B_T_g,Tissue.g,Shell.g,CI,DEAD,Notes
+Magallana gigas,Green,1,15˚C,Tide,21˚C,3,J3,1.9735,NA,2.8157,1.9522,-0.0213,0.8635,NA,DEAD,"column L = shell, column M = Tissue"
+Magallana gigas,Green,3,15˚C,Tide,21˚C,1,S1,1.9547,NA,3.4054,1.965,NA,NA,NA,DEAD,NA
+Magallana gigas,Green,6,18˚C,Tide,15˚C,6,P6,1.966,NA,3.0387,1.9669,NA,NA,NA,DEAD,NA
+Magallana gigas,Green,7,18˚C,No Tide,15˚C,9,Z9,1.9586,NA,1.1335,2.0005,0.0419,-0.867,NA,DEAD,NA
+Magallana gigas,Green,7,18˚C,Tide,21˚C,8,Y8,1.9778,NA,3.6776,1.9444,-0.0334,1.7332,NA,DEAD,NA
+Magallana gigas,Green,9,18˚C,No Tide,21˚C,5,Q5,1.935,NA,2.7209,NA,NA,NA,NA,DEAD,NA
+Magallana gigas,Green,12,24˚C,No Tide,15˚C,7,N7,1.9607,NA,3.1887,1.9606,-1e-4,1.2281,NA,DEAD,NA
+Magallana gigas,Green,15,24˚C,No Tide,21˚C,7,M7,1.9381,NA,2.7422,1.9371,NA,NA,NA,DEAD,NA
+Magallana gigas,Green,18,21˚C,No Tide,21˚C,4,K4,1.9626,NA,2.5129,1.9622,NA,NA,NA,DEAD,NA
+Magallana gigas,Green,20,21˚C,Tide,15˚C,9,X9,2.0126,NA,3.2942,2.0134,8e-4,1.2808,NA,DEAD,NA
