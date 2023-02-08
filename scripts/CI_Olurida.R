@@ -323,6 +323,7 @@ m.SH_Temp.SH_Tide.MHW.Tank_gamma <- glmer(CI ~ SH_Temp * SH_Tide * MHW + (1|Tank
 summary(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #model output
 tab_model(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #
 AIC(m.SH_Temp.SH_Tide.MHW.Tank_gamma) # AIC:3691.878
+(m.SH_Temp.SH_Tide.MHW.Tank_gamma, m.SH_Temp.SH_Tide.MHW_gamma, m.SHtemp_gamma, m.SHtide_gamma, m.MHW_gamma)
 AIC(m.SH_Temp.SH_Tide.MHW.Tank_gamma, m.SH_Temp.SH_Tide.MHW_gamma, m.SHtemp_gamma, m.SHtide_gamma, m.MHW_gamma)
 #m.SH_Temp.SH_Tide.MHW.Tank_gamma has LOWEST AIC: 3691.878
 
