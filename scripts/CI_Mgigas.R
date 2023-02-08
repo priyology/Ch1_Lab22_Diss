@@ -203,7 +203,7 @@ ggplot(Mgigas_CI2, aes(x=MHW, y=CI, fill = MHW)) +
   theme(legend.position = "none") +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
   #ylim(0,10) + # "Removed one row containing non-finite values"
-  labs(title =expression(paste("Condition Indices of ", italic("C.sikamea"))), 
+  labs(title =expression(paste("Condition Indices of ", italic("M. gigas"))), 
        x = "Marine Heatwave (°C)", 
        y = "Condition Index") #, fill = " Marine Heatwave")
 
