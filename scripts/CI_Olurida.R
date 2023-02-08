@@ -286,8 +286,6 @@ AIC(m.SH_Temp.SH_Tide.MHW.Tank_gauss) #AIC: 4195.157
 plot(fitted(m.SH_Temp.SH_Tide.MHW.Tank_gauss), resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
 abline(0,0)
 
-#plot(m.all)
-
 ## Q-Q plot of Residuals
 qqnorm(resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
 qqline(resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
@@ -318,12 +316,10 @@ tab_model(m.SH_Temp.SH_Tide.MHW_gamma)
 emmeansFIXED_gamma <- emmeans(m.SH_Temp.SH_Tide.MHW_gamma, ~ SH_Tide * MHW | SH_Temp)
 pairwiseFIXED_gamma <- contrast(emmeansFIXED_gamma, interaction = "pairwise")
 pairs(pairwiseFIXED_gamma, by = NULL)
-plot_model(m.SH_Temp.SH_TIde.MHW_gamma)
-
 ## Fixed + Random (1|Tank) Factors
 
 #SH_Temp * SH_Tide * MHW + (1|Tank)
-m.SH_Temp.SH_Tide.MHW.Tank_gamma <- glmer(CI ~ SH_Temp *SH_Tide * MHW + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
+m.SH_Temp.SH_Tide.MHW.Tank_gamma <- glmer(CI ~ SH_Temp * SH_Tide * MHW + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
 summary(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #model output
 tab_model(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #
 AIC(m.SH_Temp.SH_Tide.MHW.Tank_gamma) # AIC:3691.878
@@ -351,14 +347,14 @@ ggsave(filename = "fig_output/model_Olurida_CI_byTide.png",width = 5.10, height 
 ## By MHW ~ SH_Tide
 ggplot(Olurida_CI2, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #, shape = MHW )) + 
   facet_grid(MHW ~ SH_Tide) +
-  geom_line(aes(y = fit, lty = MHW), size=0.8) +
+  geom_line(aes(y = fit, lty = MHW), size = 0.8) +
   geom_point(alpha = 0.3) + 
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   labs(title = expression(paste("glmer(CI ~ SH_Temp *SH_Tide * MHW + (1|Tank))")), 
        subtitle = "Gamma distribution: link = 'identity'",
-       x = "Marine Heatwave (°C)", 
+       x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Olurida_CI_byTideMHW.png",width = 5.10, height = 5.77, dpi = 300)
