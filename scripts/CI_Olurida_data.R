@@ -2,11 +2,6 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
-library(lme4) ##glm
-library(lmerTest) ##p-values
-library(emmeans) ## comparisons
-library(glmmTMB) ## to do model diagnostics w/ sjPlot
 
 ### load data sheet
 Olurida_CI_og <- read_csv("data/O_lurida/CI_Olurida.csv")
@@ -21,7 +16,6 @@ is.numeric(Olurida_CI_og$CI) ## True
 
 Olurida_CI_og$Tank <- as.character(Olurida_CI_og$Tank) ## make SH_Temp a character
 is.character(Olurida_CI_og$Tank) ## True
-
 
 Olurida_CI_og$SH_Temp <- as.character(Olurida_CI_og$SH_Temp) ## make SH_Temp a character
 is.character(Olurida_CI_og$SH_Temp) ## True
@@ -80,6 +74,9 @@ summary(Olurida_CI2)
 
 ## CSV without NAs (empty cells / dead oysters)
 write_csv(Olurida_CI2 , file = "data/O_lurida/Olurida_CI_noTank1_noNAs.csv")
+
+## same as previous CSV, but make another copy specifically for doing stats in case modifications needs to be made
+write_csv(Olurida_CI2 , file = "data/O_lurida/Olurida_CI_StatsData.csv")
 
 #histogram of all CIs
 ggplot(Olurida_CI2, aes(CI)) +
@@ -245,143 +242,4 @@ ggsave(filename = "fig_output/Olurida_CI.png",width = 5.10, height = 5.77, dpi =
 
 ## CSV for Mean, SD, SE: Stats_SH_TideTemp_MHW (folder: data_output)
 write_csv(Stats_SH_TideTemp_MHW , file = "data_output/O_lurida/Olurida_CI_MeanSDSE.csv")
-
-#### O. LURIDA STATS ===============
-
-#### Gaussian Distribution ========
-
-## Fixed Factors: SH_Temp, SH_Tide, MHW
-m.SHtemp_gauss <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.SHtemp_gauss) #AIC: 4243.9
-tab_model(m.SHtemp_gauss) # p < 0.001
-
-m.SHtemp_gauss <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.SHtemp_gauss) #AIC: 4245
-tab_model(m.SHtemp_gauss) # p < 0.0.001
-
-m.MHW_gauss <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.MHW_gauss) #AIC: 4231.8
-tab_model(m.MHW_gauss) #15: p < 0.001 | #18: p = 0.001 | 21: p = 0.003 | p = 0.016 
-
-m.SH_Temp.SH_TIde.MHW_gauss <- glm(CI ~ SH_Temp * SH_Tide * MHW, family = gaussian(link = "identity"), data = Olurida_CI2)
-summary(m.SH_Temp.SH_TIde.MHW_gauss) #AIC: 4231
-tab_model(m.SH_Temp.SH_TIde.MHW_gauss)
-
-## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gauss
-emmeansFIXED_gauss <- emmeans(m.SH_Temp.SH_TIde.MHW_gauss, ~ SH_Temp * SH_Tide | MHW)
-pairwiseFIXED_gauss <- contrast(emmeansFIXED_gauss, interaction = "pairwise")
-pairs(pairwiseFIXED_gauss, by = NULL)
-
-## Fixed + Random (1|Tank) Factors
-
-#SH_Temp * MHW + (1|Tank)
-m.SH_Temp.SH_Tide.MHW.Tank_gauss <- lmer(CI ~ SH_Temp * SH_Tide * MHW + (1|Tank), data = Olurida_CI2)
-summary(m.SH_Temp.SH_Tide.MHW.Tank_gauss) #model output
-tab_model(m.SH_Temp.SH_Tide.MHW.Tank_gauss)
-AIC(m.SH_Temp.SH_Tide.MHW.Tank_gauss) #AIC: 4195.157
-
-#m.SH_Temp.MHW.TANK has LOWEST AIC: 4207.719
-
-## Plot of Residuals
-plot(fitted(m.SH_Temp.SH_Tide.MHW.Tank_gauss), resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
-abline(0,0)
-
-## Q-Q plot of Residuals
-qqnorm(resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
-qqline(resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss))
-
-## Density Plot of Residuals
-plot(density(resid(m.SH_Temp.SH_Tide.MHW.Tank_gauss)))
-
-#### Gamma Distribution ========
-
-## Fixed Factors: SH_Temp, SH_Tide, MHW
-m.SHtemp_gamma <- glm(CI ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_CI2)
-summary(m.SHtemp_gamma) #AIC: 3779.8
-tab_model(m.SHtemp_gamma) # p < 0.001
-
-m.SHtide_gamma <- glm(CI ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI2)
-summary(m.SHtide_gamma) #AIC: 3781.6
-tab_model(m.SHtide_gamma) # p < 0.001
-
-m.MHW_gamma <- glm(CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI2)
-summary(m.MHW_gamma) #AIC: 3756
-tab_model(m.MHW_gamma) #15: p < 0.001 | #18: p < 0.001 | 21: p = 0.001 | p = 0.007
-
-m.SH_Temp.SH_Tide.MHW_gamma <- glm(CI ~ SH_Temp * SH_Tide * MHW, family = Gamma(link = "identity"), data = Olurida_CI2)
-summary(m.SH_Temp.SH_Tide.MHW_gamma) #AIC: 3738
-tab_model(m.SH_Temp.SH_Tide.MHW_gamma)
-
-## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gamma
-emmeansFIXED_gamma <- emmeans(m.SH_Temp.SH_Tide.MHW_gamma, ~ SH_Tide * MHW | SH_Temp)
-pairwiseFIXED_gamma <- contrast(emmeansFIXED_gamma, interaction = "pairwise")
-pairs(pairwiseFIXED_gamma, by = NULL)
-## Fixed + Random (1|Tank) Factors
-
-#SH_Temp * SH_Tide * MHW + (1|Tank)
-m.SH_Temp.SH_Tide.MHW.Tank_gamma <- glmer(CI ~ SH_Temp * SH_Tide * MHW + (1|Tank), family = Gamma(link = "identity"), data = Olurida_CI2)
-summary(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #model output
-tab_model(m.SH_Temp.SH_Tide.MHW.Tank_gamma) #
-AIC(m.SH_Temp.SH_Tide.MHW.Tank_gamma) # AIC:3691.878
-(m.SH_Temp.SH_Tide.MHW.Tank_gamma, m.SH_Temp.SH_Tide.MHW_gamma, m.SHtemp_gamma, m.SHtide_gamma, m.MHW_gamma)
-AIC(m.SH_Temp.SH_Tide.MHW.Tank_gamma, m.SH_Temp.SH_Tide.MHW_gamma, m.SHtemp_gamma, m.SHtide_gamma, m.MHW_gamma)
-#m.SH_Temp.SH_Tide.MHW.Tank_gamma has LOWEST AIC: 3691.878
-
-#plot model
-Olurida_CI2$fit <- predict(m.SH_Temp.SH_Tide.MHW.Tank_gamma)
-
-## By ~SH_Tide
-ggplot(Olurida_CI2, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #, shape = MHW )) + 
-  facet_grid(~ SH_Tide) +
-  geom_line(aes(y = fit, lty = MHW), size=0.8) +
-  geom_point(alpha = 0.3) + 
-  geom_hline(yintercept=0, linetype="dashed") +
-  theme_classic() +
-  scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp *SH_Tide * MHW + (1|Tank))")), 
-       subtitle = "Gamma distribution: link = 'identity'",
-       x = "Marine Heatwave (°C)", 
-       y = "Condition Index")
-
-ggsave(filename = "fig_output/model_Olurida_CI_byTide.png",width = 5.10, height = 5.77, dpi = 300)
-
-## By MHW ~ SH_Tide
-ggplot(Olurida_CI2, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #, shape = MHW )) + 
-  facet_grid(MHW ~ SH_Tide) +
-  geom_line(aes(y = fit, lty = MHW), size = 0.8) +
-  geom_point(alpha = 0.3) + 
-  geom_hline(yintercept=0, linetype="dashed") +
-  theme_classic() +
-  scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp *SH_Tide * MHW + (1|Tank))")), 
-       subtitle = "Gamma distribution: link = 'identity'",
-       x = "Stress Hardening Temperature (°C)", 
-       y = "Condition Index")
-
-ggsave(filename = "fig_output/model_Olurida_CI_byTideMHW.png",width = 5.10, height = 5.77, dpi = 300)
-
-
-  
-## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gamma
-emmeansFIXED_gamma <- emmeans(m.SH_Temp.SH_Tide.MHW_gamma, ~ SH_Tide * MHW | SH_Temp)
-pairwiseFIXED_gamma <- contrast(emmeansFIXED_gamma, interaction = "pairwise")
-pairs(pairwiseFIXED_gamma, by = NULL)
-
-## Plot of Residuals
-plot(fitted(m.SH_Temp.SH_Tide.MHW.Tank_gamma), resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-abline(0,0)
-
-## Q-Q plot of Residuals
-qqnorm(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-qqline(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-
-## Density Plot of Residuals
-plot(density(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma)))
-
-### plot model ## DOESN'T WORK FOR CATEOGRICAL VARIABLES
-#ggplot(Olurida_CI2, aes(x = MHW, y = CI)) + 
-#  geom_point(color = "red", size = 6) +
-#  geom_smooth(method = lm, level = 0.9) +
-#  xlab("X") +
-#  ylab("Y")
 
