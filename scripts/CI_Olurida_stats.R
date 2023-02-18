@@ -776,8 +776,6 @@ ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_T
 
 ggsave(filename = "fig_output/model_Olurida_CI_byMHW.png",width = 5.10, height = 5.77, dpi = 300)
 
-
-
 ## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gamma
 emmeansFIXED_gamma <- emmeans(m.SH_Temp.SH_Tide.MHW_gamma, ~ SH_Tide * MHW | SH_Temp)
 pairwiseFIXED_gamma <- contrast(emmeansFIXED_gamma, interaction = "pairwise")
