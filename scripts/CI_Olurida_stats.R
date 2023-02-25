@@ -7,6 +7,7 @@ library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
 library(glmmTMB) ## to do model diagnostics w/ sjPlot
+library(stargazer) ## to print tables for glms
 
 ### load data sheet
 Olurida_CI_stats <- read_csv("data/O_lurida/Olurida_CI_StatsData.csv")
@@ -535,7 +536,16 @@ tab_model(m12)
 #MHW24˚C                      
 #SH_T21˚C:MHW1                
 #SH_T21˚C:MHW21               
-#SH_T21˚C:MHW24  0.477       
+#SH_T21˚C:MHW24  0.477 
+
+#### Publication-ready table? =============
+### https://dmyee.files.wordpress.com/2016/03/table_workshop.pdf
+stargazer(m7, m8, m9, m10, m11, m12,
+          type="html",
+          out="star_linear_3.doc",
+          intercept.bottom = F,
+          intercept.top = T,
+          digits=2)
 
 #### AIC/BIC Scores ===============
 AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
