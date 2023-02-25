@@ -2,9 +2,6 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
-library(lme4) ##glm
-library(lmerTest) ##p-values
 
 ### load data sheet
 Csikamea_CI_og <- read_csv("data/C_sikamea/CI_Csikamea.csv")

@@ -22,6 +22,8 @@ View(Olurida_CI_stats)
 #### m_null: CI ~ 1 ===============
 m_null <- glm(CI ~ 1, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m_null)
+tab_model(m_null)
+
 # Call:
 # glm(formula = CI ~ 1, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 
@@ -59,6 +61,7 @@ anova(m_null)
 #### m1: CI ~ SH_Temp ===============
 m1 <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m1)
+tab_model(m1)
 
 # Call:
 # glm(formula = CI ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,6 +90,7 @@ summary(m1)
 #### m2: CI ~ SH_Tide ===============
 m2 <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m2)
+tab_model(m2)
 
 # Call:
 # glm(formula = CI ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -136,6 +140,8 @@ summary(m2)
 #### m3: CI ~ MHW ===============
 m3 <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m3)
+tab_model(m3)
+
 # Call:
 # glm(formula = CI ~ MHW, family = gaussian(link = "identity"), 
 #    data = Olurida_CI_stats)
@@ -162,38 +168,10 @@ summary(m3)
 #
 # Number of Fisher Scoring iterations: 2
 
-#### m4: CI ~ SH_Temp + SH_Tide ===============
-m4 <- glm(CI ~ SH_Temp + SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI_stats)
+#### m4: CI ~ SH_Temp + MHW ===============
+m4 <- glm(CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m4)
-
-# Call:
-#  glm(formula = CI ~ SH_Temp + SH_Tide, family = gaussian(link = "identity"), 
-#      data = Olurida_CI_stats)
-
-# Deviance Residuals: 
-#  Min      1Q  Median      3Q     Max  
-# -7.050  -1.905  -0.768   0.696  32.489  
-
-# Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-# (Intercept)   7.3275     0.2531  28.945   <2e-16 ***
-#  SH_Temp21˚C  -0.4868     0.2931  -1.661   0.0971 .  
-# SH_TideTide   0.3766     0.2931   1.285   0.1993    
-# ---
-#  Signif. codes:  
-#  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-# (Dispersion parameter for gaussian family taken to be 16.19192)
-
-# Null deviance: 12231  on 753  degrees of freedom
-# Residual deviance: 12160  on 751  degrees of freedom
-# AIC: 4244.3
-
-# Number of Fisher Scoring iterations: 2
-
-#### m5: CI ~ SH_Temp + MHW ===============
-m5 <- glm(CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
-summary(m5)
+tab_model(m4)
 
 #Call:
 # glm(formula = CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -222,73 +200,11 @@ summary(m5)
 
 # Number of Fisher Scoring iterations: 2
 
-#### m6: CI ~ SH_Tide + MHW ===============
-m6 <- glm(CI ~ SH_Tide + MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
-summary(m6)
-
-#Call:
-#  glm(formula = CI ~ SH_Tide + MHW, family = gaussian(link = "identity"), 
-#     data = Olurida_CI_stats)
-
-# Deviance Residuals: 
-#  Min      1Q  Median      3Q     Max  
-# -7.545  -2.007  -0.734   0.786  32.306  
-
-# Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-# (Intercept)   6.0037     0.3470  17.303  < 2e-16 ***
-#  SH_TideTide   0.3764     0.2903   1.297   0.1952    
-# MHW18˚C       1.8191     0.4233   4.298 1.95e-05 ***
-#  MHW21˚C       1.2724     0.4242   2.999   0.0028 ** 
-#  MHW24˚C       1.0203     0.4237   2.408   0.0163 *  
-#  ---
-#  Signif. codes:  
-#  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-# (Dispersion parameter for gaussian family taken to be 15.88983)
-
-# Null deviance: 12231  on 753  degrees of freedom
-# Residual deviance: 11901  on 749  degrees of freedom
-# AIC: 4232.1
-
-# Number of Fisher Scoring iterations: 2
-
-#### m7: CI ~ SH_Temp + SH_Tide + MHW ===============
-m7 <- glm(CI ~ SH_Temp + SH_Tide + MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
-summary(m7)
-
-#Call:
-#  glm(formula = CI ~ SH_Temp + SH_Tide + MHW, family = gaussian(link = "identity"), 
-#      data = Olurida_CI_stats)
-
-# Deviance Residuals: 
-#  Min      1Q  Median      3Q     Max  
-# -7.788  -1.924  -0.773   0.726  32.547  
-
-# Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-# (Intercept)   6.2451     0.3754  16.637  < 2e-16 ***
-#  SH_Temp21˚C  -0.4854     0.2900  -1.674  0.09458 .  
-# SH_TideTide   0.3790     0.2900   1.307  0.19161    
-# MHW18˚C       1.8179     0.4228   4.300 1.93e-05 ***
-#  MHW21˚C       1.2736     0.4237   3.006  0.00274 ** 
-#  MHW24˚C       1.0203     0.4232   2.411  0.01617 *  
-#  ---
-#  Signif. codes:  
-#  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-# (Dispersion parameter for gaussian family taken to be 15.8517)
-
-# Null deviance: 12231  on 753  degrees of freedom
-# Residual deviance: 11857  on 748  degrees of freedom
-# AIC: 4231.2
-
-# Number of Fisher Scoring iterations: 2
-
 #### Interaction ===============
-#### m8: CI ~ SH_Temp + MHW + SH_Temp*MHW ===============
-m8 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = gaussian(link = "identity"), data = Olurida_CI_stats)
-summary(m8)
+#### m5: CI ~ SH_Temp + MHW + SH_Temp*MHW ===============
+m5 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = gaussian(link = "identity"), data = Olurida_CI_stats)
+summary(m5)
+tab_model(m5)
 
 #Call:
 #  glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
@@ -320,10 +236,10 @@ summary(m8)
 # Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m9: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
-m9 <- lmer(CI ~ SH_Temp + MHW + (1|Tank), data = Olurida_CI_stats)
-summary(m9)
-tab_model(m9)
+#### m6: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
+m6 <- lmer(CI ~ SH_Temp + MHW + (1|Tank), data = Olurida_CI_stats)
+summary(m6)
+tab_model(m6)
 
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's  method
@@ -361,8 +277,8 @@ tab_model(m9)
 # MHW24˚C     -0.727  0.000  0.555  0.555
 
 #### AIC/BIC Scores ===============
-AIC(m_null, m1, m2, m3, m4, m5, m6, m7, m8, m9)
-BIC(m_null, m1, m2, m3, m4, m5, m6, m7, m8, m9)
+AIC(m_null, m1, m2, m3, m4, m5, m6)
+BIC(m_null, m1, m2, m3, m4, m5, m6)
 
 #### Pairwise Comparisons ===============
 ## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gauss
@@ -372,15 +288,15 @@ BIC(m_null, m1, m2, m3, m4, m5, m6, m7, m8, m9)
 
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
-plot(fitted(m9), resid(m9))
+plot(fitted(m9), resid(m6))
 abline(0,0)
 
 #### Q-Q plot of Residuals ===============
-qqnorm(resid(m9))
-qqline(resid(m9))
+qqnorm(resid(m6))
+qqline(resid(m6))
 
 #### Density Plot of Residuals ===============
-plot(density(resid(m9)))
+plot(density(resid(m6)))
 
 #### Gamma Distribution ========
 
@@ -389,6 +305,7 @@ plot(density(resid(m9)))
 #### m_null_Gamma: CI ~ 1 ===============
 m_null_Gamma <- glm(CI ~ 1, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m_null_Gamma)
+tab_model(m_null_Gamma)
 
 #Call:
 #  glm(formula = CI ~ 1, family = Gamma(link = "identity"), data = Olurida_CI_stats)
@@ -412,9 +329,10 @@ summary(m_null_Gamma)
 #Number of Fisher Scoring iterations: 3
 
 #### Fixed Factors: SH_Temp, SH_Tide, MHW ===============
-#### m10: CI ~ SH_Temp ===============
-m10 <- glm(CI ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m10)
+#### m7: CI ~ SH_Temp ===============
+m7 <- glm(CI ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_CI_stats)
+summary(m7)
+tab_model(m7)
 
 #Call:
 #  glm(formula = CI ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -439,9 +357,10 @@ summary(m10)
 
 # Number of Fisher Scoring iterations: 3
 
-#### m11: CI ~ SH_Tide ===============
-m11 <- glm(CI ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m11)
+#### m8: CI ~ SH_Tide ===============
+m8 <- glm(CI ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI_stats)
+summary(m8)
+tab_model(m8)
 
 #Call:
 #  glm(formula = CI ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -466,9 +385,10 @@ summary(m11)
 
 #Number of Fisher Scoring iterations: 3
 
-#### m12: CI ~ MHW ===============
-m12 <- glm(CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m12)
+#### m9: CI ~ MHW ===============
+m9 <- glm(CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
+summary(m9)
+tab_model(m9)
 
 #Call:
 #  glm(formula = CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
@@ -494,37 +414,10 @@ summary(m12)
 
 # Number of Fisher Scoring iterations: 3
 
-#### m13: CI ~ SH_Temp + SH_Tide ===============
-m13 <- glm(CI ~ SH_Temp + SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m13)
-
-#Call:
-#glm(formula = CI ~ SH_Temp + SH_Tide, family = Gamma(link = "identity"), 
-#    data = Olurida_CI_stats)
-#
-#Deviance Residuals: 
-#  Min        1Q    Median        3Q       Max  
-#-1.92904  -0.28506  -0.10639   0.09093   2.36559
-#
-#Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)   7.3293     0.2532  28.952   <2e-16 ***
-#  SH_Temp21˚C  -0.4735     0.2913  -1.625    0.105    
-#SH_TideTide   0.3590     0.2911   1.233    0.218    
-#---
-#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-#
-#(Dispersion parameter for Gamma family taken to be 0.3028243)
-#
-#Null deviance: 147.45  on 753  degrees of freedom
-#Residual deviance: 146.15  on 751  degrees of freedom
-#AIC: 3779.4
-
-#Number of Fisher Scoring iterations: 5
-
-#### m14: CI ~ SH_Temp + MHW ===============
-m14 <- glm(CI ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m14)
+#### m10: CI ~ SH_Temp + MHW ===============
+m10 <- glm(CI ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
+summary(m10)
+tab_model(m10)
 
 #Call:
 #glm(formula = CI ~ SH_Temp + MHW, family = Gamma(link = "identity"), 
@@ -552,71 +445,11 @@ summary(m14)
 
 # Number of Fisher Scoring iterations: 6
 
-#### m15: CI ~ SH_Tide + MHW ===============
-m15 <- glm(CI ~ SH_Tide + MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m15)
-
-#Call:
-#glm(formula = CI ~ SH_Tide + MHW, family = Gamma(link = "identity"), 
-#    data = Olurida_CI_stats)
-#
-#Deviance Residuals: 
-#  Min       1Q   Median       3Q      Max  
-#-1.9911  -0.2958  -0.1061   0.1101   2.3066  
-#
-#Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)   5.9465     0.2860  20.794  < 2e-16 ***
-#  SH_TideTide   0.4469     0.2751   1.625 0.104679    
-#MHW18˚C       1.8533     0.3933   4.712 2.92e-06 ***
-#  MHW21˚C       1.2965     0.3788   3.423 0.000654 ***
-#  MHW24˚C       1.0499     0.3716   2.826 0.004843 ** 
-#  ---
-# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#(Dispersion parameter for Gamma family taken to be 0.2763865)
-
-#Null deviance: 147.45  on 753  degrees of freedom
-#Residual deviance: 140.73  on 749  degrees of freedom
-#AIC: 3754
-
-#Number of Fisher Scoring iterations: 6
-
-#### m16: CI ~ SH_Temp + SH_Tide + MHW ===============
-m16 <- glm(CI ~ SH_Temp + SH_Tide + MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m16)
-
-#Call:
-#glm(formula = CI ~ SH_Temp + SH_Tide + MHW, family = Gamma(link = "identity"), 
-#    data = Olurida_CI_stats)
-
-#Deviance Residuals: 
-#  Min        1Q    Median        3Q       Max  
-#-1.97539  -0.29061  -0.10967   0.09983   2.36352  
-
-#Coefficients:
-#  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)   6.1789     0.3214  19.225  < 2e-16 ***
-#  SH_Temp21˚C  -0.4875     0.2751  -1.772  0.07682 .  
-#SH_TideTide   0.4325     0.2750   1.573  0.11618    
-#MHW18˚C       1.8556     0.3924   4.729 2.69e-06 ***
-#  MHW21˚C       1.3164     0.3782   3.480  0.00053 ***
-#  MHW24˚C       1.0987     0.3718   2.955  0.00322 ** 
-#  ---
-#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#(Dispersion parameter for Gamma family taken to be 0.2773352)
-
-#Null deviance: 147.45  on 753  degrees of freedom
-#Residual deviance: 139.87  on 748  degrees of freedom
-#AIC: 3751.2
-
-#Number of Fisher Scoring iterations: 6
-
 #### Interactions ===============
-#### m17: SH_Temp + MHW + SH_Temp*MHW ===============
-m17 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = Gamma(link = "identity"), data = Olurida_CI_stats)
-summary(m17)
+#### m11: SH_Temp + MHW + SH_Temp*MHW ===============
+m11 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = Gamma(link = "identity"), data = Olurida_CI_stats)
+summary(m11)
+tab_model(m11)
 
 #Call:
 # glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = Gamma(link = "identity"), 
@@ -649,9 +482,11 @@ summary(m17)
 
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m18: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
-m18 <- glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_CI_stats)
-summary(m18)
+#### m12: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
+m12 <- glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_CI_stats)
+summary(m12)
+tab_model(m12)
+
 #Generalized linear mixed model fit by maximum likelihood (Laplace
 #Approximation) [glmerMod]
 #Family: Gamma  ( identity )
@@ -702,17 +537,16 @@ summary(m18)
 #SH_T21˚C:MHW21               
 #SH_T21˚C:MHW24  0.477       
 
-tab_model(m18)
-
 #### AIC/BIC Scores ===============
-AIC(m_null_Gamma, m10, m11, m12, m13, m14, m15, m16, m17, m18)
-BIC(m_null_Gamma, m10, m11, m12, m13, m14, m15, m16, m17, m18)
+AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
+BIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
 
 #### Pairwise Comparisons ===============
-## pairwise comparison for m18
-emm_m18 <-  emmeans(m18, specs = ~ SH_Temp|MHW)
-pairwise_m18 <- contrast(emm_m18, interaction = "pairwise")
-pairwise_m18
+## pairwise comparison for m12
+emm_m12a <-  emmeans(m12, specs = ~ SH_Temp|MHW)
+emm_m12a
+pairwise_m12a <- contrast(emm_m12a, interaction = "pairwise")
+pairwise_m12a
 
 #MHW = 15˚C:
 #SH_Temp_pairwise estimate    SE  df z.ratio p.value
@@ -730,21 +564,58 @@ pairwise_m18
 #  SH_Temp_pairwise estimate    SE  df z.ratio p.value
 #15˚C - 21˚C        -0.346 0.409 Inf  -0.845  0.3983
 
+emm_m12b <-  emmeans(m12, specs = ~ MHW|SH_Temp)
+emm_m12b
+pairwise_m12b <- contrast(emm_m12b, interaction = "pairwise")
+pairwise_m12b
+
+# SH_Temp = 15˚C:
+# MHW_pairwise estimate    SE  df z.ratio
+# 15˚C - 18˚C  -1.79194 0.987 Inf  -1.816
+# 15˚C - 21˚C  -1.00809 0.982 Inf  -1.027
+# 15˚C - 24˚C  -0.35057 0.978 Inf  -0.359
+# 18˚C - 21˚C   0.78385 0.921 Inf   0.851
+# 18˚C - 24˚C   1.44136 0.914 Inf   1.577
+# 21˚C - 24˚C   0.65752 0.911 Inf   0.722
+# p.value
+# 0.0694
+# 0.3045
+# 0.7199
+# 0.3946
+# 0.1149
+# 0.4705
+
+# SH_Temp = 21˚C:
+#  MHW_pairwise estimate    SE  df z.ratio
+# 15˚C - 18˚C  -1.69679 0.960 Inf  -1.767
+# 15˚C - 21˚C  -1.53338 0.962 Inf  -1.593
+# 15˚C - 24˚C  -1.69512 0.968 Inf  -1.752
+# 18˚C - 21˚C   0.16341 0.899 Inf   0.182
+# 18˚C - 24˚C   0.00167 0.904 Inf   0.002
+# 21˚C - 24˚C  -0.16174 0.908 Inf  -0.178
+# p.value
+# 0.0772
+# 0.1111
+# 0.0798
+# 0.8558
+# 0.9985
+# 0.8586
+
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
-plot(fitted(m18), resid(m18))
+plot(fitted(m12), resid(m12))
 abline(0,0)
 
 #### Q-Q plot of Residuals ===============
-qqnorm(resid(m18))
-qqline(resid(m18))
+qqnorm(resid(m12))
+qqline(resid(m12))
 
 #### Density Plot of Residuals ===============
-plot(density(resid(m18)))
+plot(density(resid(m12)))
 
 
 #### Plot Model ========
-Olurida_CI_stats$fit <- predict(m18)
+Olurida_CI_stats$fit <- predict(m12)
 
 ## By CI ~ SH_Temp
 ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #, shape = MHW )) + 
@@ -775,27 +646,4 @@ ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_T
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Olurida_CI_byMHW.png",width = 5.10, height = 5.77, dpi = 300)
-
-## pairwise comparison for m.SH_Temp.SH_TIde.MHW_gamma
-emmeansFIXED_gamma <- emmeans(m.SH_Temp.SH_Tide.MHW_gamma, ~ SH_Tide * MHW | SH_Temp)
-pairwiseFIXED_gamma <- contrast(emmeansFIXED_gamma, interaction = "pairwise")
-pairs(pairwiseFIXED_gamma, by = NULL)
-
-## Plot of Residuals
-plot(fitted(m.SH_Temp.SH_Tide.MHW.Tank_gamma), resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-abline(0,0)
-
-## Q-Q plot of Residuals
-qqnorm(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-qqline(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma))
-
-## Density Plot of Residuals
-plot(density(resid(m.SH_Temp.SH_Tide.MHW.Tank_gamma)))
-
-### plot model ## DOESN'T WORK FOR CATEOGRICAL VARIABLES
-#ggplot(Olurida_CI_stats, aes(x = MHW, y = CI)) + 
-#  geom_point(color = "red", size = 6) +
-#  geom_smooth(method = lm, level = 0.9) +
-#  xlab("X") +
-#  ylab("Y")
 
