@@ -176,6 +176,29 @@ ggplot(Csikamea_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
 
+#### Grouped by SH_Temp,MHW ====
+Stats_SHtempMHW <- Csikamea_CI2 %>%
+  group_by(SH_Temp, MHW) %>% 
+  summarize(
+    Mean_Shell.g = mean(Shell.g),
+    SD_Shell.g = sd(Shell.g),
+    SE_Shell.g = SD_Shell.g/sqrt(n()),
+    Mean_Tissue_mg = mean(Tissue.g),
+    SD_Tissue.g = sd(Tissue.g),
+    SE_Tissue.g = SD_Tissue.g/sqrt(n()),
+    Mean_CI = mean(CI),
+    SD_CI = sd(CI),
+    SE_CI = SD_CI/sqrt(n()))
+
+Stats_SHtempMHW
+
+## plot
+ggplot(Csikamea_CI2, aes(x=MHW, y=CI, fill = MHW)) +
+  geom_boxplot() +
+  facet_wrap(~SH_Temp) +
+  theme_classic() +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
 #### Grouped by SH_Tide, SH_Temp, MHW ====
 Stats_SH_TideTemp_MHW <- Csikamea_CI2 %>%
   group_by(SH_Tide, SH_Temp, MHW) %>% 
