@@ -7,7 +7,7 @@ library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
 library(glmmTMB) ## to do model diagnostics w/ sjPlot
-library(stargazer) ## to print tables for glms
+library(ggeffects) ## another model plotting option
 
 ### load data sheet
 Olurida_CI_stats <- read_csv("data/O_lurida/Olurida_CI_StatsData.csv")
@@ -617,6 +617,14 @@ plot(density(resid(m12)))
 
 
 #### Plot Model ========
+## using ggeffects
+m12.plot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
+plot(m12.plot_byMHW)
+
+m12.plot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
+plot(m12.plot_bySHtemp)
+
+####### Messier Model PLotting Option
 Olurida_CI_stats$fit <- predict(m12)
 
 ## By CI ~ SH_Temp
@@ -648,4 +656,5 @@ ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_T
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Olurida_CI_byMHW.png",width = 5.10, height = 5.77, dpi = 300)
+
 

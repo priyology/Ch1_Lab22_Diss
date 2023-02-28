@@ -7,7 +7,7 @@ library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
 library(glmmTMB) ## to do model diagnostics w/ sjPlot
-library(stargazer) ## to print tables for glms
+library(ggeffects) ##another model plotting option
 
 ### load data sheet
 Olurida_Tissue_stats <- read_csv("data/O_lurida/Olurida_CI_statsData.csv")
