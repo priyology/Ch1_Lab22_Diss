@@ -15,6 +15,14 @@ glimpse(Olurida_CI_stats)
 summary(Olurida_CI_stats)
 View(Olurida_CI_stats)
 
+### change attributes about statistical factors
+Olurida_CI_stats$SH_Temp <- as.factor(Olurida_CI_stats$SH_Temp) ## factor
+is.factor(Olurida_CI_stats$SH_Temp) ## TRUE
+Olurida_CI_stats$SH_Tide <- as.factor(Olurida_CI_stats$SH_Tide) ## factor
+is.factor(Olurida_CI_stats$SH_Tide) ## TRUE
+Olurida_CI_stats$MHW <- as.factor(Olurida_CI_stats$MHW) ## character
+is.factor(Olurida_CI_stats$MHW) ## TRUE
+
 #### O. LURIDA STATS ===============
 
 #### Gaussian Distribution ========
@@ -46,17 +54,6 @@ tab_model(m_null)
 # AIC: 4244.7
 
 # Number of Fisher Scoring iterations: 2
-anova(m_null)
-# Analysis of Deviance Table
-
-# Model: gaussian, link: identity
-
-# Response: CI
-
-# Terms added sequentially (first to last)
-
-# Df Deviance Resid. Df Resid. Dev
-# NULL                   753      12231
 
 #### Fixed Factors: SH_Temp, SH_Tide, MHW ===============
 #### m1: CI ~ SH_Temp ===============
