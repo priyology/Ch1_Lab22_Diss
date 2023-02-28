@@ -286,7 +286,7 @@ BIC(m_null, m1, m2, m3, m4, m5, m6)
 
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
-plot(fitted(m9), resid(m6))
+plot(fitted(m6), resid(m6))
 abline(0,0)
 
 #### Q-Q plot of Residuals ===============
@@ -485,6 +485,7 @@ m12 <- glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank), family = Gamma(link="i
 summary(m12)
 tab_model(m12)
 
+
 #Generalized linear mixed model fit by maximum likelihood (Laplace
 #Approximation) [glmerMod]
 #Family: Gamma  ( identity )
@@ -537,12 +538,6 @@ tab_model(m12)
 
 #### Publication-ready table? =============
 ### https://dmyee.files.wordpress.com/2016/03/table_workshop.pdf
-stargazer(m7, m8, m9, m10, m11, m12,
-          type="html",
-          out="star_linear_3.doc",
-          intercept.bottom = F,
-          intercept.top = T,
-          digits=2)
 
 #### AIC/BIC Scores ===============
 AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
