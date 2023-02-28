@@ -210,6 +210,29 @@ ggplot(Olurida_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
 
+#### Grouped by SH_Temp,MHW ====
+Stats_SHTempMHW <- Olurida_CI2 %>%
+  group_by(SH_Temp, MHW) %>% 
+  summarize(
+    Mean_Shell.mg = mean(Shell.mg),
+    SD_Shell.mg = sd(Shell.mg),
+    SE_Shell.mg = SD_Shell.mg/sqrt(n()),
+    Mean_Tissue_mg = mean(Tissue.mg),
+    SD_Tissue.mg = sd(Tissue.mg),
+    SE_Tissue.mg = SD_Tissue.mg/sqrt(n()),
+    Mean_CI = mean(CI),
+    SD_CI = sd(CI),
+    SE_CI = SD_CI/sqrt(n()))
+
+Stats_SH_TideTemp
+
+## plot
+ggplot(Olurida_CI2, aes(x=MHW, y=CI, fill = MHW)) +
+  geom_boxplot() +
+  facet_wrap(~SH_Temp) +
+  theme_classic() +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
 #### Grouped by SH_Tide, SH_Temp, MHW ====
 Stats_SH_TideTemp_MHW <- Olurida_CI2 %>%
   group_by(SH_Tide, SH_Temp, MHW) %>% 
