@@ -393,7 +393,7 @@ plot(m8.plot_byMHW) +
     labs(title = expression(paste("glmer(Shell.mg ~ MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
-       y = "Condition Index")
+       y = "Shell(mg)")
 
 ggsave(filename = "fig_output/model_Olurida_Shell-MHW_b&w.png",width = 5.10, height = 5.77, dpi = 300)
 
@@ -404,7 +404,7 @@ ggsave(filename = "fig_output/model_Olurida_Shell-MHW_b&w.png",width = 5.10, hei
 Olurida_Shell_stats$fit <- predict(m8)
 
 ## By MHW
-ggplot(Olurida_Shell_stats, aes(x = MHW, y = CI, col = MHW)) +  #group = interaction(Tank, MHW), shape = MHW)) + 
+ggplot(Olurida_Shell_stats, aes(x = MHW, y = Shell.mg, col = MHW, group = Tank)) + 
   #facet_grid(~ MHW) +
   geom_line(aes(y = fit, lty = MHW), size = 0.8) +
   geom_point(alpha = 0.3) + 
@@ -414,7 +414,7 @@ ggplot(Olurida_Shell_stats, aes(x = MHW, y = CI, col = MHW)) +  #group = interac
   labs(title = expression(paste("glmer(Shell.mg ~ MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
-       y = "Condition Index")
+       y = "Shell (mg)")
 
 ggsave(filename = "fig_output/model_Olurida_Shell_byMHW_Tanks.png",width = 5.10, height = 5.77, dpi = 300)
 
