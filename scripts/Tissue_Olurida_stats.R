@@ -470,3 +470,66 @@ qqline(resid(m8))
 
 #### Density Plot of Residuals ===============
 plot(density(resid(m8)))
+
+
+#### Plot Model ========
+## using ggeffects
+## https://strengejacke.github.io/ggeffects/articles/introduction_plotcustomize.html
+
+m12.plot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
+plot(m12.plot_byMHW) +
+  theme_classic() +
+  scale_color_manual(values=c("#4575B4", "#FDAE61")) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Olurida_CI-MHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+m12.plot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
+plot(m12.plot_bySHtemp) +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Olurida_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
+
+
+####### With individual tanks plotted
+Olurida_CI_stats$fit <- predict(m12)
+
+## By CI ~ SH_Temp
+ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #, shape = MHW )) + 
+  #facet_grid(~ SH_Tide) +
+  geom_line(aes(y = fit, lty = MHW), size=0.8) +
+  geom_point(alpha = 0.3) + 
+  geom_hline(yintercept=0, linetype="dashed") +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Olurida_CI-SH_Temp_Tanks.png",width = 5.10, height = 5.77, dpi = 300)
+
+## By MHW
+ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Tide), col = MHW)) +  #=, shape = MHW )) + 
+  facet_grid(~ MHW) +
+  geom_line(aes(y = fit, lty = MHW), size = 0.8) +
+  geom_point(alpha = 0.3) + 
+  geom_hline(yintercept=0, linetype="dashed") +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Olurida_CI_byMHW_Tanks.png",width = 5.10, height = 5.77, dpi = 300)
+
+
