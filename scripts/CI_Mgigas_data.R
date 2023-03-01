@@ -2,9 +2,6 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
-library(lme4) ##glm
-library(lmerTest) ##p-values
 
 ### load data sheet
 Mgigas_CI_og <- read_csv("data/M_gigas/CI_Mgigas.csv")
