@@ -5,6 +5,9 @@ library(tidyverse)
 library(sjPlot) ## manuscript-quality tables
 library(lme4) ##glm
 library(lmerTest) ##p-values
+library(emmeans) ## comparisons
+library(glmmTMB) ## to do model diagnostics w/ sjPlot
+library(ggeffects) ## another model plotting option
 
 ### load data sheet
 Csikamea_CI_og <- read_csv("data/C_sikamea/CI_Csikamea.csv")
