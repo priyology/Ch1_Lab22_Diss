@@ -483,7 +483,7 @@ plot(m8.plot_byMHW) +
   labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
-       y = "Condition Index")
+       y = "Tissue (mg)")
 
 ggsave(filename = "fig_output/model_Olurida_Tissue-MHW.png",width = 5.10, height = 5.77, dpi = 300)
 
