@@ -12,7 +12,7 @@ View(Csikamea_CI_og)
 ### new variable for new factors
 Csikamea_CI1 <- Csikamea_CI_og
 
-### change attributes about statistical factors
+### change attributes for data cleaning purposes
 Csikamea_CI1$CI <- as.numeric(Csikamea_CI1$CI) ## make CI numeric
 is.numeric(Csikamea_CI1$CI) ## True
 Csikamea_CI1$SH_Temp <- as.character(Csikamea_CI1$SH_Temp) ## character
@@ -31,6 +31,10 @@ summary(DEAD_Csikamea_CI)
 ### CSV of dead oysters
 write_csv(DEAD_Csikamea_CI , file = "data/C_sikamea/CI_Csikamea_Dead.csv") #Dead Oysters
 
+## Total Dead
+DEAD_Csikamea_CI %>% summarize("Numb_Dead" = n()) #52
+
+## Numb Dead by treatment
 DEAD_count <- DEAD_Csikamea_CI %>% group_by(SH_Temp, SH_Tide, MHW) %>% 
   summarize("Numb_Dead" = n())
 DEAD_count
