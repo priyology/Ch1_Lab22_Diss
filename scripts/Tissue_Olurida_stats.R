@@ -494,7 +494,7 @@ plot(m8.plot_bySHtemp) +
   labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
-       y = "Condition Index")
+       y = "Tissue (mg)")
 
 ggsave(filename = "fig_output/model_Olurida_Tissue-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
 

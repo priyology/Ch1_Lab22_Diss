@@ -135,12 +135,22 @@ Stats_MHW <- Olurida_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_MHW
+View(Stats_MHW)
 
-## plot
+## plot - CI
 ggplot(Olurida_CI2, aes(x = MHW, y = CI, fill = MHW)) +
   geom_boxplot() +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
+## plot - Shell
+ggplot(Olurida_CI2, aes(x = MHW, y = Shell.mg, fill = MHW)) +
+  geom_boxplot() +
+  theme_classic() +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
+ggsave(filename = "fig_output/Olurida_Shell_SHTempMHW.png",width = 5.10, height = 5.77, dpi = 300)
+
 
 #### Grouped by SH_Tide ====
 Stats_SH_Tide <- Olurida_CI2 %>%
@@ -224,14 +234,27 @@ Stats_SHTempMHW <- Olurida_CI2 %>%
     SD_CI = sd(CI),
     SE_CI = SD_CI/sqrt(n()))
 
-Stats_SH_TideTemp
+Stats_SHTempMHW
+View(Stats_SHTempMHW)
 
-## plot
-ggplot(Olurida_CI2, aes(x=MHW, y=CI, fill = MHW)) +
+
+## plot - CI
+ggplot(Olurida_CI2, aes(x=SH_Temp, y=CI, fill = MHW)) +
   geom_boxplot() +
-  facet_wrap(~SH_Temp) +
+  #facet_wrap(~SH_Temp) +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
+ggsave(filename = "fig_output/Olurida_CI_SHTempMHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+## plot - Tissue
+ggplot(Olurida_CI2, aes(x=SH_Temp, y=Tissue.mg, fill = MHW)) +
+  geom_boxplot() +
+  #facet_wrap(~SH_Temp) +
+  theme_classic() +
+  scale_fill_brewer(palette = "RdYlBu", direction = -1)
+
+ggsave(filename = "fig_output/Olurida_Tissu_SHTempMHW.png",width = 5.10, height = 5.77, dpi = 300)
 
 #### Grouped by SH_Tide, SH_Temp, MHW ====
 Stats_SH_TideTemp_MHW <- Olurida_CI2 %>%
