@@ -172,14 +172,14 @@ m5 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = gaussian(link = "identity"
 summary(m5)
 tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
-Call:
-  glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
-      data = Csikamea_CI_stats)
-
-Deviance Residuals: 
-  Min       1Q   Median       3Q      Max  
--3.8691  -0.8273  -0.1409   0.6356   6.1445  
-
+# Call:
+#  glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
+#      data = Csikamea_CI_stats)
+#
+# Deviance Residuals: 
+#  Min       1Q   Median       3Q      Max  
+# -3.8691  -0.8273  -0.1409   0.6356   6.1445  
+#
 # Coefficients:
 #  Estimate Std. Error t value Pr(>|t|)    
 # (Intercept)          4.59752    0.14018  32.796  < 2e-16 ***
@@ -259,3 +259,62 @@ qqline(resid(m6))
 #### Density Plot of Residuals ===============
 plot(density(resid(m6)))
 
+#### Plot Model ========
+## using ggeffects
+## https://strengejacke.github.io/ggeffects/articles/introduction_plotcustomize.html
+
+m6.plot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Temp"))
+plot(m6.plot_byMHW) +
+  theme_classic() +
+  scale_color_manual(values=c("#4575B4", "#FDAE61")) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Csikamea_CI-MHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+m6.plot_bySHtemp <- ggpredict(m6, terms = c("SH_Temp", "MHW"))
+plot(m6.plot_bySHtemp) +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Csikamea_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
+
+
+####### With individual tanks plotted
+Csikamea_CI_stats$fit <- predict(m6)
+
+## By CI ~ SH_Temp
+ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Temp), col = MHW)) +  #, shape = MHW )) + 
+  #facet_grid(~ SH_Tide) +
+  geom_line(aes(y = fit, lty = MHW), size=0.8) +
+  geom_point(alpha = 0.3) + 
+  geom_hline(yintercept=0, linetype="dashed") +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Csikamea_CI-SH_Temp_Tanks.png",width = 5.10, height = 5.77, dpi = 300)
+
+## By MHW
+ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Temp), col = MHW)) +  #=, shape = MHW )) + 
+  facet_grid(~ MHW) +
+  geom_line(aes(y = fit, lty = MHW), size = 0.8) +
+  geom_point(alpha = 0.3) + 
+  geom_hline(yintercept=0, linetype="dashed") +
+  theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/model_Csikamea_CI_byMHW_Tanks.png",width = 5.10, height = 5.77, dpi = 300)

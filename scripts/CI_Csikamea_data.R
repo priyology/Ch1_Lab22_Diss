@@ -59,7 +59,7 @@ summary(Csikamea_CI2)
 write_csv(Csikamea_CI2 , file = "data/C_sikamea/Csikamea_CI_noNAs.csv")
 
 ## same as previous CSV, but make another copy specifically for doing stats in case modifications needs to be made
-write_csv(Olurida_CI2 , file = "data/C_sikamea/Csikamea_CI_StatsData.csv")
+write_csv(Csikamea_CI2 , file = "data/C_sikamea/Csikamea_CI_StatsData.csv")
 
 #histogram of all CIs
 ggplot(Csikamea_CI2, aes(CI)) +

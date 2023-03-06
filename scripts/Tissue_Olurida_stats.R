@@ -209,7 +209,7 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 # Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m6: Tissue.mg ~ MHW + (1|Tank) ===============
+#### m6: Tissue.mg ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), data = Olurida_Tissue_stats)
 summary(m6)
 tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
