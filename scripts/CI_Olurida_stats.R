@@ -235,7 +235,7 @@ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 # Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m6: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
+#### m6: CI ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(CI ~ SH_Temp + MHW + (1|Tank), data = Olurida_CI_stats)
 summary(m6)
 tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
