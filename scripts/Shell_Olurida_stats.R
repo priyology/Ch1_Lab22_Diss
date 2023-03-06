@@ -59,7 +59,7 @@ tab_model(m_null)
 #### m1: Shell.mg ~ SH_Temp ===============
 m1 <- glm(Shell.mg ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m1)
-tab_model(m1)
+tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = Shell.mg ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,7 +87,7 @@ tab_model(m1)
 #### m2: Shell.mg ~ SH_Tide ===============
 m2 <- glm(Shell.mg ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m2)
-tab_model(m2)
+tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -116,7 +116,7 @@ tab_model(m2)
 #### m3: Shell.mg ~ MHW ===============
 m3 <- glm(Shell.mg ~ MHW, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m3)
-tab_model(m3)
+tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ MHW, family = gaussian(link = "identity"), 
@@ -151,7 +151,7 @@ tab_model(m3)
 #### m4: Shell.mg ~ MHW + (1|Tank) ===============
 m4 <- lmer(Shell.mg ~ MHW + (1|Tank), data = Olurida_Shell_stats)
 summary(m4)
-tab_model(m4)
+tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m4) ## 4921.375
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's
@@ -238,7 +238,7 @@ tab_model(m_null_Gamma)
 #### m5: Shell.mg ~ SH_Temp ===============
 m5 <- glm(Shell.mg ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m5)
-tab_model(m5)
+tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 # glm(formula = Shell.mg ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -266,7 +266,7 @@ tab_model(m5)
 #### m6: Shell.mg ~ SH_Tide ===============
 m6 <- glm(Shell.mg ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m6)
-tab_model(m6)
+tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -295,7 +295,7 @@ tab_model(m6)
 #### m7: Shell.mg ~ MHW ===============
 m7 <- glm(Shell.mg ~ MHW, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m7)
-tab_model(m7)
+tab_model(m7, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ MHW, family = Gamma(link = "identity"), 
@@ -329,7 +329,7 @@ tab_model(m7)
 #### m8: Shell.mg ~ MHW + (1|Tank) ===============
 m8 <- glmer(Shell.mg ~ MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_Shell_stats)
 summary(m8)
-tab_model(m8)
+tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m8) ## 4768.359
 plot_model(m8, type = "eff", terms = "MHW") ## via sjplot
 

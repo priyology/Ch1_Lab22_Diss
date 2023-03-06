@@ -59,7 +59,7 @@ tab_model(m_null)
 #### m1: Tissue.mg ~ SH_Temp ===============
 m1 <- glm(Tissue.mg ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
 summary(m1)
-tab_model(m1)
+tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,7 +87,7 @@ tab_model(m1)
 #### m2: Tissue.mg ~ SH_Tide ===============
 m2 <- glm(Tissue.mg ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
 summary(m2)
-tab_model(m2)
+tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -116,7 +116,7 @@ tab_model(m2)
 #### m3: Tissue.mg ~ MHW ===============
  m3 <- glm(Tissue.mg ~ MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m3)
- tab_model(m3)
+ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ MHW, family = gaussian(link = "identity"), 
@@ -146,7 +146,7 @@ tab_model(m2)
  #### m4: Tissue.mg ~ SH_Temp + MHW ===============
  m4 <- glm(Tissue.mg ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m4)
- tab_model(m4)
+ tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -177,7 +177,7 @@ tab_model(m2)
 #### Interaction: Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW ===============
  m5 <- glm(Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m5)
- tab_model(m5)
+ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
  
  # Call:
  # glm(formula = Tissue.mg ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
@@ -212,7 +212,7 @@ tab_model(m2)
 #### m6: Tissue.mg ~ MHW + (1|Tank) ===============
 m6 <- lmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), data = Olurida_Tissue_stats)
 summary(m6)
-tab_model(m6)
+tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m6) ## 1509.262
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's
@@ -299,10 +299,10 @@ tab_model(m_null_Gamma)
 
 #
 #### Fixed Factors: SH_Temp, SH_Tide, MHW ===============
-#### m5: Tissue.mg ~ SH_Temp ===============
-m5 <- glm(Tissue.mg ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
-summary(m5)
-tab_model(m5)
+#### m7: Tissue.mg ~ SH_Temp ===============
+m7 <- glm(Tissue.mg ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
+summary(m7)
+tab_model(m7)
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -328,10 +328,10 @@ tab_model(m5)
 # Number of Fisher Scoring iterations: 3
 
 
-#### m6: Tissue.mg ~ SH_Tide ===============
-m6 <- glm(Tissue.mg ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
-summary(m6)
-tab_model(m6)
+#### m8: Tissue.mg ~ SH_Tide ===============
+m8 <- glm(Tissue.mg ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
+summary(m8)
+tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -356,10 +356,10 @@ tab_model(m6)
 #
 # Number of Fisher Scoring iterations: 3
 
-#### m7: Tissue.mg ~ MHW ===============
-m7 <- glm(Tissue.mg ~ MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
-summary(m7)
-tab_model(m7)
+#### m9: Tissue.mg ~ MHW ===============
+m9 <- glm(Tissue.mg ~ MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
+summary(m9)
+tab_model(m9, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ MHW, family = Gamma(link = "identity"), 
@@ -386,10 +386,10 @@ tab_model(m7)
 #
 # Number of Fisher Scoring iterations: 3
 
-#### m8: Tissue.mg ~ SH_Temp + MHW ===============
-m8 <- glm(Tissue.mg ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
-summary(m8)
-tab_model(m8)
+#### m10: Tissue.mg ~ SH_Temp + MHW ===============
+m10 <- glm(Tissue.mg ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
+summary(m10)
+tab_model(m10, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp + MHW, family = Gamma(link = "identity"), 
@@ -417,13 +417,13 @@ tab_model(m8)
 # 
 # Number of Fisher Scoring iterations: 5
 
-#### Interactions: Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW ===============
-m9 <- glm(Tissue.mg ~ SH_Temp + MHW + MHW + SH_Temp*MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
-summary(m9)
-tab_model(m9)
+#### m11: Interactions: Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW ===============
+m11 <- glm(Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
+summary(m11)
+tab_model(m11, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
-# glm(formula = Tissue.mg ~ SH_Temp + MHW + MHW + SH_Temp * MHW, 
+# glm(formula = Tissue.mg ~ SH_Temp + MHW + SH_Temp * MHW, 
 #    family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 #
 # Deviance Residuals: 
@@ -452,32 +452,82 @@ tab_model(m9)
 # Number of Fisher Scoring iterations: 3
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m10: Tissue.mg ~ SH_Temp + MHW + (1|Tank) ===============
-m10 <- glmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_Tissue_stats)
-summary(m10)
-tab_model(m10)
-AIC(m10) ## 986.5
-plot_model(m10, type = "eff", terms = "MHW") ## via sjplot
+#### m12: Tissue.mg ~ SH_Temp + MHW + (1|Tank) ===============
+m12 <- glmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_Tissue_stats)
+summary(m12)
+tab_model(m12, show.reflvl = TRUE, prefix.labels = "varname")
+AIC(m12) ## 986.5
+plot_model(m12, type = "eff", terms = "MHW") ## via sjplot
+
+AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
+BIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
+
+#### Pairwise Comparisons ===============
+## pairwise comparison for m12
+
+emm_m12a <-  emmeans(m12, specs = ~ SH_Temp|MHW)
+emm_m12a
+pairwise_m12a <- contrast(emm_m12a, interaction = "pairwise")
+pairwise_m12a
+
+# MHW = 15˚C:
+# SH_Temp_pairwise estimate     SE  df z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf   2.722  0.0065
+#
+# MHW = 18˚C:
+#  SH_Temp_pairwise estimate     SE  df z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf   2.722  0.0065
+#
+# MHW = 21˚C:
+#  SH_Temp_pairwise estimate     SE  df z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf   2.722  0.0065
+#
+# MHW = 24˚C:
+#   SH_Temp_pairwise estimate     SE  df z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf   2.722  0.0065
+
+emm_m12b <-  emmeans(m12, specs = ~ MHW|SH_Temp)
+emm_m12b
+pairwise_m12b <- contrast(emm_m12b, interaction = "pairwise")
+pairwise_m12b
+
+# SH_Temp = 15˚C:
+# MHW_pairwise estimate    SE  df z.ratio p.value
+# 15˚C - 18˚C   -0.2978 0.130 Inf  -2.289  0.0221
+# 15˚C - 21˚C   -0.2847 0.130 Inf  -2.185  0.0289
+# 15˚C - 24˚C   -0.2336 0.130 Inf  -1.796  0.0725
+# 18˚C - 21˚C    0.0131 0.122 Inf   0.107  0.9146
+# 18˚C - 24˚C    0.0642 0.122 Inf   0.528  0.5978
+# 21˚C - 24˚C    0.0511 0.122 Inf   0.418  0.6760
+#
+# SH_Temp = 21˚C:
+#  MHW_pairwise estimate    SE  df z.ratio p.value
+# 15˚C - 18˚C   -0.2978 0.130 Inf  -2.289  0.0221
+# 15˚C - 21˚C   -0.2847 0.130 Inf  -2.185  0.0289
+# 15˚C - 24˚C   -0.2336 0.130 Inf  -1.796  0.0725
+# 18˚C - 21˚C    0.0131 0.122 Inf   0.107  0.9146
+# 18˚C - 24˚C    0.0642 0.122 Inf   0.528  0.5978
+# 21˚C - 24˚C    0.0511 0.122 Inf   0.418  0.6760
 
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
-plot(fitted(m8), resid(m8))
+plot(fitted(m12), resid(m12))
 abline(0,0)
 
 #### Q-Q plot of Residuals ===============
-qqnorm(resid(m8))
-qqline(resid(m8))
+qqnorm(resid(m12))
+qqline(resid(m12))
 
 #### Density Plot of Residuals ===============
-plot(density(resid(m8)))
+plot(density(resid(m12)))
 
 
 #### Plot Model ========
 ## using ggeffects
 ## https://strengejacke.github.io/ggeffects/articles/introduction_plotcustomize.html
 
-m8.plot_byMHW <- ggpredict(m8, terms = c("MHW", "SH_Temp"))
-plot(m8.plot_byMHW) +
+m12.plot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
+plot(m12.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
   labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
@@ -487,8 +537,8 @@ plot(m8.plot_byMHW) +
 
 ggsave(filename = "fig_output/model_Olurida_Tissue-MHW.png",width = 5.10, height = 5.77, dpi = 300)
 
-m8.plot_bySHtemp <- ggpredict(m8, terms = c("SH_Temp", "MHW"))
-plot(m8.plot_bySHtemp) +
+m12.plot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
+plot(m12.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
@@ -500,7 +550,7 @@ ggsave(filename = "fig_output/model_Olurida_Tissue-SH_Temp.png",width = 5.10, he
 
 
 ####### With individual tanks plotted
-Olurida_Tissue_stats$fit <- predict(m8)
+Olurida_Tissue_stats$fit <- predict(m12)
 
 ## By SH_Temp
 ggplot(Olurida_Tissue_stats, aes(x = SH_Temp, y = Tissue.mg, group = interaction(Tank, SH_Temp), col = MHW)) +  #, shape = MHW )) + 
