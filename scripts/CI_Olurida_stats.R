@@ -3,6 +3,8 @@
 ## load libraries
 library(tidyverse)
 library(sjPlot) ## manuscript-quality tables
+library(sjmisc)
+library(sjlabelled)
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -26,7 +28,6 @@ is.factor(Olurida_CI_stats$MHW) ## TRUE
 #### O. LURIDA STATS ===============
 
 #### Gaussian Distribution ========
-#### Fixed Factors: SH_Temp, SH_Tide, MHW ========
 
 #### m_null: CI ~ 1 ===============
 m_null <- glm(CI ~ 1, family = gaussian(link = "identity"), data = Olurida_CI_stats)
