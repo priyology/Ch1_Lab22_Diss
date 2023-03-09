@@ -611,7 +611,7 @@ m12.plot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
 plot(m12.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -623,7 +623,7 @@ plot(m12.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+       subtitle = "O. lurida: Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 
@@ -641,7 +641,7 @@ ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_T
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -656,7 +656,7 @@ ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_T
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")

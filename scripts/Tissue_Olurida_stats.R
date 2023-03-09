@@ -566,7 +566,7 @@ m12.plot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
 plot(m12.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Tissue (mg)")
@@ -577,7 +577,7 @@ m12.plot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
 plot(m12.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Tissue (mg)")
@@ -595,7 +595,7 @@ ggplot(Olurida_Tissue_stats, aes(x = SH_Temp, y = Tissue.mg, group = interaction
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Tissue (mg)")
@@ -610,7 +610,7 @@ ggplot(Olurida_Tissue_stats, aes(x = SH_Temp, y = Tissue.mg, group = interaction
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("glmer(O. lurida: Tissue ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Tissue (mg)")

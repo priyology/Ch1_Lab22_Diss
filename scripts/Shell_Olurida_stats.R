@@ -386,7 +386,7 @@ plot(m8.plot_byMHW) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   #scale_color_manual(values = c("#4575B4", "#ABD9E9",  "#FDAE61", "#D73027")) +
-    labs(title = expression(paste("glmer(Shell.mg ~ MHW + (1|Tank)")), 
+    labs(title = expression(paste("glmer(O. lurida: Shell.mg ~ MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Shell(mg)")
@@ -407,7 +407,7 @@ ggplot(Olurida_Shell_stats, aes(x = MHW, y = Shell.mg, col = MHW, group = Tank))
   #geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(Shell.mg ~ MHW + (1|Tank)")), 
+  labs(title = expression(paste("O. lurida: glmer(Shell.mg ~ MHW + (1|Tank)")), 
        subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Shell (mg)")
