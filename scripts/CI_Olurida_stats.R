@@ -2,9 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
-library(sjmisc)
-library(sjlabelled)
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -32,7 +31,6 @@ is.factor(Olurida_CI_stats$MHW) ## TRUE
 #### m_null: CI ~ 1 ===============
 m_null <- glm(CI ~ 1, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m_null)
-tab_model(m_null)
 
 # Call:
 # glm(formula = CI ~ 1, family = gaussian(link = "identity"), data = Olurida_CI_stats)
@@ -60,7 +58,6 @@ tab_model(m_null)
 #### m1: CI ~ SH_Temp ===============
 m1 <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -89,7 +86,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: CI ~ SH_Tide ===============
 m2 <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -139,7 +135,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: CI ~ MHW ===============
 m3 <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m3)
-tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ MHW, family = gaussian(link = "identity"), 
@@ -170,7 +165,6 @@ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 #### m4: CI ~ SH_Temp + MHW ===============
 m4 <- glm(CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m4)
-tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 # glm(formula = CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -203,7 +197,6 @@ tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 #### m5: CI ~ SH_Temp + MHW + SH_Temp*MHW ===============
 m5 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = gaussian(link = "identity"), data = Olurida_CI_stats)
 summary(m5)
-tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 #  glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
@@ -238,8 +231,6 @@ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 #### m6: CI ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(CI ~ SH_Temp + MHW + (1|Tank), data = Olurida_CI_stats)
 summary(m6)
-tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
-
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's  method
 # [lmerModLmerTest]
@@ -304,7 +295,6 @@ plot(density(resid(m6)))
 #### m_null_Gamma: CI ~ 1 ===============
 m_null_Gamma <- glm(CI ~ 1, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m_null_Gamma)
-tab_model(m_null_Gamma)
 
 #Call:
 #  glm(formula = CI ~ 1, family = Gamma(link = "identity"), data = Olurida_CI_stats)
@@ -331,7 +321,6 @@ tab_model(m_null_Gamma)
 #### m7: CI ~ SH_Temp ===============
 m7 <- glm(CI ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m7)
-tab_model(m7)
 
 #Call:
 #  glm(formula = CI ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -359,7 +348,6 @@ tab_model(m7)
 #### m8: CI ~ SH_Tide ===============
 m8 <- glm(CI ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m8)
-tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 #  glm(formula = CI ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -387,7 +375,6 @@ tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 #### m9: CI ~ MHW ===============
 m9 <- glm(CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m9)
-tab_model(m9, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 #  glm(formula = CI ~ MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
@@ -416,7 +403,6 @@ tab_model(m9, show.reflvl = TRUE, prefix.labels = "varname")
 #### m10: CI ~ SH_Temp + MHW ===============
 m10 <- glm(CI ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m10)
-tab_model(m10, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 #glm(formula = CI ~ SH_Temp + MHW, family = Gamma(link = "identity"), 
@@ -448,7 +434,6 @@ tab_model(m10, show.reflvl = TRUE, prefix.labels = "varname")
 #### m11: SH_Temp + MHW + SH_Temp*MHW ===============
 m11 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = Gamma(link = "identity"), data = Olurida_CI_stats)
 summary(m11)
-tab_model(m11, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 # glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = Gamma(link = "identity"), 
@@ -484,8 +469,6 @@ tab_model(m11, show.reflvl = TRUE, prefix.labels = "varname")
 #### m12: CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
 m12 <- glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_CI_stats)
 summary(m12)
-tab_model(m12, show.reflvl = TRUE, prefix.labels = "varname")
-
 
 #Generalized linear mixed model fit by maximum likelihood (Laplace
 #Approximation) [glmerMod]
@@ -537,8 +520,12 @@ tab_model(m12, show.reflvl = TRUE, prefix.labels = "varname")
 #SH_T21˚C:MHW21               
 #SH_T21˚C:MHW24  0.477 
 
-#### Publication-ready table? =============
-### https://dmyee.files.wordpress.com/2016/03/table_workshop.pdf
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m12 <- tbl_regression(m12, exponentiate = TRUE) ## table!
+tbl.m12
+inline_text(tbl.m12,  variable = SH_Temp, level = "21˚C") ##in-line text
+# "0.37 (95% CI 0.17, 0.81; p=0.012)"
 
 #### AIC/BIC Scores ===============
 AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
