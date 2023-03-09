@@ -2,7 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -31,7 +32,6 @@ is.factor(Olurida_Shell_stats$MHW) ## TRUE
 #### m_null: Shell.mg ~ 1 ===============
 m_null <- glm(Shell.mg ~ 1, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m_null)
-tab_model(m_null)
 
 # Call:
 # glm(formula = Shell.mg ~ 1, family = gaussian(link = "identity"), 
@@ -59,7 +59,6 @@ tab_model(m_null)
 #### m1: Shell.mg ~ SH_Temp ===============
 m1 <- glm(Shell.mg ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = Shell.mg ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,7 +86,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: Shell.mg ~ SH_Tide ===============
 m2 <- glm(Shell.mg ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -116,7 +114,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: Shell.mg ~ MHW ===============
 m3 <- glm(Shell.mg ~ MHW, family = gaussian(link = "identity"), data = Olurida_Shell_stats)
 summary(m3)
-tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ MHW, family = gaussian(link = "identity"), 
@@ -151,7 +148,6 @@ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 #### m4: Shell.mg ~ MHW + (1|Tank) ===============
 m4 <- lmer(Shell.mg ~ MHW + (1|Tank), data = Olurida_Shell_stats)
 summary(m4)
-tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m4) ## 4921.375
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's
@@ -210,7 +206,6 @@ plot(density(resid(m4)))
 #### m_null_Gamma: Shell.mg ~ 1 ===============
 m_null_Gamma <- glm(Shell.mg ~ 1, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m_null_Gamma)
-tab_model(m_null_Gamma)
 
 # Call:
 # glm(formula = Shell.mg ~ 1, family = Gamma(link = "identity"), 
@@ -238,7 +233,6 @@ tab_model(m_null_Gamma)
 #### m5: Shell.mg ~ SH_Temp ===============
 m5 <- glm(Shell.mg ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m5)
-tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 # glm(formula = Shell.mg ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -266,7 +260,6 @@ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 #### m6: Shell.mg ~ SH_Tide ===============
 m6 <- glm(Shell.mg ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m6)
-tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -295,7 +288,6 @@ tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 #### m7: Shell.mg ~ MHW ===============
 m7 <- glm(Shell.mg ~ MHW, family = Gamma(link = "identity"), data = Olurida_Shell_stats)
 summary(m7)
-tab_model(m7, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Shell.mg ~ MHW, family = Gamma(link = "identity"), 
@@ -329,7 +321,6 @@ tab_model(m7, show.reflvl = TRUE, prefix.labels = "varname")
 #### m8: Shell.mg ~ MHW + (1|Tank) ===============
 m8 <- glmer(Shell.mg ~ MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_Shell_stats)
 summary(m8)
-tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m8) ## 4768.359
 plot_model(m8, type = "eff", terms = "MHW") ## via sjplot
 
@@ -379,7 +370,12 @@ qqline(resid(m8))
 #### Density Plot of Residuals ===============
 plot(density(resid(m8)))
 
-
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m8 <- tbl_regression(m8, exponentiate = TRUE) ## table!
+tbl.m8
+inline_text(tbl.m8,  variable = MHW, level = "21˚C") ##in-line text
+# "5.40 (95% CI 0.97, 30.0; p=0.054)"
 
 #### Plot Model ========
 ## using ggeffects

@@ -54,6 +54,9 @@ summary(Mgigas_CI2)
 ## CSV without NAs (empty cells / dead oysters)
 write_csv(Mgigas_CI2 , file = "data/M_gigas/Mgigas_CI_noNAs.csv")
 
+## same as previous CSV, but make another copy specifically for doing stats in case modifications needs to be made
+write_csv(Mgigas_CI2 , file = "data/M_gigas/Mgigas_CI_StatsData.csv")
+
 #histogram of all CIs
 ggplot(Mgigas_CI2, aes(CI)) +
   geom_histogram() +

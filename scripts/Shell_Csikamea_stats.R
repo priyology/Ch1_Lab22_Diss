@@ -2,7 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -31,7 +32,6 @@ is.factor(Csikamea_Shell_stats$MHW) ## TRUE
 #### m_null: Shell.g ~ 1 ===============
 m_null <- glm(Shell.g ~ 1, family = gaussian(link = "identity"), data = Csikamea_Shell_stats)
 summary(m_null)
-tab_model(m_null)
 
 # Call:
 # glm(formula = Shell.g ~ 1, family = gaussian(link = "identity"), 
@@ -60,7 +60,6 @@ tab_model(m_null)
 #### m1: Shell.g ~ SH_Temp ===============
 m1 <- glm(Shell.g ~ SH_Temp, family = gaussian(link = "identity"), data = Csikamea_Shell_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = Shell.g ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -88,7 +87,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: Shell.g ~ SH_Tide ===============
 m2 <- glm(Shell.g ~ SH_Tide, family = gaussian(link = "identity"), data = Csikamea_Shell_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = Shell.g ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -116,7 +114,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: Shell.g ~ MHW ===============
 m3 <- glm(Shell.g ~ MHW, family = gaussian(link = "identity"), data = Csikamea_Shell_stats)
 summary(m3)
-tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = Shell.g ~ MHW, family = gaussian(link = "identity"), 
@@ -149,9 +146,10 @@ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 #### Random Factor: (1|Tank), lmer ===============
 #### m4: Shell.g ~ (1|Tank) ===============
+
+#### NON-SIGNIFICANT
 m4 <- lmer(Shell.g ~ SH_Temp + SH_Tide + MHW + (1|Tank), data = Csikamea_Shell_stats)
 summary(m4)
-tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m4) ## 1155.64
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's method [
@@ -209,8 +207,12 @@ qqline(resid(m4))
 #### Density Plot of Residuals ===============
 plot(density(resid(m4)))
 
-
-
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m4 <- tbl_regression(m4, exponentiate = TRUE) ## table!
+tbl.m4 ### NON-SIGNIFICANT
+inline_text(tbl.m4,  variable = MHW, level = "21˚C") ##in-line text
+# "1.02 (95% CI 0.91, 1.14; p=0.7)"
 
 
 #### Plot Model ========
@@ -222,12 +224,12 @@ plot(m4.plot_byMHW) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   #scale_color_manual(values = c("#4575B4", "#ABD9E9",  "#FDAE61", "#D73027")) +
-  labs(title = expression(paste("glmer(Shell.g ~ MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(Shell.g ~ MHW + (1|Tank)")), 
+       subtitle = "NON-SIGNIFICANT",
        x = "Marine Heatwave (°C)", 
        y = "Shell(g)")
 
-ggsave(filename = "fig_output/model_Csikamea_Shell-MHW_b&w.png",width = 5.10, height = 5.77, dpi = 300)
+ggsave(filename = "fig_output/NSmodel_Csikamea_Shell-MHW_b&w.png",width = 5.10, height = 5.77, dpi = 300)
 
 #library(RColorBrewer)
 #brewer.pal(11, "RdYlBu")
@@ -243,9 +245,9 @@ ggplot(Csikamea_Shell_stats, aes(x = MHW, y = Shell.g, col = MHW, group = Tank))
   #geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(Shell.g ~ MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(Shell.g ~ MHW + (1|Tank)")), 
+       subtitle = "NON-SIGNIFICANT",
        x = "Stress Hardening Temperature (°C)", 
        y = "Shell (g)")
 
-ggsave(filename = "fig_output/model_Csikamea_Shell_byMHW_Tanks.png",width = 5.10, height = 5.77, dpi = 300)
+ggsave(filename = "fig_output/NSmodel_Csikamea_Shell_byMHW_Tanks.png",width = 5.10, height = 5.77, dpi = 300)

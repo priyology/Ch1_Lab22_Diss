@@ -2,9 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
-library(sjmisc)
-library(sjlabelled)
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -25,7 +24,6 @@ View(Csikamea_CI_stats)
 #### m_null: CI ~ 1 ===============
 m_null <- glm(CI ~ 1, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m_null)
-tab_model(m_null)
 
 # Call:
 # glm(formula = CI ~ 1, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
@@ -52,7 +50,6 @@ tab_model(m_null)
 #### m1: CI ~ SH_Temp ===============
 m1 <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -80,7 +77,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: CI ~ SH_Tide ===============
 m2 <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -108,7 +104,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: CI ~ MHW ===============
 m3 <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m3)
-tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = CI ~ MHW, family = gaussian(link = "identity"), 
@@ -138,7 +133,6 @@ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 #### m4: CI ~ SH_Temp + MHW ===============
 m4 <- glm(CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m4)
-tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = CI ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -170,7 +164,6 @@ tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 #### m5: CI ~ SH_Temp + MHW + SH_Temp*MHW ===============
 m5 <- glm(CI ~ SH_Temp + MHW + SH_Temp*MHW , family = gaussian(link = "identity"), data = Csikamea_CI_stats)
 summary(m5)
-tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 #  glm(formula = CI ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
@@ -205,7 +198,6 @@ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 #### m6: CI ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(CI ~ SH_Temp + MHW + (1|Tank), data = Csikamea_CI_stats)
 summary(m6)
-tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 # lmerModLmerTest]
@@ -259,6 +251,13 @@ qqline(resid(m6))
 #### Density Plot of Residuals ===============
 plot(density(resid(m6)))
 
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m6 <- tbl_regression(m6, exponentiate = TRUE) ## table!
+tbl.m6
+inline_text(tbl.m6,  variable = SH_Temp, level = "21˚C") ##in-line text
+# "0.78 (95% CI 0.64, 0.94; p=0.011)"
+
 #### Plot Model ========
 ## using ggeffects
 ## https://strengejacke.github.io/ggeffects/articles/introduction_plotcustomize.html
@@ -267,8 +266,8 @@ m6.plot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Temp"))
 plot(m6.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
 
@@ -278,8 +277,8 @@ m6.plot_bySHtemp <- ggpredict(m6, terms = c("SH_Temp", "MHW"))
 plot(m6.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 
@@ -297,8 +296,8 @@ ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
 
@@ -312,8 +311,8 @@ ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 

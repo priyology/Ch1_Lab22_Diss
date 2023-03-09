@@ -2,7 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -31,7 +32,6 @@ is.factor(Csikamea_Tissue_stats$MHW) ## TRUE
 #### m_null: Tissue.g ~ 1 ===============
 m_null <- glm(Tissue.g ~ 1, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m_null)
-tab_model(m_null)
 
 # Call:
 # glm(formula = Tissue.g ~ 1, family = gaussian(link = "identity"), 
@@ -59,7 +59,6 @@ tab_model(m_null)
 #### m1: Tissue.g ~ SH_Temp ===============
 m1 <- glm(Tissue.g ~ SH_Temp, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.g ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,7 +86,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: Tissue.g ~ SH_Tide ===============
 m2 <- glm(Tissue.g ~ SH_Tide, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 #Call:
 # glm(formula = Tissue.g ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -115,7 +113,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: Tissue.g ~ MHW ===============
 m3 <- glm(Tissue.g ~ MHW, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m3)
-tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.g ~ MHW, family = gaussian(link = "identity"), 
@@ -145,7 +142,6 @@ tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 #### m4: Tissue.g ~ SH_Temp + MHW ===============
 m4 <- glm(Tissue.g ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m4)
-tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # (formula = Tissue.g ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -176,7 +172,6 @@ tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 #### Interaction: Tissue.g ~ SH_Temp + MHW + SH_Temp*MHW ===============
 m5 <- glm(Tissue.g ~ SH_Temp + MHW + SH_Temp*MHW, family = gaussian(link = "identity"), data = Csikamea_Tissue_stats)
 summary(m5)
-tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.g ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
@@ -211,7 +206,6 @@ tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
 #### m6: Tissue.g ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(Tissue.g ~ SH_Temp + MHW + (1|Tank), data =Csikamea_Tissue_stats)
 summary(m6)
-tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m6) ## -2579.794
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's method [
@@ -253,7 +247,6 @@ AIC(m6) ## -2579.794
 #### m7: Tissue.g ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank) ===============
 m7 <- lmer(Tissue.g ~ SH_Temp +  + SH_Temp*MHW + (1|Tank), data =Csikamea_Tissue_stats)
 summary(m7)
-tab_model(m7, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m7) ## -2556.243
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's method [
@@ -321,6 +314,13 @@ qqline(resid(m6))
 
 #### Density Plot of Residuals ===============
 plot(density(resid(m6)))
+
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m6 <- tbl_regression(m6, exponentiate = TRUE) ## table!
+tbl.m6
+inline_text(tbl.m6,  variable = SH_Temp, level = "21˚C") ##in-line text
+# "0.99 (95% CI 0.99, 1.00; p=0.027)"
 
 #### Plot Model ========
 ## using ggeffects

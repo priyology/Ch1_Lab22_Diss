@@ -2,7 +2,8 @@
 
 ## load libraries
 library(tidyverse)
-library(sjPlot) ## manuscript-quality tables
+library(gtsummary) # for producing tables: 
+library(broom.mixed) ## to use with gtsummary
 library(lme4) ##glm
 library(lmerTest) ##p-values
 library(emmeans) ## comparisons
@@ -31,7 +32,6 @@ is.factor(Olurida_Tissue_stats$MHW) ## TRUE
 #### m_null: Tissue.mg ~ 1 ===============
 m_null <- glm(Tissue.mg ~ 1, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
 summary(m_null)
-tab_model(m_null)
 
 #Call:
 # glm(formula = Tissue.mg ~ 1, family = gaussian(link = "identity"), 
@@ -59,7 +59,6 @@ tab_model(m_null)
 #### m1: Tissue.mg ~ SH_Temp ===============
 m1 <- glm(Tissue.mg ~ SH_Temp, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
 summary(m1)
-tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp, family = gaussian(link = "identity"), 
@@ -87,7 +86,6 @@ tab_model(m1, show.reflvl = TRUE, prefix.labels = "varname")
 #### m2: Tissue.mg ~ SH_Tide ===============
 m2 <- glm(Tissue.mg ~ SH_Tide, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
 summary(m2)
-tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Tide, family = gaussian(link = "identity"), 
@@ -116,7 +114,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m3: Tissue.mg ~ MHW ===============
  m3 <- glm(Tissue.mg ~ MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m3)
- tab_model(m3, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ MHW, family = gaussian(link = "identity"), 
@@ -146,7 +143,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
  #### m4: Tissue.mg ~ SH_Temp + MHW ===============
  m4 <- glm(Tissue.mg ~ SH_Temp + MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m4)
- tab_model(m4, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp + MHW, family = gaussian(link = "identity"), 
@@ -177,8 +173,7 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### Interaction: Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW ===============
  m5 <- glm(Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW, family = gaussian(link = "identity"), data = Olurida_Tissue_stats)
  summary(m5)
- tab_model(m5, show.reflvl = TRUE, prefix.labels = "varname")
- 
+
  # Call:
  # glm(formula = Tissue.mg ~ SH_Temp + MHW + SH_Temp * MHW, family = gaussian(link = "identity"), 
   #     data = Olurida_Tissue_stats)
@@ -212,7 +207,6 @@ tab_model(m2, show.reflvl = TRUE, prefix.labels = "varname")
 #### m6: Tissue.mg ~ SH_Temp + MHW + (1|Tank) ===============
 m6 <- lmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), data = Olurida_Tissue_stats)
 summary(m6)
-tab_model(m6, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m6) ## 1509.262
 
 # Linear mixed model fit by REML. t-tests use Satterthwaite's
@@ -302,7 +296,6 @@ tab_model(m_null_Gamma)
 #### m7: Tissue.mg ~ SH_Temp ===============
 m7 <- glm(Tissue.mg ~ SH_Temp, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 summary(m7)
-tab_model(m7)
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp, family = Gamma(link = "identity"), 
@@ -331,7 +324,6 @@ tab_model(m7)
 #### m8: Tissue.mg ~ SH_Tide ===============
 m8 <- glm(Tissue.mg ~ SH_Tide, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 summary(m8)
-tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Tide, family = Gamma(link = "identity"), 
@@ -359,7 +351,6 @@ tab_model(m8, show.reflvl = TRUE, prefix.labels = "varname")
 #### m9: Tissue.mg ~ MHW ===============
 m9 <- glm(Tissue.mg ~ MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 summary(m9)
-tab_model(m9, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ MHW, family = Gamma(link = "identity"), 
@@ -389,7 +380,6 @@ tab_model(m9, show.reflvl = TRUE, prefix.labels = "varname")
 #### m10: Tissue.mg ~ SH_Temp + MHW ===============
 m10 <- glm(Tissue.mg ~ SH_Temp + MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 summary(m10)
-tab_model(m10, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp + MHW, family = Gamma(link = "identity"), 
@@ -420,7 +410,6 @@ tab_model(m10, show.reflvl = TRUE, prefix.labels = "varname")
 #### m11: Interactions: Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW ===============
 m11 <- glm(Tissue.mg ~ SH_Temp + MHW + SH_Temp*MHW, family = Gamma(link = "identity"), data = Olurida_Tissue_stats)
 summary(m11)
-tab_model(m11, show.reflvl = TRUE, prefix.labels = "varname")
 
 # Call:
 # glm(formula = Tissue.mg ~ SH_Temp + MHW + SH_Temp * MHW, 
@@ -455,9 +444,8 @@ tab_model(m11, show.reflvl = TRUE, prefix.labels = "varname")
 #### m12: Tissue.mg ~ SH_Temp + MHW + (1|Tank) ===============
 m12 <- glmer(Tissue.mg ~ SH_Temp + MHW + (1|Tank), family = Gamma(link="identity"), data = Olurida_Tissue_stats)
 summary(m12)
-tab_model(m12, show.reflvl = TRUE, prefix.labels = "varname")
 AIC(m12) ## 986.5
-plot_model(m12, type = "eff", terms = "MHW") ## via sjplot
+plot_model(m12, type = "eff", terms = "MHW")
 
 AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
 BIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
@@ -467,8 +455,12 @@ BIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
 
 emm_m12a <-  emmeans(m12, specs = ~ SH_Temp|MHW)
 emm_m12a
+
 pairwise_m12a <- contrast(emm_m12a, interaction = "pairwise")
 pairwise_m12a
+
+pairwise_m12a  %>%
+  summary(infer = TRUE)
 
 # MHW = 15˚C:
 # SH_Temp_pairwise estimate     SE  df z.ratio p.value
@@ -488,6 +480,23 @@ pairwise_m12a
 
 emm_m12b <-  emmeans(m12, specs = ~ MHW|SH_Temp)
 emm_m12b
+
+# SH_Temp = 15˚C:
+# MHW  emmean     SE  df asymp.LCL asymp.UCL
+# 15˚C  0.816 0.0993 Inf     0.621     1.010
+# 18˚C  1.113 0.0886 Inf     0.940     1.287
+# 21˚C  1.100 0.0889 Inf     0.926     1.275
+# 24˚C  1.049 0.0887 Inf     0.875     1.223
+#
+# SH_Temp = 21˚C:
+#  MHW  emmean     SE  df asymp.LCL asymp.UCL
+# 15˚C  0.719 0.0987 Inf     0.525     0.913
+# 18˚C  1.017 0.0880 Inf     0.844     1.189
+# 21˚C  1.004 0.0879 Inf     0.832     1.176
+# 24˚C  0.953 0.0879 Inf     0.780     1.125
+#
+# Confidence level used: 0.95
+
 pairwise_m12b <- contrast(emm_m12b, interaction = "pairwise")
 pairwise_m12b
 
@@ -509,6 +518,27 @@ pairwise_m12b
 # 18˚C - 24˚C    0.0642 0.122 Inf   0.528  0.5978
 # 21˚C - 24˚C    0.0511 0.122 Inf   0.418  0.6760
 
+pairwise_m12a  %>%
+  summary(infer = TRUE)
+
+# MHW = 15˚C:
+# SH_Temp_pairwise estimate     SE  df asymp.LCL asymp.UCL z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf     0.027     0.166   2.722  0.0065
+#
+# MHW = 18˚C:
+#  SH_Temp_pairwise estimate     SE  df asymp.LCL asymp.UCL z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf     0.027     0.166   2.722  0.0065
+#
+# MHW = 21˚C:
+#  SH_Temp_pairwise estimate     SE  df asymp.LCL asymp.UCL z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf     0.027     0.166   2.722  0.0065
+#
+# MHW = 24˚C:
+#  SH_Temp_pairwise estimate     SE  df asymp.LCL asymp.UCL z.ratio p.value
+# 15˚C - 21˚C        0.0966 0.0355 Inf     0.027     0.166   2.722  0.0065
+#
+# Confidence level used: 0.95 
+
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
 plot(fitted(m12), resid(m12))
@@ -521,6 +551,12 @@ qqline(resid(m12))
 #### Density Plot of Residuals ===============
 plot(density(resid(m12)))
 
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m12 <- tbl_regression(m12, exponentiate = TRUE) ## table!
+tbl.m12
+inline_text(tbl.m12,  variable = SH_Temp, level = "21˚C") ##in-line text
+# "0.37 (95% CI 0.17, 0.81; p=0.012)"
 
 #### Plot Model ========
 ## using ggeffects

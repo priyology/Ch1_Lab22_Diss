@@ -520,13 +520,6 @@ summary(m12)
 #SH_T21˚C:MHW21               
 #SH_T21˚C:MHW24  0.477 
 
-#### Publication-ready table =============
-## https://education.rstudio.com/blog/2020/07/gtsummary/
-tbl.m12 <- tbl_regression(m12, exponentiate = TRUE) ## table!
-tbl.m12
-inline_text(tbl.m12,  variable = SH_Temp, level = "21˚C") ##in-line text
-# "0.37 (95% CI 0.17, 0.81; p=0.012)"
-
 #### AIC/BIC Scores ===============
 AIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
 BIC(m_null_Gamma, m7, m8, m9, m10, m11, m12)
@@ -603,6 +596,12 @@ qqline(resid(m12))
 #### Density Plot of Residuals ===============
 plot(density(resid(m12)))
 
+#### Publication-ready table =============
+## https://education.rstudio.com/blog/2020/07/gtsummary/
+tbl.m12 <- tbl_regression(m12, exponentiate = TRUE) ## table!
+tbl.m12
+inline_text(tbl.m12,  variable = SH_Temp, level = "21˚C") ##in-line text
+# "0.37 (95% CI 0.17, 0.81; p=0.012)"
 
 #### Plot Model ========
 ## using ggeffects
