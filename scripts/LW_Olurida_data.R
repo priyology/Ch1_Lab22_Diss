@@ -219,14 +219,19 @@ ggplot(Olurida_LWend.1, aes(W)) +
 #### PRIYA PICK UP HERE ====
 
 #### No Grouping ====
+##fucking around to find out
+Olurida_LWend.1 %>% 
+  summarize(
+  Mean_L = mean(L))
+
 Stats_ALL <- Olurida_LWend.1 %>% 
   summarize(
-  Mean_L = mean(L),
-  SD_L = sd(L),
-  SE_L = SD_L/sqrt(n()),
-  Mean_W = mean(W),
-  SD_W = sd(W),
-  SE_W = SD_W/sqrt(n()))
+    Mean_L = mean(L),
+    SD_L = sd(L),
+    SE_L = SD_L/sqrt(n()),
+    Mean_W = mean(W),
+    SD_W = sd(W),
+    SE_W = SD_W/sqrt(n()))
 
 Stats_ALL
 
