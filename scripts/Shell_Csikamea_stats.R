@@ -24,7 +24,7 @@ is.factor(Csikamea_Shell_stats$SH_Tide) ## TRUE
 Csikamea_Shell_stats$MHW <- as.factor(Csikamea_Shell_stats$MHW) ## character
 is.factor(Csikamea_Shell_stats$MHW) ## TRUE
 
-#### O. LURIDA STATS ===============
+#### C. SIKAMEA SHELL STATS ===============
 
 #### Gaussian Distribution ========
 #### Fixed Factors: SH_Temp, SH_Tide, MHW ========
@@ -224,7 +224,7 @@ plot(m4.plot_byMHW) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
   #scale_color_manual(values = c("#4575B4", "#ABD9E9",  "#FDAE61", "#D73027")) +
-  labs(title = expression(paste("lmer(Shell.g ~ MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(Shell.g ~ MHW + (1|Tank)")), 
        subtitle = "NON-SIGNIFICANT",
        x = "Marine Heatwave (°C)", 
        y = "Shell(g)")
@@ -245,7 +245,7 @@ ggplot(Csikamea_Shell_stats, aes(x = MHW, y = Shell.g, col = MHW, group = Tank))
   #geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(Shell.g ~ MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(Shell.g ~ MHW + (1|Tank)")), 
        subtitle = "NON-SIGNIFICANT",
        x = "Stress Hardening Temperature (°C)", 
        y = "Shell (g)")

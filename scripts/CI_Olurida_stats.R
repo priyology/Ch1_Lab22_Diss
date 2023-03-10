@@ -622,16 +622,42 @@ m12.plot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
 plot(m12.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
-       subtitle = "O. lurida: Gamma distribution: link = 'identity'",
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Olurida_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
 
+##### DARK PLOTS: ggdark / black background =================
+library(ggdark)
+
+m12.DARKplot_byMHW <- ggpredict(m12, terms = c("MHW", "SH_Temp"))
+plot(m12.plot_byMHW) +
+  dark_theme_classic() +
+  scale_color_manual(values=c("#4575B4", "#FDAE61")) +
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARK_model_Olurida_CI-MHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+m12.DARKplot_bySHtemp <- ggpredict(m12, terms = c("SH_Temp", "MHW"))
+plot(m12.plot_bySHtemp) +
+  dark_theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("O. lurida: glmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+       subtitle = "Gamma distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARKmodel_Olurida_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
 
 ####### With individual tanks plotted
+
 Olurida_CI_stats$fit <- predict(m12)
+
 
 ## By CI ~ SH_Temp
 ggplot(Olurida_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_Temp), col = MHW)) +  #, shape = MHW )) + 

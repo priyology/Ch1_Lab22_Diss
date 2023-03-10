@@ -199,6 +199,8 @@ Stats_SHtempMHW <- Csikamea_CI2 %>%
 
 Stats_SHtempMHW
 
+write_csv(Stats_SHtempMHW, file = "data_output/C_sikamea/Csikamea_CI_SHTempMHW.csv")
+
 ## plot
 ggplot(Csikamea_CI2, aes(x=MHW, y=CI, fill = MHW)) +
   geom_boxplot() +

@@ -178,6 +178,32 @@ ggplot(Mgigas_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
   facet_wrap(~SH_Tide) +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
+
+#### Grouped by SH_Tide, MHW ====
+Stats_SHTideMHW <- Mgigas_CI2 %>%
+  group_by(SH_Tide, MHW) %>% 
+  summarize(
+    Mean_Shell.g = mean(Shell.g),
+    SD_Shell.g = sd(Shell.g),
+    SE_Shell.g = SD_Shell.g/sqrt(n()),
+    Mean_Tissue_mg = mean(Tissue.g),
+    SD_Tissue.g = sd(Tissue.g),
+    SE_Tissue.g = SD_Tissue.g/sqrt(n()),
+    Mean_CI = mean(CI),
+    SD_CI = sd(CI),
+    SE_CI = SD_CI/sqrt(n()))
+
+Stats_SHTideMHW
+
+## plot
+ggplot(Mgigas_CI2, aes(x=SH_Tide, y=CI, fill = MHW)) +
+  geom_boxplot() +
+#  facet_wrap(~SH_Temp) +
+  theme_classic() +
+  scale_color_manual(values=c("#4575B4", "#FDAE61"))
+
+write_csv(Stats_SHTideMHW, file = "data_output/M_gigas/Mgigas_CI_SHTideMHW.csv")
+
 #### Grouped by SH_Tide, SH_Temp, MHW ====
 Stats_SH_TideTemp_MHW <- Mgigas_CI2 %>%
   group_by(SH_Tide, SH_Temp, MHW) %>% 
@@ -211,52 +237,3 @@ ggsave(filename = "fig_output/Mgigas_CI.png",width = 5.10, height = 5.77, dpi = 
 
 ## CSV for Mean, SD, SE: Stats_SH_TideTemp_MHW (folder: data_output)
 write_csv(Stats_SH_TideTemp_MHW , file = "data_output/M_gigas/Mgigas_CI_MeanSDSE.csv")
-
-#### c. SIKAMEA STATS ===============
-
-## All Factors
-
-## Fixed Factors: SH_Temp, SH_Tide, MHW
-m.SHtemp <- glm(CI ~ SH_Temp, family = gaussian(link = "identity"), data = Mgigas_CI2)
-summary(m.SHtemp) #AIC: 2635.6
-tab_model(m.SHtemp)
-
-m.SHtide <- glm(CI ~ SH_Tide, family = gaussian(link = "identity"), data = Mgigas_CI2)
-summary(m.SHtide) #AIC: 2621.4
-tab_model(m.SHtide)
-
-m.MHW <- glm(CI ~ MHW, family = gaussian(link = "identity"), data = Mgigas_CI2)
-summary(m.MHW) #AIC: 2616.4
-tab_model(m.MHW)
-
-## Fixed + Random (Tank) Factors
-m.SHtide.Tank <- lmer(CI ~ SH_Tide + (1|Tank), data = Mgigas_CI2)
-summary(m.SHtide.Tank) #model output
-tab_model(m.SHtide.Tank)
-AIC(m.SHtide.Tank) #AIC: 2600.26
-
-m.MHW.Tank <- lmer(CI ~ MHW + (1|Tank), data = Mgigas_CI2)
-summary(m.MHW.Tank) #model output
-tab_model(m.MHW.Tank)
-AIC(m.MHW.Tank) # AIC: 2615.642
-
-m.SHtide.MHW.Tank <- lmer(CI ~ SH_Tide * MHW + (1|Tank), data = Mgigas_CI2)
-summary(m.SHtide.MHW.Tank) #model output
-tab_model(m.SHtide.MHW.Tank)
-AIC(m.SHtide.MHW.Tank) # AIC: 2606.973
-
-AIC(m.SHtide.MHW.Tank, m.SHtide.Tank, m.MHW.Tank, m.SHtemp, m.SHtide, m.MHW)
-## m.SHtide.Tank has lowest AIC (2600.260)
-
-## Plot of Residuals
-plot(fitted(m.SHtide.Tank), resid(m.SHtide.Tank))
-abline(0,0)
-
-#plot(m.all)
-
-## Q-Q plot of Residuals
-qqnorm(resid(m.SHtide.Tank))
-qqline(resid(m.SHtide.Tank)) 
-
-## Density Plot of Residuals
-plot(density(resid(m.SHtide.Tank)))
