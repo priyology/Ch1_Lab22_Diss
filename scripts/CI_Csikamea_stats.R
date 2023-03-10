@@ -266,7 +266,7 @@ m6.plot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Temp"))
 plot(m6.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -277,12 +277,37 @@ m6.plot_bySHtemp <- ggpredict(m6, terms = c("SH_Temp", "MHW"))
 plot(m6.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Csikamea_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
+
+##### DARK PLOTS: ggdark / black background =================
+library(ggdark)
+
+m6.DARKplot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Temp"))
+plot(m6.plot_byMHW) +
+  dark_theme_classic() +
+  scale_color_manual(values=c("#4575B4", "#FDAE61")) +
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARKmodel_Csikamea_CI-MHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+m6.DARKplot_bySHtemp <- ggpredict(m6, terms = c("SH_Temp", "MHW"))
+plot(m6.plot_bySHtemp) +
+  dark_theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
+       x = "Stress Hardening Temperature (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARKmodel_Csikamea_CI-SH_Temp.png",width = 5.10, height = 5.77, dpi = 300)
 
 
 ####### With individual tanks plotted
@@ -296,7 +321,7 @@ ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -311,7 +336,7 @@ ggplot(Csikamea_CI_stats, aes(x = SH_Temp, y = CI, group = interaction(Tank, SH_
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Temp + MHW + SH_Temp*MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(CI ~ SH_Temp + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Condition Index")

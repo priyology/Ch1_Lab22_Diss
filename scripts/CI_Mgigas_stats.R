@@ -191,11 +191,12 @@ summary(m5)
 # Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### m6: CI ~ SH_Tide + MHW + SH_Tide*MHW (1|Tank) ===============
-m6 <- lmer(CI ~ SH_Tide + MHW + SH_Tide*MHW (1|Tank), data = Mgigas_CI_stats)
+#### m6: CI ~ SH_Tide + MHW + (1|Tank) ===============
+m6 <- lmer(CI ~ SH_Tide + MHW + (1|Tank), data = Mgigas_CI_stats)
 summary(m6)
 
-# Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+# Linear mixed model fit by REML. t-tests use Satterthwaite's
+# method [lmerModLmerTest]
 # Formula: CI ~ SH_Tide + MHW + (1 | Tank)
 # Data: Mgigas_CI_stats
 #
@@ -212,12 +213,18 @@ summary(m6)
 # Number of obs: 775, groups:  Tank, 20
 #
 # Fixed effects:
-#  Estimate Std. Error        df t value Pr(>|t|)    
-# (Intercept)   3.95787    0.16524  18.62953  23.953 1.87e-15 ***
-#  SH_TideTide   0.39120    0.09071 754.39466   4.313 1.83e-05 ***
-#  MHW18˚C      -0.47126    0.22557  16.17708  -2.089   0.0528 .  
-# MHW21˚C      -0.42790    0.22480  15.95786  -1.903   0.0752 .  
-# MHW24˚C      -0.64857    0.22527  16.09171  -2.879   0.0109 *  
+#  Estimate Std. Error        df t value Pr(>|t|)
+# (Intercept)   3.95787    0.16524  18.62953  23.953 1.87e-15
+# SH_TideTide   0.39120    0.09071 754.39466   4.313 1.83e-05
+# MHW18˚C      -0.47126    0.22557  16.17708  -2.089   0.0528
+# MHW21˚C      -0.42790    0.22480  15.95786  -1.903   0.0752
+# MHW24˚C      -0.64857    0.22527  16.09171  -2.879   0.0109
+
+# (Intercept) ***
+#  SH_TideTide ***
+#  MHW18˚C     .  
+# MHW21˚C     .  
+# MHW24˚C     *  
 #  ---
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #
@@ -258,8 +265,8 @@ inline_text(tbl.m6,  variable = SH_Tide, level = "Tide") ##in-line text
 m6.plot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Tide"))
 plot(m6.plot_byMHW) +
   theme_classic() +
-  scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("lmer(CI ~ SH_Tide + MHW + SH_Tide*MHW + (1|Tank)")), 
+  scale_color_brewer(palette = "Paired", direction = -1) +
+  labs(title = expression(paste("lmer(M. gigas: CI ~ SH_Tide + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -270,12 +277,37 @@ m6.plot_bySHtide <- ggpredict(m6, terms = c("SH_Tide", "MHW"))
 plot(m6.plot_bySHtide) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Tide + MHW + SH_Tide*MHW + (1|Tank)")), 
+  labs(title = expression(paste("lmer(M. gigas: CI ~ SH_Tide + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Tide", 
        y = "Condition Index")
 
 ggsave(filename = "fig_output/model_Mgigas_CI-SH_Tide.png",width = 5.10, height = 5.77, dpi = 300)
+
+##### DARK PLOTS: ggdark / black background =================
+library(ggdark)
+
+m6.DARKplot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Tide"))
+plot(m6.plot_byMHW) +
+  dark_theme_classic() +
+  scale_color_brewer(palette = "Paired", direction = -1) +
+  labs(title = expression(paste("M. gigas: lmer(CI ~ SH_Tide + MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
+       x = "Marine Heatwave (°C)", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARKmodel_Mgigas_CI-MHW.png",width = 5.10, height = 5.77, dpi = 300)
+
+m6.DARKplot_bySHtide <- ggpredict(m6, terms = c("SH_Tide", "MHW"))
+plot(m6.plot_bySHtide) +
+  dark_theme_classic() +
+  scale_color_brewer(palette = "RdYlBu", direction = -1) +
+  labs(title = expression(paste("M. gigas: lmer(CI ~ SH_Tide + MHW + (1|Tank)")), 
+       subtitle = "Gaussian distribution: link = 'identity'",
+       x = "Tide", 
+       y = "Condition Index")
+
+ggsave(filename = "fig_output/DARKmodel_Mgigas_CI-SH_Tide.png",width = 5.10, height = 5.77, dpi = 300)
 
 
 ####### With individual tanks plotted
@@ -289,7 +321,7 @@ ggplot(Mgigas_CI_stats, aes(x = SH_Tide, y = CI, group = interaction(Tank, SH_Ti
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Tide + MHW + SH_Tide*MHW + (1|Tank)")), 
+  labs(title = expression(paste("M. gigas: lmer(CI ~ SH_Tide + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Condition Index")
@@ -304,7 +336,7 @@ ggplot(Mgigas_CI_stats, aes(x = SH_Tide, y = CI, group = interaction(Tank, SH_Ti
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(CI ~ SH_Tide + MHW + SH_Tide*MHW + (1|Tank)")), 
+  labs(title = expression(paste("M. gigas: lmer(CI ~ SH_Tide + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Tide", 
        y = "Condition Index")

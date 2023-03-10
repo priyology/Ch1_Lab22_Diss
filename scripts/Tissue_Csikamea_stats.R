@@ -330,7 +330,7 @@ m6.plot_byMHW <- ggpredict(m6, terms = c("MHW", "SH_Temp"))
 plot(m6.plot_byMHW) +
   theme_classic() +
   scale_color_manual(values=c("#4575B4", "#FDAE61")) +
-  labs(title = expression(paste("lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Tissue (g)")
@@ -341,7 +341,7 @@ m6.plot_bySHtemp <- ggpredict(m6, terms = c("SH_Temp", "MHW"))
 plot(m6.plot_bySHtemp) +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea:lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Tissue (g)")
@@ -359,7 +359,7 @@ ggplot(Csikamea_Tissue_stats, aes(x = SH_Temp, y = Tissue.g, group = interaction
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Marine Heatwave (°C)", 
        y = "Tissue (g)")
@@ -374,7 +374,7 @@ ggplot(Csikamea_Tissue_stats, aes(x = SH_Temp, y = Tissue.g, group = interaction
   geom_hline(yintercept=0, linetype="dashed") +
   theme_classic() +
   scale_color_brewer(palette = "RdYlBu", direction = -1) +
-  labs(title = expression(paste("lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
+  labs(title = expression(paste("C. sikamea: lmer(Tissue ~ SH_Temp + MHW + (1|Tank)")), 
        subtitle = "Gaussian distribution: link = 'identity'",
        x = "Stress Hardening Temperature (°C)", 
        y = "Tissue (g)")
