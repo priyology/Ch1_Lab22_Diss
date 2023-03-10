@@ -55,7 +55,7 @@ Stats_ALL <- Olurida_LWd1 %>%
 Stats_ALL
 
 #### Grouped by Batch ====
-Stats_MHW <- Olurida_LWd1 %>%
+Stats_Batch <- Olurida_LWd1 %>%
   group_by(Batch) %>% 
   summarize(
     Mean_L = mean(L),
@@ -65,8 +65,8 @@ Stats_MHW <- Olurida_LWd1 %>%
     SD_W = sd(W),
     SE_W = SD_W/sqrt(n()))
 
-Stats_MHW
-View(Stats_MHW)
+Stats_Batch
+View(Stats_Batch)
 
 ## plot - L
 L.plot <- ggplot(Olurida_LWd1, aes(x = Batch, y = L)) +
@@ -186,18 +186,23 @@ glimpse(Olurida_LWend_og)
 summary(Olurida_LWend_og)
 View(Olurida_LWend_og)
 
-#### Put Length(L) & Width(W) in its own columns ==========
-Olurida_LWend.1 <- Olurida_LWend_og %>%
-  pivot_wider(names_from = L_W, values_from = Size_mm)
-
-Olurida_LWend.1
-
 #### Omit NAs=========
 
-colSums(is.na(Olurida_LWd1)) ## find NAs in each column, 400 under Date
+colSums(is.na(Olurida_LWend_og)) ## find NAs in each column, 400 under Date, 8 under Size_mm
+
+## omit Size_mm column which is all NAs / info
+Olurida_LWend.1 <- Olurida_LWend_og %>% 
+  filter(!is.na(Size_mm)) # omit the 8 NAs in Size_mm
+colSums(is.na(Olurida_LWend.1)) ## All NAs under Size_mm
+
+#### Put Length(L) & Width(W) in its own columns ==========
+Olurida_LWend.2 <- Olurida_LWend.1 %>%
+  pivot_wider(names_from = L_W, values_from = Size_mm)
+
+glimpse(Olurida_LWend.2)
 
 #### LENGTHS histogram ====
-ggplot(Olurida_LWend.1, aes(L)) +
+ggplot(Olurida_LWend.2, aes(L)) +
   geom_histogram() +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
@@ -206,7 +211,7 @@ ggplot(Olurida_LWend.1, aes(L)) +
        y = "Counts of L")
 
 #### WIDTHS histogram ====
-ggplot(Olurida_LWend.1, aes(W)) +
+ggplot(Olurida_LWend.2, aes(W)) +
   geom_histogram() +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
@@ -216,15 +221,10 @@ ggplot(Olurida_LWend.1, aes(W)) +
 
 #### Figures, Mean, SD, SE =====
 
-#### PRIYA PICK UP HERE ====
+
 
 #### No Grouping ====
-##fucking around to find out
-Olurida_LWend.1 %>% 
-  summarize(
-  Mean_L = mean(L))
-
-Stats_ALL <- Olurida_LWend.1 %>% 
+Stats_ALL <- Olurida_LWend.2 %>% 
   summarize(
     Mean_L = mean(L),
     SD_L = sd(L),
@@ -235,9 +235,14 @@ Stats_ALL <- Olurida_LWend.1 %>%
 
 Stats_ALL
 
+#### PRIYA PICK UP HERE ====
+#### PRIYA PICK UP HERE ====
+#### PRIYA PICK UP HERE ====
+
+
 #### Grouped by SH_Temp ====
 
-Stats_SHTemp <- Olurida_LWend.1 %>%
+Stats_SHTemp <- Olurida_LWend.2 %>%
   group_by(SH_Temp) %>% 
   summarize(
     Mean_L = mean(L),
@@ -250,7 +255,7 @@ Stats_SHTemp <- Olurida_LWend.1 %>%
 Stats_SHTemp
 
 ## plot
-ggplot(Olurida_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
+ggplot(Olurida_LWend.2, aes(x=SH_Temp, y=L, fill = SH_Temp)) +
   geom_boxplot() +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
