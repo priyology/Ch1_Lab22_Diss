@@ -1,0 +1,765 @@
+Species,Day,Date,Rep,SH_Tide,SH_Temp,MHW,Tank,L,W
+Crassostrea sikamea,19,NA,1,Tide,15,15,1,2.52,1.865
+Crassostrea sikamea,19,NA,2,Tide,15,15,1,2.547,1.529
+Crassostrea sikamea,19,NA,3,Tide,15,15,1,2.027,1.444
+Crassostrea sikamea,19,NA,4,Tide,15,15,1,2.707,2.016
+Crassostrea sikamea,19,NA,5,Tide,15,15,1,2.457,1.493
+Crassostrea sikamea,19,NA,6,Tide,15,15,1,2.413,1.873
+Crassostrea sikamea,19,NA,7,Tide,15,15,1,2.504,2.218
+Crassostrea sikamea,19,NA,8,Tide,15,15,1,2.918,1.793
+Crassostrea sikamea,19,NA,9,Tide,15,15,1,2.234,1.655
+Crassostrea sikamea,19,NA,1,Tide,21,15,1,2.952,1.795
+Crassostrea sikamea,19,NA,2,Tide,21,15,1,3.115,1.885
+Crassostrea sikamea,19,NA,3,Tide,21,15,1,2.805,1.878
+Crassostrea sikamea,19,NA,4,Tide,21,15,1,2.977,2.071
+Crassostrea sikamea,19,NA,5,Tide,21,15,1,2.635,1.785
+Crassostrea sikamea,19,NA,6,Tide,21,15,1,2.256,1.684
+Crassostrea sikamea,19,NA,7,Tide,21,15,1,3.045,2.203
+Crassostrea sikamea,19,NA,8,Tide,21,15,1,2.5,1.839
+Crassostrea sikamea,19,NA,1,No Tide,15,15,1,2.663,1.864
+Crassostrea sikamea,19,NA,2,No Tide,15,15,1,2.601,1.977
+Crassostrea sikamea,19,NA,3,No Tide,15,15,1,2.782,1.896
+Crassostrea sikamea,19,NA,4,No Tide,15,15,1,2.739,1.671
+Crassostrea sikamea,19,NA,5,No Tide,15,15,1,2.566,1.837
+Crassostrea sikamea,19,NA,6,No Tide,15,15,1,2.48,1.997
+Crassostrea sikamea,19,NA,7,No Tide,15,15,1,2.571,1.866
+Crassostrea sikamea,19,NA,8,No Tide,15,15,1,2.381,1.78
+Crassostrea sikamea,19,NA,9,No Tide,15,15,1,2.708,1.754
+Crassostrea sikamea,19,NA,10,No Tide,15,15,1,2.564,1.948
+Crassostrea sikamea,19,NA,1,No Tide,21,15,1,3.038,1.77
+Crassostrea sikamea,19,NA,2,No Tide,21,15,1,2.766,1.669
+Crassostrea sikamea,19,NA,3,No Tide,21,15,1,2.548,1.706
+Crassostrea sikamea,19,NA,4,No Tide,21,15,1,2.972,1.998
+Crassostrea sikamea,19,NA,5,No Tide,21,15,1,3.049,1.714
+Crassostrea sikamea,19,NA,6,No Tide,21,15,1,2.608,1.829
+Crassostrea sikamea,19,NA,7,No Tide,21,15,1,2.581,1.919
+Crassostrea sikamea,19,NA,8,No Tide,21,15,1,3.036,2.178
+Crassostrea sikamea,19,NA,9,No Tide,21,15,1,2.595,1.802
+Crassostrea sikamea,19,NA,10,No Tide,21,15,1,2.789,1.983
+Crassostrea sikamea,19,NA,1,Tide,15,15,2,2.584,2.099
+Crassostrea sikamea,19,NA,2,Tide,15,15,2,2.998,2.263
+Crassostrea sikamea,19,NA,3,Tide,15,15,2,3.049,2.1
+Crassostrea sikamea,19,NA,4,Tide,15,15,2,3.157,2.168
+Crassostrea sikamea,19,NA,5,Tide,15,15,2,2.876,1.865
+Crassostrea sikamea,19,NA,6,Tide,15,15,2,2.99,2.067
+Crassostrea sikamea,19,NA,7,Tide,15,15,2,2.915,1.756
+Crassostrea sikamea,19,NA,8,Tide,15,15,2,2.691,2.032
+Crassostrea sikamea,19,NA,9,Tide,15,15,2,2.419,1.56
+Crassostrea sikamea,19,NA,10,Tide,15,15,2,2.665,1.738
+Crassostrea sikamea,19,NA,1,Tide,21,15,2,3.104,1.983
+Crassostrea sikamea,19,NA,2,Tide,21,15,2,2.55,1.143
+Crassostrea sikamea,19,NA,3,Tide,21,15,2,2.669,1.767
+Crassostrea sikamea,19,NA,4,Tide,21,15,2,2.485,1.792
+Crassostrea sikamea,19,NA,5,Tide,21,15,2,2.807,2.066
+Crassostrea sikamea,19,NA,6,Tide,21,15,2,2.45,2.048
+Crassostrea sikamea,19,NA,7,Tide,21,15,2,2.613,1.985
+Crassostrea sikamea,19,NA,8,Tide,21,15,2,2.877,1.857
+Crassostrea sikamea,19,NA,9,Tide,21,15,2,2.683,1.837
+Crassostrea sikamea,19,NA,10,Tide,21,15,2,2.729,2.009
+Crassostrea sikamea,19,NA,1,No Tide,15,15,2,2.664,1.846
+Crassostrea sikamea,19,NA,2,No Tide,15,15,2,2.387,1.596
+Crassostrea sikamea,19,NA,3,No Tide,15,15,2,2.491,1.941
+Crassostrea sikamea,19,NA,4,No Tide,15,15,2,2.44,1.869
+Crassostrea sikamea,19,NA,5,No Tide,15,15,2,2.449,1.693
+Crassostrea sikamea,19,NA,6,No Tide,15,15,2,2.438,2.088
+Crassostrea sikamea,19,NA,7,No Tide,15,15,2,2.599,2.217
+Crassostrea sikamea,19,NA,8,No Tide,15,15,2,3.203,2.081
+Crassostrea sikamea,19,NA,9,No Tide,15,15,2,2.477,1.779
+Crassostrea sikamea,19,NA,10,No Tide,15,15,2,2.546,2.099
+Crassostrea sikamea,19,NA,1,No Tide,21,15,2,2.863,1.862
+Crassostrea sikamea,19,NA,2,No Tide,21,15,2,2.312,1.816
+Crassostrea sikamea,19,NA,3,No Tide,21,15,2,2.456,2.013
+Crassostrea sikamea,19,NA,4,No Tide,21,15,2,3.025,2.214
+Crassostrea sikamea,19,NA,5,No Tide,21,15,2,2.367,1.792
+Crassostrea sikamea,19,NA,6,No Tide,21,15,2,2.119,1.825
+Crassostrea sikamea,19,NA,7,No Tide,21,15,2,2.951,2.163
+Crassostrea sikamea,19,NA,8,No Tide,21,15,2,2.633,1.891
+Crassostrea sikamea,19,NA,9,No Tide,21,15,2,3.136,1.874
+Crassostrea sikamea,19,NA,1,Tide,15,15,3,3.451,1.974
+Crassostrea sikamea,19,NA,2,Tide,15,15,3,2.911,1.935
+Crassostrea sikamea,19,NA,3,Tide,15,15,3,2.714,1.751
+Crassostrea sikamea,19,NA,4,Tide,15,15,3,2.582,1.778
+Crassostrea sikamea,19,NA,5,Tide,15,15,3,3.316,1.993
+Crassostrea sikamea,19,NA,6,Tide,15,15,3,2.632,1.74
+Crassostrea sikamea,19,NA,7,Tide,15,15,3,2.597,2.147
+Crassostrea sikamea,19,NA,8,Tide,15,15,3,2.406,1.884
+Crassostrea sikamea,19,NA,9,Tide,15,15,3,2.076,1.803
+Crassostrea sikamea,19,NA,10,Tide,15,15,3,2.896,1.977
+Crassostrea sikamea,19,NA,1,Tide,21,15,3,2.531,1.888
+Crassostrea sikamea,19,NA,2,Tide,21,15,3,2.888,1.979
+Crassostrea sikamea,19,NA,3,Tide,21,15,3,2.808,1.876
+Crassostrea sikamea,19,NA,4,Tide,21,15,3,2.955,1.815
+Crassostrea sikamea,19,NA,5,Tide,21,15,3,2.646,1.738
+Crassostrea sikamea,19,NA,6,Tide,21,15,3,2.85,2.134
+Crassostrea sikamea,19,NA,7,Tide,21,15,3,2.817,1.87
+Crassostrea sikamea,19,NA,8,Tide,21,15,3,2.765,1.94
+Crassostrea sikamea,19,NA,9,Tide,21,15,3,2.377,1.649
+Crassostrea sikamea,19,NA,1,No Tide,15,15,3,2.356,1.585
+Crassostrea sikamea,19,NA,2,No Tide,15,15,3,2.613,2.034
+Crassostrea sikamea,19,NA,3,No Tide,15,15,3,3.454,2.363
+Crassostrea sikamea,19,NA,4,No Tide,15,15,3,2.496,1.753
+Crassostrea sikamea,19,NA,5,No Tide,15,15,3,2.02,1.823
+Crassostrea sikamea,19,NA,6,No Tide,15,15,3,2.223,2.256
+Crassostrea sikamea,19,NA,7,No Tide,15,15,3,2.937,1.924
+Crassostrea sikamea,19,NA,8,No Tide,15,15,3,2.663,1.847
+Crassostrea sikamea,19,NA,9,No Tide,15,15,3,3.024,1.979
+Crassostrea sikamea,19,NA,10,No Tide,15,15,3,2.583,2.059
+Crassostrea sikamea,19,NA,1,No Tide,21,15,3,2.477,2.027
+Crassostrea sikamea,19,NA,2,No Tide,21,15,3,2.277,2.374
+Crassostrea sikamea,19,NA,3,No Tide,21,15,3,2.629,1.938
+Crassostrea sikamea,19,NA,4,No Tide,21,15,3,2.567,1.745
+Crassostrea sikamea,19,NA,5,No Tide,21,15,3,2.793,1.847
+Crassostrea sikamea,19,NA,6,No Tide,21,15,3,2.564,2.014
+Crassostrea sikamea,19,NA,7,No Tide,21,15,3,2.899,2.089
+Crassostrea sikamea,19,NA,8,No Tide,21,15,3,2.671,1.65
+Crassostrea sikamea,19,NA,9,No Tide,21,15,3,2.419,1.957
+Crassostrea sikamea,19,NA,10,No Tide,21,15,3,3.008,1.889
+Crassostrea sikamea,19,NA,1,Tide,15,15,4,2.815,1.799
+Crassostrea sikamea,19,NA,2,Tide,15,15,4,2.858,1.99
+Crassostrea sikamea,19,NA,3,Tide,15,15,4,1.873,1.648
+Crassostrea sikamea,19,NA,4,Tide,15,15,4,2.683,1.726
+Crassostrea sikamea,19,NA,5,Tide,15,15,4,2.565,1.587
+Crassostrea sikamea,19,NA,6,Tide,15,15,4,1.967,1.814
+Crassostrea sikamea,19,NA,7,Tide,15,15,4,2.305,1.875
+Crassostrea sikamea,19,NA,8,Tide,15,15,4,2.503,1.859
+Crassostrea sikamea,19,NA,9,Tide,15,15,4,2.388,1.786
+Crassostrea sikamea,19,NA,1,Tide,21,15,4,2.759,1.608
+Crassostrea sikamea,19,NA,2,Tide,21,15,4,2.17,1.763
+Crassostrea sikamea,19,NA,3,Tide,21,15,4,2.386,1.719
+Crassostrea sikamea,19,NA,4,Tide,21,15,4,2.043,1.381
+Crassostrea sikamea,19,NA,5,Tide,21,15,4,2.464,1.889
+Crassostrea sikamea,19,NA,6,Tide,21,15,4,2.787,1.835
+Crassostrea sikamea,19,NA,7,Tide,21,15,4,2.45,1.556
+Crassostrea sikamea,19,NA,8,Tide,21,15,4,2.439,1.882
+Crassostrea sikamea,19,NA,9,Tide,21,15,4,2.784,1.904
+Crassostrea sikamea,19,NA,1,No Tide,15,15,4,3.214,1.815
+Crassostrea sikamea,19,NA,2,No Tide,15,15,4,2.728,1.814
+Crassostrea sikamea,19,NA,3,No Tide,15,15,4,2.451,1.581
+Crassostrea sikamea,19,NA,4,No Tide,15,15,4,2.199,1.647
+Crassostrea sikamea,19,NA,5,No Tide,15,15,4,2.372,1.932
+Crassostrea sikamea,19,NA,6,No Tide,15,15,4,2.479,1.746
+Crassostrea sikamea,19,NA,7,No Tide,15,15,4,2.667,1.943
+Crassostrea sikamea,19,NA,8,No Tide,15,15,4,2.798,1.731
+Crassostrea sikamea,19,NA,9,No Tide,15,15,4,2.965,1.794
+Crassostrea sikamea,19,NA,10,No Tide,15,15,4,2.625,1.931
+Crassostrea sikamea,19,NA,1,No Tide,21,15,4,2.234,1.523
+Crassostrea sikamea,19,NA,2,No Tide,21,15,4,2.769,1.994
+Crassostrea sikamea,19,NA,3,No Tide,21,15,4,2.722,1.754
+Crassostrea sikamea,19,NA,4,No Tide,21,15,4,2.996,1.764
+Crassostrea sikamea,19,NA,5,No Tide,21,15,4,2.802,1.908
+Crassostrea sikamea,19,NA,6,No Tide,21,15,4,2.929,1.795
+Crassostrea sikamea,19,NA,7,No Tide,21,15,4,3.463,1.946
+Crassostrea sikamea,19,NA,8,No Tide,21,15,4,2.592,1.279
+Crassostrea sikamea,19,NA,9,No Tide,21,15,4,2.463,2.102
+Crassostrea sikamea,19,NA,1,Tide,15,15,5,3.153,1.964
+Crassostrea sikamea,19,NA,2,Tide,15,15,5,2.811,1.736
+Crassostrea sikamea,19,NA,3,Tide,15,15,5,2.346,1.847
+Crassostrea sikamea,19,NA,4,Tide,15,15,5,3.101,1.934
+Crassostrea sikamea,19,NA,5,Tide,15,15,5,2.403,2.042
+Crassostrea sikamea,19,NA,6,Tide,15,15,5,2.639,1.93
+Crassostrea sikamea,19,NA,7,Tide,15,15,5,2.226,1.806
+Crassostrea sikamea,19,NA,8,Tide,15,15,5,2.291,1.694
+Crassostrea sikamea,19,NA,9,Tide,15,15,5,2.568,1.627
+Crassostrea sikamea,19,NA,10,Tide,15,15,5,2.799,2.041
+Crassostrea sikamea,19,NA,1,Tide,21,15,5,2.922,1.875
+Crassostrea sikamea,19,NA,2,Tide,21,15,5,2.027,1.209
+Crassostrea sikamea,19,NA,3,Tide,21,15,5,3.169,1.879
+Crassostrea sikamea,19,NA,4,Tide,21,15,5,2.389,1.544
+Crassostrea sikamea,19,NA,5,Tide,21,15,5,2.472,1.797
+Crassostrea sikamea,19,NA,6,Tide,21,15,5,2.623,2.015
+Crassostrea sikamea,19,NA,7,Tide,21,15,5,2.729,1.876
+Crassostrea sikamea,19,NA,8,Tide,21,15,5,2.588,2.172
+Crassostrea sikamea,19,NA,1,No Tide,15,15,5,2.951,1.926
+Crassostrea sikamea,19,NA,2,No Tide,15,15,5,2.39,1.735
+Crassostrea sikamea,19,NA,3,No Tide,15,15,5,2.922,1.935
+Crassostrea sikamea,19,NA,4,No Tide,15,15,5,2.995,1.852
+Crassostrea sikamea,19,NA,5,No Tide,15,15,5,2.555,1.751
+Crassostrea sikamea,19,NA,6,No Tide,15,15,5,2.63,1.707
+Crassostrea sikamea,19,NA,7,No Tide,15,15,5,2.707,1.858
+Crassostrea sikamea,19,NA,8,No Tide,15,15,5,2.18,1.68
+Crassostrea sikamea,19,NA,9,No Tide,15,15,5,3.039,1.933
+Crassostrea sikamea,19,NA,10,No Tide,15,15,5,2.863,1.897
+Crassostrea sikamea,19,NA,1,No Tide,21,15,5,3.154,2.139
+Crassostrea sikamea,19,NA,2,No Tide,21,15,5,2.878,1.772
+Crassostrea sikamea,19,NA,3,No Tide,21,15,5,2.675,1.78
+Crassostrea sikamea,19,NA,4,No Tide,21,15,5,3.291,2.069
+Crassostrea sikamea,19,NA,5,No Tide,21,15,5,3.268,1.916
+Crassostrea sikamea,19,NA,6,No Tide,21,15,5,2.337,1.667
+Crassostrea sikamea,19,NA,7,No Tide,21,15,5,2.764,1.68
+Crassostrea sikamea,19,NA,8,No Tide,21,15,5,2.583,1.794
+Crassostrea sikamea,19,NA,9,No Tide,21,15,5,3.092,1.708
+Crassostrea sikamea,19,NA,10,No Tide,21,15,5,2.806,2.058
+Crassostrea sikamea,19,NA,1,Tide,15,18,6,2.922,1.848
+Crassostrea sikamea,19,NA,2,Tide,15,18,6,2.854,1.876
+Crassostrea sikamea,19,NA,3,Tide,15,18,6,2.583,1.95
+Crassostrea sikamea,19,NA,4,Tide,15,18,6,3.019,2.059
+Crassostrea sikamea,19,NA,5,Tide,15,18,6,2.395,1.548
+Crassostrea sikamea,19,NA,6,Tide,15,18,6,2.268,1.606
+Crassostrea sikamea,19,NA,7,Tide,15,18,6,2.146,1.726
+Crassostrea sikamea,19,NA,8,Tide,15,18,6,2.576,1.724
+Crassostrea sikamea,19,NA,9,Tide,15,18,6,2.953,1.684
+Crassostrea sikamea,19,NA,1,Tide,21,18,6,2.387,1.555
+Crassostrea sikamea,19,NA,2,Tide,21,18,6,2.76,1.665
+Crassostrea sikamea,19,NA,3,Tide,21,18,6,2.4,1.725
+Crassostrea sikamea,19,NA,4,Tide,21,18,6,2.697,1.66
+Crassostrea sikamea,19,NA,5,Tide,21,18,6,2.732,2.101
+Crassostrea sikamea,19,NA,6,Tide,21,18,6,2.925,2.027
+Crassostrea sikamea,19,NA,7,Tide,21,18,6,2.216,1.698
+Crassostrea sikamea,19,NA,8,Tide,21,18,6,2.108,1.584
+Crassostrea sikamea,19,NA,9,Tide,21,18,6,2.366,1.992
+Crassostrea sikamea,19,NA,10,Tide,21,18,6,2.419,1.994
+Crassostrea sikamea,19,NA,1,No Tide,15,18,6,2.703,1.725
+Crassostrea sikamea,19,NA,2,No Tide,15,18,6,2.562,1.855
+Crassostrea sikamea,19,NA,3,No Tide,15,18,6,2.567,1.96
+Crassostrea sikamea,19,NA,4,No Tide,15,18,6,3.329,2.079
+Crassostrea sikamea,19,NA,5,No Tide,15,18,6,2.336,1.58
+Crassostrea sikamea,19,NA,6,No Tide,15,18,6,2.989,1.96
+Crassostrea sikamea,19,NA,7,No Tide,15,18,6,2.041,1.501
+Crassostrea sikamea,19,NA,8,No Tide,15,18,6,2.842,2.057
+Crassostrea sikamea,19,NA,9,No Tide,15,18,6,2.351,1.981
+Crassostrea sikamea,19,NA,10,No Tide,15,18,6,2.884,1.86
+Crassostrea sikamea,19,NA,1,No Tide,21,18,6,3.031,1.54
+Crassostrea sikamea,19,NA,2,No Tide,21,18,6,2.583,1.879
+Crassostrea sikamea,19,NA,3,No Tide,21,18,6,2.406,1.779
+Crassostrea sikamea,19,NA,4,No Tide,21,18,6,3.037,1.938
+Crassostrea sikamea,19,NA,5,No Tide,21,18,6,2.824,1.83
+Crassostrea sikamea,19,NA,6,No Tide,21,18,6,2.759,1.796
+Crassostrea sikamea,19,NA,7,No Tide,21,18,6,2.664,1.627
+Crassostrea sikamea,19,NA,8,No Tide,21,18,6,2.508,1.593
+Crassostrea sikamea,19,NA,9,No Tide,21,18,6,2.815,2
+Crassostrea sikamea,19,NA,10,No Tide,21,18,6,2.611,1.717
+Crassostrea sikamea,19,NA,1,Tide,15,18,7,2.791,1.919
+Crassostrea sikamea,19,NA,2,Tide,15,18,7,2.384,1.812
+Crassostrea sikamea,19,NA,3,Tide,15,18,7,2.661,1.799
+Crassostrea sikamea,19,NA,4,Tide,15,18,7,1.969,1.914
+Crassostrea sikamea,19,NA,5,Tide,15,18,7,2.418,1.701
+Crassostrea sikamea,19,NA,6,Tide,15,18,7,2.327,1.843
+Crassostrea sikamea,19,NA,7,Tide,15,18,7,2.795,1.544
+Crassostrea sikamea,19,NA,8,Tide,15,18,7,2.324,1.76
+Crassostrea sikamea,19,NA,9,Tide,15,18,7,2.113,1.652
+Crassostrea sikamea,19,NA,1,Tide,21,18,7,2.191,1.678
+Crassostrea sikamea,19,NA,2,Tide,21,18,7,2.507,2.161
+Crassostrea sikamea,19,NA,3,Tide,21,18,7,2.758,1.899
+Crassostrea sikamea,19,NA,4,Tide,21,18,7,2.672,1.898
+Crassostrea sikamea,19,NA,5,Tide,21,18,7,2.466,1.614
+Crassostrea sikamea,19,NA,6,Tide,21,18,7,2.229,1.475
+Crassostrea sikamea,19,NA,7,Tide,21,18,7,3.361,1.883
+Crassostrea sikamea,19,NA,8,Tide,21,18,7,2.602,1.598
+Crassostrea sikamea,19,NA,9,Tide,21,18,7,2.897,1.834
+Crassostrea sikamea,19,NA,1,No Tide,15,18,7,2.725,1.616
+Crassostrea sikamea,19,NA,2,No Tide,15,18,7,2.566,1.873
+Crassostrea sikamea,19,NA,3,No Tide,15,18,7,2.531,1.814
+Crassostrea sikamea,19,NA,4,No Tide,15,18,7,2.942,2.04
+Crassostrea sikamea,19,NA,5,No Tide,15,18,7,2.324,1.396
+Crassostrea sikamea,19,NA,6,No Tide,15,18,7,2.821,1.786
+Crassostrea sikamea,19,NA,7,No Tide,15,18,7,2.633,1.886
+Crassostrea sikamea,19,NA,8,No Tide,15,18,7,2.86,1.665
+Crassostrea sikamea,19,NA,9,No Tide,15,18,7,2.12,1.906
+Crassostrea sikamea,19,NA,10,No Tide,15,18,7,2.859,1.637
+Crassostrea sikamea,19,NA,1,No Tide,21,18,7,2.747,1.7
+Crassostrea sikamea,19,NA,2,No Tide,21,18,7,2.41,1.845
+Crassostrea sikamea,19,NA,3,No Tide,21,18,7,2.526,1.584
+Crassostrea sikamea,19,NA,4,No Tide,21,18,7,2.685,1.803
+Crassostrea sikamea,19,NA,5,No Tide,21,18,7,2.499,1.571
+Crassostrea sikamea,19,NA,6,No Tide,21,18,7,2.885,1.677
+Crassostrea sikamea,19,NA,7,No Tide,21,18,7,2.9,1.624
+Crassostrea sikamea,19,NA,8,No Tide,21,18,7,2.952,1.838
+Crassostrea sikamea,19,NA,9,No Tide,21,18,7,3.073,1.839
+Crassostrea sikamea,19,NA,10,No Tide,21,18,7,3.033,1.76
+Crassostrea sikamea,19,NA,1,Tide,15,18,8,2.451,1.615
+Crassostrea sikamea,19,NA,2,Tide,15,18,8,3.283,1.885
+Crassostrea sikamea,19,NA,3,Tide,15,18,8,2.454,1.91
+Crassostrea sikamea,19,NA,4,Tide,15,18,8,2.529,1.776
+Crassostrea sikamea,19,NA,5,Tide,15,18,8,2.295,1.774
+Crassostrea sikamea,19,NA,6,Tide,15,18,8,2.491,1.639
+Crassostrea sikamea,19,NA,7,Tide,15,18,8,2.545,1.545
+Crassostrea sikamea,19,NA,8,Tide,15,18,8,2.57,1.979
+Crassostrea sikamea,19,NA,9,Tide,15,18,8,2.354,2.18
+Crassostrea sikamea,19,NA,1,Tide,21,18,8,2.498,1.749
+Crassostrea sikamea,19,NA,2,Tide,21,18,8,2.422,1.897
+Crassostrea sikamea,19,NA,3,Tide,21,18,8,2.771,1.695
+Crassostrea sikamea,19,NA,4,Tide,21,18,8,2.813,2.017
+Crassostrea sikamea,19,NA,5,Tide,21,18,8,2.839,1.843
+Crassostrea sikamea,19,NA,6,Tide,21,18,8,2.507,1.903
+Crassostrea sikamea,19,NA,7,Tide,21,18,8,2.693,1.989
+Crassostrea sikamea,19,NA,8,Tide,21,18,8,2.405,1.645
+Crassostrea sikamea,19,NA,9,Tide,21,18,8,2.093,1.807
+Crassostrea sikamea,19,NA,10,Tide,21,18,8,1.916,1.732
+Crassostrea sikamea,19,NA,1,No Tide,15,18,8,2.261,1.643
+Crassostrea sikamea,19,NA,2,No Tide,15,18,8,2.799,2.2
+Crassostrea sikamea,19,NA,3,No Tide,15,18,8,3.411,1.997
+Crassostrea sikamea,19,NA,4,No Tide,15,18,8,2.422,1.817
+Crassostrea sikamea,19,NA,5,No Tide,15,18,8,2.684,1.83
+Crassostrea sikamea,19,NA,6,No Tide,15,18,8,2.954,1.844
+Crassostrea sikamea,19,NA,7,No Tide,15,18,8,2.603,1.753
+Crassostrea sikamea,19,NA,8,No Tide,15,18,8,2.357,1.816
+Crassostrea sikamea,19,NA,9,No Tide,15,18,8,2.547,1.434
+Crassostrea sikamea,19,NA,10,No Tide,15,18,8,2.464,1.685
+Crassostrea sikamea,19,NA,1,No Tide,21,18,8,2.966,1.939
+Crassostrea sikamea,19,NA,2,No Tide,21,18,8,2.785,1.655
+Crassostrea sikamea,19,NA,3,No Tide,21,18,8,2.544,1.926
+Crassostrea sikamea,19,NA,4,No Tide,21,18,8,3.041,1.897
+Crassostrea sikamea,19,NA,5,No Tide,21,18,8,2.949,1.655
+Crassostrea sikamea,19,NA,6,No Tide,21,18,8,2.886,1.722
+Crassostrea sikamea,19,NA,7,No Tide,21,18,8,2.881,2.017
+Crassostrea sikamea,19,NA,8,No Tide,21,18,8,3.042,1.874
+Crassostrea sikamea,19,NA,9,No Tide,21,18,8,2.758,1.992
+Crassostrea sikamea,19,NA,10,No Tide,21,18,8,2.901,1.839
+Crassostrea sikamea,19,NA,1,Tide,15,18,9,2.731,1.793
+Crassostrea sikamea,19,NA,2,Tide,15,18,9,2.852,1.708
+Crassostrea sikamea,19,NA,3,Tide,15,18,9,2.748,1.813
+Crassostrea sikamea,19,NA,4,Tide,15,18,9,2.554,1.667
+Crassostrea sikamea,19,NA,5,Tide,15,18,9,2.637,1.973
+Crassostrea sikamea,19,NA,6,Tide,15,18,9,2.735,1.785
+Crassostrea sikamea,19,NA,7,Tide,15,18,9,2.301,1.85
+Crassostrea sikamea,19,NA,8,Tide,15,18,9,2.852,1.73
+Crassostrea sikamea,19,NA,9,Tide,15,18,9,2.189,1.865
+Crassostrea sikamea,19,NA,10,Tide,15,18,9,2.122,1.911
+Crassostrea sikamea,19,NA,1,Tide,21,18,9,2.367,1.929
+Crassostrea sikamea,19,NA,2,Tide,21,18,9,2.857,2
+Crassostrea sikamea,19,NA,3,Tide,21,18,9,2.534,1.991
+Crassostrea sikamea,19,NA,4,Tide,21,18,9,2.513,1.581
+Crassostrea sikamea,19,NA,5,Tide,21,18,9,2.421,1.784
+Crassostrea sikamea,19,NA,6,Tide,21,18,9,2.794,1.606
+Crassostrea sikamea,19,NA,7,Tide,21,18,9,2.45,1.432
+Crassostrea sikamea,19,NA,8,Tide,21,18,9,2.548,1.683
+Crassostrea sikamea,19,NA,9,Tide,21,18,9,2.731,2.013
+Crassostrea sikamea,19,NA,10,Tide,21,18,9,2.34,1.96
+Crassostrea sikamea,19,NA,1,No Tide,15,18,9,2.279,1.651
+Crassostrea sikamea,19,NA,2,No Tide,15,18,9,2.756,1.947
+Crassostrea sikamea,19,NA,3,No Tide,15,18,9,2.636,1.706
+Crassostrea sikamea,19,NA,4,No Tide,15,18,9,2.342,1.757
+Crassostrea sikamea,19,NA,5,No Tide,15,18,9,2.965,1.851
+Crassostrea sikamea,19,NA,6,No Tide,15,18,9,2.985,1.987
+Crassostrea sikamea,19,NA,7,No Tide,15,18,9,3.067,2.081
+Crassostrea sikamea,19,NA,8,No Tide,15,18,9,3.121,2.043
+Crassostrea sikamea,19,NA,9,No Tide,15,18,9,1.992,1.635
+Crassostrea sikamea,19,NA,10,No Tide,15,18,9,3.148,2.041
+Crassostrea sikamea,19,NA,1,No Tide,21,18,9,2.869,1.844
+Crassostrea sikamea,19,NA,2,No Tide,21,18,9,2.754,1.909
+Crassostrea sikamea,19,NA,3,No Tide,21,18,9,2.816,1.882
+Crassostrea sikamea,19,NA,4,No Tide,21,18,9,2.691,1.934
+Crassostrea sikamea,19,NA,5,No Tide,21,18,9,2.482,1.655
+Crassostrea sikamea,19,NA,6,No Tide,21,18,9,2.758,1.931
+Crassostrea sikamea,19,NA,7,No Tide,21,18,9,2.392,1.697
+Crassostrea sikamea,19,NA,8,No Tide,21,18,9,2.804,1.724
+Crassostrea sikamea,19,NA,9,No Tide,21,18,9,2.884,1.883
+Crassostrea sikamea,19,NA,10,No Tide,21,18,9,3.305,1.82
+Crassostrea sikamea,19,NA,1,Tide,15,18,10,2.278,2.007
+Crassostrea sikamea,19,NA,2,Tide,15,18,10,2.715,2.162
+Crassostrea sikamea,19,NA,3,Tide,15,18,10,2.522,1.655
+Crassostrea sikamea,19,NA,4,Tide,15,18,10,2.007,1.833
+Crassostrea sikamea,19,NA,5,Tide,15,18,10,2.13,1.573
+Crassostrea sikamea,19,NA,6,Tide,15,18,10,2.671,1.863
+Crassostrea sikamea,19,NA,7,Tide,15,18,10,2.513,2.103
+Crassostrea sikamea,19,NA,8,Tide,15,18,10,2.512,2.054
+Crassostrea sikamea,19,NA,9,Tide,15,18,10,2.432,1.767
+Crassostrea sikamea,19,NA,1,Tide,21,18,10,2.387,1.722
+Crassostrea sikamea,19,NA,2,Tide,21,18,10,2.405,1.495
+Crassostrea sikamea,19,NA,3,Tide,21,18,10,2.388,1.631
+Crassostrea sikamea,19,NA,4,Tide,21,18,10,3.079,1.728
+Crassostrea sikamea,19,NA,5,Tide,21,18,10,2.657,2.04
+Crassostrea sikamea,19,NA,6,Tide,21,18,10,2.861,1.721
+Crassostrea sikamea,19,NA,7,Tide,21,18,10,2.237,1.615
+Crassostrea sikamea,19,NA,8,Tide,21,18,10,2.57,2.127
+Crassostrea sikamea,19,NA,9,Tide,21,18,10,2.808,1.898
+Crassostrea sikamea,19,NA,10,Tide,21,18,10,2.319,1.927
+Crassostrea sikamea,19,NA,1,No Tide,15,18,10,2.771,1.885
+Crassostrea sikamea,19,NA,2,No Tide,15,18,10,3.01,2.212
+Crassostrea sikamea,19,NA,3,No Tide,15,18,10,2.767,1.818
+Crassostrea sikamea,19,NA,4,No Tide,15,18,10,2.74,1.777
+Crassostrea sikamea,19,NA,5,No Tide,15,18,10,2.912,1.98
+Crassostrea sikamea,19,NA,6,No Tide,15,18,10,2.912,1.926
+Crassostrea sikamea,19,NA,7,No Tide,15,18,10,2.515,1.713
+Crassostrea sikamea,19,NA,8,No Tide,15,18,10,2.209,1.719
+Crassostrea sikamea,19,NA,9,No Tide,15,18,10,2.997,1.953
+Crassostrea sikamea,19,NA,10,No Tide,15,18,10,2.726,2.129
+Crassostrea sikamea,19,NA,1,No Tide,21,18,10,3.313,1.933
+Crassostrea sikamea,19,NA,2,No Tide,21,18,10,2.675,1.982
+Crassostrea sikamea,19,NA,3,No Tide,21,18,10,2.784,2.058
+Crassostrea sikamea,19,NA,4,No Tide,21,18,10,2.62,1.6
+Crassostrea sikamea,19,NA,5,No Tide,21,18,10,2.536,1.725
+Crassostrea sikamea,19,NA,6,No Tide,21,18,10,3.037,1.966
+Crassostrea sikamea,19,NA,7,No Tide,21,18,10,2.829,1.967
+Crassostrea sikamea,19,NA,8,No Tide,21,18,10,2.659,1.953
+Crassostrea sikamea,19,NA,9,No Tide,21,18,10,2.555,1.819
+Crassostrea sikamea,19,NA,1,Tide,15,24,11,2.819,1.853
+Crassostrea sikamea,19,NA,2,Tide,15,24,11,2.209,1.923
+Crassostrea sikamea,19,NA,3,Tide,15,24,11,2.861,1.906
+Crassostrea sikamea,19,NA,4,Tide,15,24,11,2.777,2.178
+Crassostrea sikamea,19,NA,5,Tide,15,24,11,2.68,1.855
+Crassostrea sikamea,19,NA,6,Tide,15,24,11,2.833,1.839
+Crassostrea sikamea,19,NA,7,Tide,15,24,11,2.617,1.96
+Crassostrea sikamea,19,NA,8,Tide,15,24,11,2.939,1.759
+Crassostrea sikamea,19,NA,1,Tide,21,24,11,2.39,1.783
+Crassostrea sikamea,19,NA,2,Tide,21,24,11,2.277,1.799
+Crassostrea sikamea,19,NA,3,Tide,21,24,11,2.253,1.552
+Crassostrea sikamea,19,NA,4,Tide,21,24,11,2.475,1.436
+Crassostrea sikamea,19,NA,5,Tide,21,24,11,2.42,1.571
+Crassostrea sikamea,19,NA,6,Tide,21,24,11,2.806,2.247
+Crassostrea sikamea,19,NA,7,Tide,21,24,11,2.299,1.605
+Crassostrea sikamea,19,NA,8,Tide,21,24,11,2.537,1.852
+Crassostrea sikamea,19,NA,9,Tide,21,24,11,2.664,1.722
+Crassostrea sikamea,19,NA,10,Tide,21,24,11,2.47,1.933
+Crassostrea sikamea,19,NA,1,No Tide,15,24,11,2.654,1.732
+Crassostrea sikamea,19,NA,2,No Tide,15,24,11,3.306,1.879
+Crassostrea sikamea,19,NA,3,No Tide,15,24,11,2.043,1.672
+Crassostrea sikamea,19,NA,4,No Tide,15,24,11,2.496,1.801
+Crassostrea sikamea,19,NA,5,No Tide,15,24,11,2.969,1.8
+Crassostrea sikamea,19,NA,6,No Tide,15,24,11,3.007,2.046
+Crassostrea sikamea,19,NA,7,No Tide,15,24,11,2.66,1.759
+Crassostrea sikamea,19,NA,8,No Tide,15,24,11,2.724,1.973
+Crassostrea sikamea,19,NA,9,No Tide,15,24,11,2.508,1.762
+Crassostrea sikamea,19,NA,10,No Tide,15,24,11,2.457,1.758
+Crassostrea sikamea,19,NA,1,No Tide,21,24,11,2.48,1.786
+Crassostrea sikamea,19,NA,2,No Tide,21,24,11,2.993,1.732
+Crassostrea sikamea,19,NA,3,No Tide,21,24,11,2.927,1.705
+Crassostrea sikamea,19,NA,4,No Tide,21,24,11,3.387,2.09
+Crassostrea sikamea,19,NA,5,No Tide,21,24,11,2.794,1.688
+Crassostrea sikamea,19,NA,6,No Tide,21,24,11,2.514,1.517
+Crassostrea sikamea,19,NA,7,No Tide,21,24,11,2.967,1.653
+Crassostrea sikamea,19,NA,8,No Tide,21,24,11,2.285,1.6
+Crassostrea sikamea,19,NA,9,No Tide,21,24,11,2.659,1.56
+Crassostrea sikamea,19,NA,10,No Tide,21,24,11,3.428,1.986
+Crassostrea sikamea,19,NA,1,Tide,15,24,12,2.723,1.968
+Crassostrea sikamea,19,NA,2,Tide,15,24,12,2.662,1.7
+Crassostrea sikamea,19,NA,3,Tide,15,24,12,3.179,1.887
+Crassostrea sikamea,19,NA,4,Tide,15,24,12,2.842,1.738
+Crassostrea sikamea,19,NA,5,Tide,15,24,12,2.623,1.67
+Crassostrea sikamea,19,NA,6,Tide,15,24,12,3.214,1.709
+Crassostrea sikamea,19,NA,7,Tide,15,24,12,2.649,1.914
+Crassostrea sikamea,19,NA,8,Tide,15,24,12,2.512,1.778
+Crassostrea sikamea,19,NA,9,Tide,15,24,12,2.28,1.595
+Crassostrea sikamea,19,NA,10,Tide,15,24,12,2.824,1.724
+Crassostrea sikamea,19,NA,1,Tide,21,24,12,2.403,1.833
+Crassostrea sikamea,19,NA,2,Tide,21,24,12,2.514,1.522
+Crassostrea sikamea,19,NA,3,Tide,21,24,12,2.799,2.172
+Crassostrea sikamea,19,NA,4,Tide,21,24,12,2.798,1.849
+Crassostrea sikamea,19,NA,5,Tide,21,24,12,2.579,1.988
+Crassostrea sikamea,19,NA,6,Tide,21,24,12,2.532,1.59
+Crassostrea sikamea,19,NA,7,Tide,21,24,12,1.895,1.457
+Crassostrea sikamea,19,NA,8,Tide,21,24,12,2.485,1.826
+Crassostrea sikamea,19,NA,9,Tide,21,24,12,2.878,1.834
+Crassostrea sikamea,19,NA,1,No Tide,15,24,12,3.084,1.996
+Crassostrea sikamea,19,NA,2,No Tide,15,24,12,2.97,1.793
+Crassostrea sikamea,19,NA,3,No Tide,15,24,12,2.87,1.894
+Crassostrea sikamea,19,NA,4,No Tide,15,24,12,2.908,1.807
+Crassostrea sikamea,19,NA,5,No Tide,15,24,12,2.547,1.833
+Crassostrea sikamea,19,NA,6,No Tide,15,24,12,2.518,1.456
+Crassostrea sikamea,19,NA,7,No Tide,15,24,12,2.742,1.795
+Crassostrea sikamea,19,NA,8,No Tide,15,24,12,2.672,2.01
+Crassostrea sikamea,19,NA,9,No Tide,15,24,12,2.888,1.685
+Crassostrea sikamea,19,NA,10,No Tide,15,24,12,2.878,2.2
+Crassostrea sikamea,19,NA,1,No Tide,21,24,12,3.031,2.158
+Crassostrea sikamea,19,NA,2,No Tide,21,24,12,3.057,1.822
+Crassostrea sikamea,19,NA,3,No Tide,21,24,12,2.692,1.547
+Crassostrea sikamea,19,NA,4,No Tide,21,24,12,2.905,1.833
+Crassostrea sikamea,19,NA,5,No Tide,21,24,12,2.403,1.47
+Crassostrea sikamea,19,NA,6,No Tide,21,24,12,2.711,1.535
+Crassostrea sikamea,19,NA,7,No Tide,21,24,12,2.514,1.905
+Crassostrea sikamea,19,NA,8,No Tide,21,24,12,2.674,1.547
+Crassostrea sikamea,19,NA,9,No Tide,21,24,12,2.639,1.778
+Crassostrea sikamea,19,NA,1,Tide,15,24,13,2.501,1.891
+Crassostrea sikamea,19,NA,2,Tide,15,24,13,2.643,1.797
+Crassostrea sikamea,19,NA,3,Tide,15,24,13,2.435,1.81
+Crassostrea sikamea,19,NA,4,Tide,15,24,13,2.599,1.538
+Crassostrea sikamea,19,NA,5,Tide,15,24,13,2.136,1.959
+Crassostrea sikamea,19,NA,6,Tide,15,24,13,2.272,2.138
+Crassostrea sikamea,19,NA,7,Tide,15,24,13,2.346,1.932
+Crassostrea sikamea,19,NA,8,Tide,15,24,13,2.544,1.932
+Crassostrea sikamea,19,NA,9,Tide,15,24,13,2.65,1.919
+Crassostrea sikamea,19,NA,1,Tide,21,24,13,2.857,1.878
+Crassostrea sikamea,19,NA,2,Tide,21,24,13,2.558,1.606
+Crassostrea sikamea,19,NA,3,Tide,21,24,13,2.75,1.853
+Crassostrea sikamea,19,NA,4,Tide,21,24,13,2.789,1.646
+Crassostrea sikamea,19,NA,5,Tide,21,24,13,2.901,1.892
+Crassostrea sikamea,19,NA,6,Tide,21,24,13,2.681,1.634
+Crassostrea sikamea,19,NA,7,Tide,21,24,13,2.57,1.741
+Crassostrea sikamea,19,NA,8,Tide,21,24,13,2.695,1.823
+Crassostrea sikamea,19,NA,9,Tide,21,24,13,2.817,1.897
+Crassostrea sikamea,19,NA,10,Tide,21,24,13,2.395,1.715
+Crassostrea sikamea,19,NA,1,No Tide,15,24,13,2.685,2.176
+Crassostrea sikamea,19,NA,2,No Tide,15,24,13,2.899,1.937
+Crassostrea sikamea,19,NA,3,No Tide,15,24,13,2.818,1.741
+Crassostrea sikamea,19,NA,4,No Tide,15,24,13,2.996,1.782
+Crassostrea sikamea,19,NA,5,No Tide,15,24,13,3.036,1.92
+Crassostrea sikamea,19,NA,6,No Tide,15,24,13,2.773,1.868
+Crassostrea sikamea,19,NA,7,No Tide,15,24,13,2.339,1.579
+Crassostrea sikamea,19,NA,8,No Tide,15,24,13,2.871,1.963
+Crassostrea sikamea,19,NA,9,No Tide,15,24,13,2.315,2.01
+Crassostrea sikamea,19,NA,10,No Tide,15,24,13,2.368,1.703
+Crassostrea sikamea,19,NA,1,No Tide,21,24,13,2.6,1.694
+Crassostrea sikamea,19,NA,2,No Tide,21,24,13,2.904,1.953
+Crassostrea sikamea,19,NA,3,No Tide,21,24,13,2.802,1.605
+Crassostrea sikamea,19,NA,4,No Tide,21,24,13,3.144,1.906
+Crassostrea sikamea,19,NA,5,No Tide,21,24,13,3.168,1.851
+Crassostrea sikamea,19,NA,6,No Tide,21,24,13,2.995,1.81
+Crassostrea sikamea,19,NA,7,No Tide,21,24,13,2.804,1.783
+Crassostrea sikamea,19,NA,8,No Tide,21,24,13,3.21,1.946
+Crassostrea sikamea,19,NA,9,No Tide,21,24,13,3.08,1.895
+Crassostrea sikamea,19,NA,10,No Tide,21,24,13,2.537,1.973
+Crassostrea sikamea,19,NA,1,Tide,15,24,14,2.571,1.829
+Crassostrea sikamea,19,NA,2,Tide,15,24,14,2.851,2.006
+Crassostrea sikamea,19,NA,3,Tide,15,24,14,2.348,1.826
+Crassostrea sikamea,19,NA,4,Tide,15,24,14,2.663,1.949
+Crassostrea sikamea,19,NA,5,Tide,15,24,14,2.744,1.912
+Crassostrea sikamea,19,NA,6,Tide,15,24,14,2.979,2.142
+Crassostrea sikamea,19,NA,7,Tide,15,24,14,2.432,1.75
+Crassostrea sikamea,19,NA,8,Tide,15,24,14,2.954,1.98
+Crassostrea sikamea,19,NA,9,Tide,15,24,14,2.703,1.702
+Crassostrea sikamea,19,NA,10,Tide,15,24,14,2.284,1.79
+Crassostrea sikamea,19,NA,1,Tide,21,24,14,3.241,1.924
+Crassostrea sikamea,19,NA,2,Tide,21,24,14,3.068,2.1
+Crassostrea sikamea,19,NA,3,Tide,21,24,14,2.924,2.006
+Crassostrea sikamea,19,NA,4,Tide,21,24,14,3.147,2.007
+Crassostrea sikamea,19,NA,5,Tide,21,24,14,2.869,1.867
+Crassostrea sikamea,19,NA,6,Tide,21,24,14,2.761,2.224
+Crassostrea sikamea,19,NA,7,Tide,21,24,14,2.919,1.87
+Crassostrea sikamea,19,NA,8,Tide,21,24,14,2.8,1.895
+Crassostrea sikamea,19,NA,9,Tide,21,24,14,2.499,1.785
+Crassostrea sikamea,19,NA,10,Tide,21,24,14,2.225,1.497
+Crassostrea sikamea,19,NA,1,No Tide,15,24,14,2.824,1.909
+Crassostrea sikamea,19,NA,2,No Tide,15,24,14,2.692,1.799
+Crassostrea sikamea,19,NA,3,No Tide,15,24,14,2.997,1.833
+Crassostrea sikamea,19,NA,4,No Tide,15,24,14,3.215,1.979
+Crassostrea sikamea,19,NA,5,No Tide,15,24,14,2.551,1.737
+Crassostrea sikamea,19,NA,6,No Tide,15,24,14,3.143,2.142
+Crassostrea sikamea,19,NA,7,No Tide,15,24,14,2.665,1.908
+Crassostrea sikamea,19,NA,8,No Tide,15,24,14,2.571,1.867
+Crassostrea sikamea,19,NA,9,No Tide,15,24,14,2.408,1.584
+Crassostrea sikamea,19,NA,10,No Tide,15,24,14,2.81,1.778
+Crassostrea sikamea,19,NA,1,No Tide,21,24,14,2.715,1.586
+Crassostrea sikamea,19,NA,2,No Tide,21,24,14,3.185,2.032
+Crassostrea sikamea,19,NA,3,No Tide,21,24,14,3.125,2.174
+Crassostrea sikamea,19,NA,4,No Tide,21,24,14,3.319,1.904
+Crassostrea sikamea,19,NA,5,No Tide,21,24,14,3.185,1.827
+Crassostrea sikamea,19,NA,6,No Tide,21,24,14,3.034,2.018
+Crassostrea sikamea,19,NA,7,No Tide,21,24,14,3.112,1.936
+Crassostrea sikamea,19,NA,8,No Tide,21,24,14,2.485,1.621
+Crassostrea sikamea,19,NA,9,No Tide,21,24,14,2.453,1.442
+Crassostrea sikamea,19,NA,10,No Tide,21,24,14,2.554,1.597
+Crassostrea sikamea,19,NA,1,Tide,15,24,15,2.671,1.732
+Crassostrea sikamea,19,NA,2,Tide,15,24,15,2.718,1.71
+Crassostrea sikamea,19,NA,3,Tide,15,24,15,2.064,1.46
+Crassostrea sikamea,19,NA,4,Tide,15,24,15,2.964,1.816
+Crassostrea sikamea,19,NA,5,Tide,15,24,15,2.265,1.687
+Crassostrea sikamea,19,NA,6,Tide,15,24,15,2.355,1.735
+Crassostrea sikamea,19,NA,7,Tide,15,24,15,2.584,1.871
+Crassostrea sikamea,19,NA,8,Tide,15,24,15,2.648,1.842
+Crassostrea sikamea,19,NA,9,Tide,15,24,15,2.452,1.847
+Crassostrea sikamea,19,NA,10,Tide,15,24,15,2.515,1.806
+Crassostrea sikamea,19,NA,1,Tide,21,24,15,2.277,1.599
+Crassostrea sikamea,19,NA,2,Tide,21,24,15,2.622,1.455
+Crassostrea sikamea,19,NA,3,Tide,21,24,15,2.216,2.056
+Crassostrea sikamea,19,NA,4,Tide,21,24,15,2.388,1.979
+Crassostrea sikamea,19,NA,5,Tide,21,24,15,2.652,1.752
+Crassostrea sikamea,19,NA,6,Tide,21,24,15,2.838,1.907
+Crassostrea sikamea,19,NA,7,Tide,21,24,15,2.584,1.996
+Crassostrea sikamea,19,NA,8,Tide,21,24,15,2.478,2.078
+Crassostrea sikamea,19,NA,9,Tide,21,24,15,2.53,1.698
+Crassostrea sikamea,19,NA,1,No Tide,15,24,15,3.323,2.053
+Crassostrea sikamea,19,NA,2,No Tide,15,24,15,2.647,1.803
+Crassostrea sikamea,19,NA,3,No Tide,15,24,15,2.635,2.173
+Crassostrea sikamea,19,NA,4,No Tide,15,24,15,2.532,1.725
+Crassostrea sikamea,19,NA,5,No Tide,15,24,15,2.883,1.891
+Crassostrea sikamea,19,NA,6,No Tide,15,24,15,2.333,1.607
+Crassostrea sikamea,19,NA,7,No Tide,15,24,15,3.248,2.013
+Crassostrea sikamea,19,NA,8,No Tide,15,24,15,2.801,1.768
+Crassostrea sikamea,19,NA,9,No Tide,15,24,15,2.505,1.814
+Crassostrea sikamea,19,NA,10,No Tide,15,24,15,2.851,1.834
+Crassostrea sikamea,19,NA,1,No Tide,21,24,15,2.907,1.811
+Crassostrea sikamea,19,NA,2,No Tide,21,24,15,2.556,1.637
+Crassostrea sikamea,19,NA,3,No Tide,21,24,15,2.726,1.864
+Crassostrea sikamea,19,NA,4,No Tide,21,24,15,2.673,1.731
+Crassostrea sikamea,19,NA,5,No Tide,21,24,15,2.46,1.807
+Crassostrea sikamea,19,NA,6,No Tide,21,24,15,3.017,1.794
+Crassostrea sikamea,19,NA,7,No Tide,21,24,15,2.434,1.768
+Crassostrea sikamea,19,NA,8,No Tide,21,24,15,2.35,1.576
+Crassostrea sikamea,19,NA,9,No Tide,21,24,15,2.934,1.956
+Crassostrea sikamea,19,NA,10,No Tide,21,24,15,2.763,1.698
+Crassostrea sikamea,19,NA,1,Tide,15,21,16,2.516,2.093
+Crassostrea sikamea,19,NA,2,Tide,15,21,16,3.008,1.827
+Crassostrea sikamea,19,NA,3,Tide,15,21,16,2.518,1.708
+Crassostrea sikamea,19,NA,4,Tide,15,21,16,3.01,1.758
+Crassostrea sikamea,19,NA,5,Tide,15,21,16,2.953,1.807
+Crassostrea sikamea,19,NA,6,Tide,15,21,16,3.117,1.709
+Crassostrea sikamea,19,NA,7,Tide,15,21,16,2.815,2.162
+Crassostrea sikamea,19,NA,8,Tide,15,21,16,2.389,1.595
+Crassostrea sikamea,19,NA,9,Tide,15,21,16,2.484,1.643
+Crassostrea sikamea,19,NA,10,Tide,15,21,16,2.339,1.701
+Crassostrea sikamea,19,NA,1,Tide,21,21,16,3.137,1.995
+Crassostrea sikamea,19,NA,2,Tide,21,21,16,2.769,1.756
+Crassostrea sikamea,19,NA,3,Tide,21,21,16,2.618,1.791
+Crassostrea sikamea,19,NA,4,Tide,21,21,16,2.334,1.655
+Crassostrea sikamea,19,NA,5,Tide,21,21,16,3.049,1.832
+Crassostrea sikamea,19,NA,6,Tide,21,21,16,2.392,1.695
+Crassostrea sikamea,19,NA,7,Tide,21,21,16,2.94,1.873
+Crassostrea sikamea,19,NA,8,Tide,21,21,16,2.434,1.737
+Crassostrea sikamea,19,NA,1,No Tide,15,21,16,3.365,2.027
+Crassostrea sikamea,19,NA,2,No Tide,15,21,16,2.473,1.794
+Crassostrea sikamea,19,NA,3,No Tide,15,21,16,3.278,2.067
+Crassostrea sikamea,19,NA,4,No Tide,15,21,16,3.35,1.823
+Crassostrea sikamea,19,NA,5,No Tide,15,21,16,2.933,1.972
+Crassostrea sikamea,19,NA,6,No Tide,15,21,16,2.68,1.806
+Crassostrea sikamea,19,NA,7,No Tide,15,21,16,2.945,1.919
+Crassostrea sikamea,19,NA,8,No Tide,15,21,16,2.598,1.709
+Crassostrea sikamea,19,NA,9,No Tide,15,21,16,3.158,2.003
+Crassostrea sikamea,19,NA,10,No Tide,15,21,16,2.476,1.586
+Crassostrea sikamea,19,NA,1,No Tide,21,21,16,2.982,2.202
+Crassostrea sikamea,19,NA,2,No Tide,21,21,16,3.117,2.14
+Crassostrea sikamea,19,NA,3,No Tide,21,21,16,2.751,1.586
+Crassostrea sikamea,19,NA,4,No Tide,21,21,16,3.295,2.037
+Crassostrea sikamea,19,NA,5,No Tide,21,21,16,2.752,1.791
+Crassostrea sikamea,19,NA,6,No Tide,21,21,16,3.281,2.119
+Crassostrea sikamea,19,NA,7,No Tide,21,21,16,3.064,2.162
+Crassostrea sikamea,19,NA,8,No Tide,21,21,16,3.186,1.887
+Crassostrea sikamea,19,NA,9,No Tide,21,21,16,2.953,1.627
+Crassostrea sikamea,19,NA,10,No Tide,21,21,16,2.598,1.819
+Crassostrea sikamea,19,NA,1,Tide,15,21,17,2.46,1.879
+Crassostrea sikamea,19,NA,2,Tide,15,21,17,2.691,1.711
+Crassostrea sikamea,19,NA,3,Tide,15,21,17,2.7,1.639
+Crassostrea sikamea,19,NA,4,Tide,15,21,17,2.655,1.607
+Crassostrea sikamea,19,NA,5,Tide,15,21,17,3.001,2.282
+Crassostrea sikamea,19,NA,6,Tide,15,21,17,2.702,1.987
+Crassostrea sikamea,19,NA,7,Tide,15,21,17,3.106,1.823
+Crassostrea sikamea,19,NA,8,Tide,15,21,17,2.422,1.539
+Crassostrea sikamea,19,NA,9,Tide,15,21,17,2.944,1.852
+Crassostrea sikamea,19,NA,10,Tide,15,21,17,2.696,1.853
+Crassostrea sikamea,19,NA,1,Tide,21,21,17,2.73,1.914
+Crassostrea sikamea,19,NA,2,Tide,21,21,17,3.315,2.119
+Crassostrea sikamea,19,NA,3,Tide,21,21,17,2.752,2.018
+Crassostrea sikamea,19,NA,4,Tide,21,21,17,2.675,2.097
+Crassostrea sikamea,19,NA,5,Tide,21,21,17,2.722,1.839
+Crassostrea sikamea,19,NA,6,Tide,21,21,17,3.204,2.089
+Crassostrea sikamea,19,NA,7,Tide,21,21,17,3.04,1.999
+Crassostrea sikamea,19,NA,8,Tide,21,21,17,2.823,1.885
+Crassostrea sikamea,19,NA,9,Tide,21,21,17,2.642,1.701
+Crassostrea sikamea,19,NA,1,No Tide,15,21,17,3.309,2.013
+Crassostrea sikamea,19,NA,2,No Tide,15,21,17,2.719,1.687
+Crassostrea sikamea,19,NA,3,No Tide,15,21,17,2.485,1.661
+Crassostrea sikamea,19,NA,4,No Tide,15,21,17,2.847,1.742
+Crassostrea sikamea,19,NA,5,No Tide,15,21,17,2.89,1.91
+Crassostrea sikamea,19,NA,6,No Tide,15,21,17,3.175,1.891
+Crassostrea sikamea,19,NA,7,No Tide,15,21,17,3.026,2.134
+Crassostrea sikamea,19,NA,8,No Tide,15,21,17,2.466,1.729
+Crassostrea sikamea,19,NA,9,No Tide,15,21,17,2.559,1.773
+Crassostrea sikamea,19,NA,10,No Tide,15,21,17,3.324,1.864
+Crassostrea sikamea,19,NA,1,No Tide,21,21,17,2.302,1.769
+Crassostrea sikamea,19,NA,2,No Tide,21,21,17,2.593,1.757
+Crassostrea sikamea,19,NA,3,No Tide,21,21,17,2.795,1.769
+Crassostrea sikamea,19,NA,4,No Tide,21,21,17,2.674,1.607
+Crassostrea sikamea,19,NA,5,No Tide,21,21,17,2.543,1.877
+Crassostrea sikamea,19,NA,6,No Tide,21,21,17,2.922,1.743
+Crassostrea sikamea,19,NA,7,No Tide,21,21,17,2.487,1.567
+Crassostrea sikamea,19,NA,8,No Tide,21,21,17,2.984,2.104
+Crassostrea sikamea,19,NA,9,No Tide,21,21,17,2.87,1.823
+Crassostrea sikamea,19,NA,1,Tide,15,21,18,2.65,1.805
+Crassostrea sikamea,19,NA,2,Tide,15,21,18,3.226,2.052
+Crassostrea sikamea,19,NA,3,Tide,15,21,18,2.541,1.64
+Crassostrea sikamea,19,NA,4,Tide,15,21,18,2.255,1.966
+Crassostrea sikamea,19,NA,5,Tide,15,21,18,2.69,1.857
+Crassostrea sikamea,19,NA,6,Tide,15,21,18,2.394,1.747
+Crassostrea sikamea,19,NA,7,Tide,15,21,18,2.676,1.748
+Crassostrea sikamea,19,NA,8,Tide,15,21,18,2.587,1.713
+Crassostrea sikamea,19,NA,9,Tide,15,21,18,2.599,1.766
+Crassostrea sikamea,19,NA,1,Tide,21,21,18,2.177,1.491
+Crassostrea sikamea,19,NA,2,Tide,21,21,18,3.253,2.077
+Crassostrea sikamea,19,NA,3,Tide,21,21,18,2.367,1.993
+Crassostrea sikamea,19,NA,4,Tide,21,21,18,2.939,1.953
+Crassostrea sikamea,19,NA,5,Tide,21,21,18,2.894,1.952
+Crassostrea sikamea,19,NA,6,Tide,21,21,18,2.841,1.843
+Crassostrea sikamea,19,NA,7,Tide,21,21,18,2.938,1.735
+Crassostrea sikamea,19,NA,8,Tide,21,21,18,2.921,1.87
+Crassostrea sikamea,19,NA,1,No Tide,15,21,18,2.137,1.597
+Crassostrea sikamea,19,NA,2,No Tide,15,21,18,2.6,1.694
+Crassostrea sikamea,19,NA,3,No Tide,15,21,18,2.983,1.885
+Crassostrea sikamea,19,NA,4,No Tide,15,21,18,2.95,1.625
+Crassostrea sikamea,19,NA,5,No Tide,15,21,18,3.156,2.021
+Crassostrea sikamea,19,NA,6,No Tide,15,21,18,3.031,1.898
+Crassostrea sikamea,19,NA,7,No Tide,15,21,18,3.427,2.116
+Crassostrea sikamea,19,NA,8,No Tide,15,21,18,2.837,1.916
+Crassostrea sikamea,19,NA,9,No Tide,15,21,18,2.578,1.892
+Crassostrea sikamea,19,NA,10,No Tide,15,21,18,3.02,1.763
+Crassostrea sikamea,19,NA,1,No Tide,21,21,18,2.73,1.843
+Crassostrea sikamea,19,NA,2,No Tide,21,21,18,2.909,2.143
+Crassostrea sikamea,19,NA,3,No Tide,21,21,18,2.676,1.953
+Crassostrea sikamea,19,NA,4,No Tide,21,21,18,2.655,1.441
+Crassostrea sikamea,19,NA,5,No Tide,21,21,18,2.608,1.778
+Crassostrea sikamea,19,NA,6,No Tide,21,21,18,3.17,2.144
+Crassostrea sikamea,19,NA,7,No Tide,21,21,18,2.822,1.625
+Crassostrea sikamea,19,NA,8,No Tide,21,21,18,2.669,1.844
+Crassostrea sikamea,19,NA,9,No Tide,21,21,18,2.655,1.708
+Crassostrea sikamea,19,NA,10,No Tide,21,21,18,2.309,1.488
+Crassostrea sikamea,19,NA,1,Tide,15,21,19,2.752,1.917
+Crassostrea sikamea,19,NA,2,Tide,15,21,19,2.619,2.034
+Crassostrea sikamea,19,NA,3,Tide,15,21,19,2.332,1.777
+Crassostrea sikamea,19,NA,4,Tide,15,21,19,2.88,1.875
+Crassostrea sikamea,19,NA,5,Tide,15,21,19,2.984,1.844
+Crassostrea sikamea,19,NA,6,Tide,15,21,19,2.592,1.953
+Crassostrea sikamea,19,NA,7,Tide,15,21,19,2.538,2.007
+Crassostrea sikamea,19,NA,8,Tide,15,21,19,3.027,1.912
+Crassostrea sikamea,19,NA,1,Tide,21,21,19,2.979,2.084
+Crassostrea sikamea,19,NA,2,Tide,21,21,19,3.096,2.095
+Crassostrea sikamea,19,NA,3,Tide,21,21,19,2.595,1.949
+Crassostrea sikamea,19,NA,4,Tide,21,21,19,2.967,1.763
+Crassostrea sikamea,19,NA,5,Tide,21,21,19,3.397,1.865
+Crassostrea sikamea,19,NA,6,Tide,21,21,19,3.124,1.628
+Crassostrea sikamea,19,NA,7,Tide,21,21,19,2.595,1.682
+Crassostrea sikamea,19,NA,8,Tide,21,21,19,2.782,1.899
+Crassostrea sikamea,19,NA,9,Tide,21,21,19,2.625,1.857
+Crassostrea sikamea,19,NA,1,No Tide,15,21,19,2.685,1.722
+Crassostrea sikamea,19,NA,2,No Tide,15,21,19,2.997,1.939
+Crassostrea sikamea,19,NA,3,No Tide,15,21,19,2.906,1.832
+Crassostrea sikamea,19,NA,4,No Tide,15,21,19,2.783,1.724
+Crassostrea sikamea,19,NA,5,No Tide,15,21,19,2.742,1.573
+Crassostrea sikamea,19,NA,6,No Tide,15,21,19,3.447,2.075
+Crassostrea sikamea,19,NA,7,No Tide,15,21,19,2.712,1.683
+Crassostrea sikamea,19,NA,8,No Tide,15,21,19,2.886,1.858
+Crassostrea sikamea,19,NA,9,No Tide,15,21,19,2.622,1.576
+Crassostrea sikamea,19,NA,10,No Tide,15,21,19,2.795,1.73
+Crassostrea sikamea,19,NA,1,No Tide,21,21,19,2.644,1.9
+Crassostrea sikamea,19,NA,2,No Tide,21,21,19,2.889,1.885
+Crassostrea sikamea,19,NA,3,No Tide,21,21,19,2.753,1.479
+Crassostrea sikamea,19,NA,4,No Tide,21,21,19,2.647,2.102
+Crassostrea sikamea,19,NA,5,No Tide,21,21,19,2.612,1.75
+Crassostrea sikamea,19,NA,6,No Tide,21,21,19,3.157,2.024
+Crassostrea sikamea,19,NA,7,No Tide,21,21,19,2.667,2.021
+Crassostrea sikamea,19,NA,8,No Tide,21,21,19,2.62,1.858
+Crassostrea sikamea,19,NA,9,No Tide,21,21,19,2.447,1.9
+Crassostrea sikamea,19,NA,10,No Tide,21,21,19,2.646,1.668
+Crassostrea sikamea,19,NA,1,Tide,15,21,20,2.603,1.877
+Crassostrea sikamea,19,NA,2,Tide,15,21,20,2.855,1.812
+Crassostrea sikamea,19,NA,3,Tide,15,21,20,2.992,1.864
+Crassostrea sikamea,19,NA,4,Tide,15,21,20,2.444,1.961
+Crassostrea sikamea,19,NA,5,Tide,15,21,20,2.483,1.85
+Crassostrea sikamea,19,NA,6,Tide,15,21,20,2.701,1.822
+Crassostrea sikamea,19,NA,7,Tide,15,21,20,2.372,1.786
+Crassostrea sikamea,19,NA,8,Tide,15,21,20,2.716,1.973
+Crassostrea sikamea,19,NA,9,Tide,15,21,20,3.428,1.933
+Crassostrea sikamea,19,NA,1,Tide,21,21,20,2.671,1.742
+Crassostrea sikamea,19,NA,2,Tide,21,21,20,2.247,1.466
+Crassostrea sikamea,19,NA,3,Tide,21,21,20,2.91,1.952
+Crassostrea sikamea,19,NA,4,Tide,21,21,20,2.603,1.836
+Crassostrea sikamea,19,NA,5,Tide,21,21,20,2.781,1.824
+Crassostrea sikamea,19,NA,6,Tide,21,21,20,2.455,1.695
+Crassostrea sikamea,19,NA,7,Tide,21,21,20,2.577,1.822
+Crassostrea sikamea,19,NA,8,Tide,21,21,20,2.953,1.63
+Crassostrea sikamea,19,NA,1,No Tide,15,21,20,2.499,1.452
+Crassostrea sikamea,19,NA,2,No Tide,15,21,20,2.329,1.945
+Crassostrea sikamea,19,NA,3,No Tide,15,21,20,3.233,2.033
+Crassostrea sikamea,19,NA,4,No Tide,15,21,20,3.18,1.836
+Crassostrea sikamea,19,NA,5,No Tide,15,21,20,2.555,1.543
+Crassostrea sikamea,19,NA,6,No Tide,15,21,20,2.458,1.688
+Crassostrea sikamea,19,NA,7,No Tide,15,21,20,2.697,1.73
+Crassostrea sikamea,19,NA,8,No Tide,15,21,20,2.853,1.685
+Crassostrea sikamea,19,NA,9,No Tide,15,21,20,2.645,1.863
+Crassostrea sikamea,19,NA,10,No Tide,15,21,20,2.599,2
+Crassostrea sikamea,19,NA,2,No Tide,21,21,20,2.795,1.85
+Crassostrea sikamea,19,NA,3,No Tide,21,21,20,2.662,1.754
+Crassostrea sikamea,19,NA,4,No Tide,21,21,20,2.963,1.836
+Crassostrea sikamea,19,NA,5,No Tide,21,21,20,2.617,1.795
+Crassostrea sikamea,19,NA,6,No Tide,21,21,20,2.288,1.575
+Crassostrea sikamea,19,NA,7,No Tide,21,21,20,3.268,1.933
+Crassostrea sikamea,19,NA,8,No Tide,21,21,20,2.918,1.66
+Crassostrea sikamea,19,NA,9,No Tide,21,21,20,2.945,2.015
+Crassostrea sikamea,19,NA,10,No Tide,21,21,20,3.26,1.754
