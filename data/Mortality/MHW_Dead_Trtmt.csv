@@ -1,0 +1,49 @@
+Species,SH_Temp,SH_tide,MHW,total,mean
+C_sikamea,15,No Tide,15,1,NA
+C_sikamea,15,No Tide,18,1,NA
+C_sikamea,15,No Tide,21,1,NA
+C_sikamea,15,No Tide,24,2,NA
+C_sikamea,15,Tide,15,1,NA
+C_sikamea,15,Tide,18,1,NA
+C_sikamea,15,Tide,21,1,NA
+C_sikamea,15,Tide,24,2,NA
+C_sikamea,21,No Tide,15,1,NA
+C_sikamea,21,No Tide,18,1,NA
+C_sikamea,21,No Tide,21,1,NA
+C_sikamea,21,No Tide,24,1,NA
+C_sikamea,21,Tide,15,1,NA
+C_sikamea,21,Tide,18,1,NA
+C_sikamea,21,Tide,21,1,NA
+C_sikamea,21,Tide,24,1,NA
+M_gigas,15,No Tide,15,1,NA
+M_gigas,15,No Tide,18,1,NA
+M_gigas,15,No Tide,21,1,NA
+M_gigas,15,No Tide,24,1,NA
+M_gigas,15,Tide,15,1,NA
+M_gigas,15,Tide,18,1,NA
+M_gigas,15,Tide,21,1,NA
+M_gigas,15,Tide,24,1,NA
+M_gigas,21,No Tide,15,1,NA
+M_gigas,21,No Tide,18,2,NA
+M_gigas,21,No Tide,21,1,NA
+M_gigas,21,No Tide,24,1,NA
+M_gigas,21,Tide,15,1,NA
+M_gigas,21,Tide,18,1,NA
+M_gigas,21,Tide,21,1,NA
+M_gigas,21,Tide,24,1,NA
+O_lurida,15,No Tide,15,1,NA
+O_lurida,15,No Tide,18,1,NA
+O_lurida,15,No Tide,21,2,NA
+O_lurida,15,No Tide,24,2,NA
+O_lurida,15,Tide,15,1,NA
+O_lurida,15,Tide,18,2,NA
+O_lurida,15,Tide,21,1,NA
+O_lurida,15,Tide,24,2,NA
+O_lurida,21,No Tide,15,1,NA
+O_lurida,21,No Tide,18,1,NA
+O_lurida,21,No Tide,21,1,NA
+O_lurida,21,No Tide,24,2,NA
+O_lurida,21,Tide,15,1,NA
+O_lurida,21,Tide,18,2,NA
+O_lurida,21,Tide,21,2,NA
+O_lurida,21,Tide,24,2,NA

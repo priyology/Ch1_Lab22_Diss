@@ -753,35 +753,30 @@ plot(L.m12.plot_bySHtemp) +
 
 ggsave(filename = "fig_output/DARKmodel_Csikamea_Length-Tide.MHW.png", width = 5.10, height = 5.77, dpi = 300)
 
-
-##### PRIYA PICK UP HERE ===========
-##### PRIYA PICK UP HERE ===========
-##### PRIYA PICK UP HERE ===========
-
 #### WIDTHS ========
 
 #### W.m_null: W ~ 1 ===============
-#W.m_null <- glm(W ~ 1, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
-#summary(W.m_null)
-#
-#Call:
-#  glm(formula = W ~ 1, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
+W.m_null <- glm(W ~ 1, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
+summary(W.m_null)
+
+# Call:
+#glm(formula = W ~ 1, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
 #
 #Deviance Residuals: 
-#  Min       1Q   Median       3Q      Max  
-#-2.6302  -0.8982  -0.1397   0.7508   5.1578  
+#  Min        1Q    Median        3Q       Max  
+#-0.68965  -0.11090   0.00285   0.11560   0.54135  
 #
 #Coefficients:
 #  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)  5.11721    0.04146   123.4   <2e-16 ***
+#(Intercept) 1.832647   0.006361   288.1   <2e-16 ***
 #  ---
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #
-#(Dispersion parameter for gaussian family taken to be 1.368376)
+#(Dispersion parameter for gaussian family taken to be 0.03091806)
 #
-#Null deviance: 1087.9  on 795  degrees of freedom
-#Residual deviance: 1087.9  on 795  degrees of freedom
-#AIC: 2511.6
+#Null deviance: 23.59  on 763  degrees of freedom
+#Residual deviance: 23.59  on 763  degrees of freedom
+#AIC: -484.84
 #
 #Number of Fisher Scoring iterations: 2
 
@@ -791,29 +786,28 @@ ggsave(filename = "fig_output/DARKmodel_Csikamea_Length-Tide.MHW.png", width = 5
 W.m1 <- glm(W ~ SH_Temp, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
 summary(W.m1)
 
-# Call:
-# glm(formula = W ~ SH_Temp, family = gaussian(link = "identity"), 
-#    data = Csikamea_LWend_stats)
+#Call:
+#  glm(formula = W ~ SH_Temp, family = gaussian(link = "identity"), 
+#      data = Csikamea_LWend_stats)
 #
 #Deviance Residuals: 
-#  Min       1Q   Median       3Q      Max  
-#-2.5806  -0.8891  -0.1648   0.7790   5.1082  
+#  Min        1Q    Median        3Q       Max  
+#-0.68040  -0.11565   0.00485   0.11485   0.55060  
 #
 #Coefficients:
 #  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)  5.16684    0.05862  88.142   <2e-16 ***
-#  SH_Temp21   -0.09926    0.08290  -1.197    0.232    
+#(Intercept)  1.841651   0.008932 206.185   <2e-16 ***
+#  SH_Temp21   -0.018248   0.012715  -1.435    0.152    
 #---
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #
-#(Dispersion parameter for gaussian family taken to be 1.36763)
+#(Dispersion parameter for gaussian family taken to be 0.03087518)
 #
-#Null deviance: 1087.9  on 795  degrees of freedom
-#Residual deviance: 1085.9  on 794  degrees of freedom
-#AIC: 2512.2
+#Null deviance: 23.590  on 763  degrees of freedom
+#Residual deviance: 23.527  on 762  degrees of freedom
+#AIC: -484.91
 #
 #Number of Fisher Scoring iterations: 2
-
 
 #### W.m2: W ~ SH_Tide ===============
 W.m2 <- glm(W ~ SH_Tide, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
@@ -824,56 +818,92 @@ summary(W.m2)
 #    data = Csikamea_LWend_stats)
 #
 #Deviance Residuals: 
-#  Min       1Q   Median       3Q      Max  
-#-2.6661  -0.8911  -0.1566   0.7391   5.1939  
+#  Min        1Q    Median        3Q       Max  
+#-0.68619  -0.11239   0.00311   0.11336   0.53811  
 #
 #Coefficients:
 #  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)  5.15310    0.05857  87.980   <2e-16 ***
-#  SH_TideTide -0.07196    0.08294  -0.868    0.386    
+#(Intercept)  1.835891   0.008863 207.149   <2e-16 ***
+#  SH_TideTide -0.006699   0.012735  -0.526    0.599    
 #---
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #
-#(Dispersion parameter for gaussian family taken to be 1.368801)
+#(Dispersion parameter for gaussian family taken to be 0.0309474)
 #
-#Null deviance: 1087.9  on 795  degrees of freedom
-#Residual deviance: 1086.8  on 794  degrees of freedom
-#AIC: 2512.8
+#Null deviance: 23.590  on 763  degrees of freedom
+#Residual deviance: 23.582  on 762  degrees of freedom
+#AIC: -483.12
 #
 #Number of Fisher Scoring iterations: 2
 
 #### W.m3: W ~ MHW ===============
 W.m3 <- glm(W ~ MHW, family = gaussian(link = "identity"), data = Csikamea_LWend_stats)
 summary(W.m3)
-#
-#Call:
-#  glm(formula = W ~ MHW, family = gaussian(link = "identity"), 
-#      data = Csikamea_LWend_stats)
+
+# Call:
+#glm(formula = W ~ MHW, family = gaussian(link = "identity"), 
+#    data = Csikamea_LWend_stats)
 #
 #Deviance Residuals: 
-#  Min       1Q   Median       3Q      Max  
-#-2.8740  -0.8715  -0.1020   0.7214   4.9140  
+#  Min        1Q    Median        3Q       Max  
+#-0.71735  -0.11391   0.00337   0.11671   0.51365  
 #
 #Coefficients:
 #  Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)  5.36105    0.08219  65.225  < 2e-16 ***
-#  MHW18       -0.32044    0.11639  -2.753  0.00604 ** 
-#  MHW21       -0.25950    0.11668  -2.224  0.02643 *  
-#  MHW24       -0.39602    0.11624  -3.407  0.00069 ***
+#(Intercept)  1.86035    0.01272 146.288   <2e-16 ***
+#  MHW18       -0.04424    0.01789  -2.473   0.0136 *  
+#  MHW21       -0.02444    0.01808  -1.352   0.1769    
+#MHW24       -0.04144    0.01789  -2.316   0.0208 *  
 #  ---
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #
-#(Dispersion parameter for gaussian family taken to be 1.351161)
+#(Dispersion parameter for gaussian family taken to be 0.03072766)
 #
-#Null deviance: 1087.9  on 795  degrees of freedom
-#Residual deviance: 1070.1  on 792  degrees of freedom
-#AIC: 2504.5
+#Null deviance: 23.590  on 763  degrees of freedom
+#Residual deviance: 23.353  on 760  degrees of freedom
+#AIC: -486.57
 #
-# Number of Fisher Scoring iterations: 2
+#Number of Fisher Scoring iterations: 2
+
+#### W.m4: W ~ MHW + (1|Tank) ===============
+W.m4 <- lmer(W ~ MHW +  (1|Tank), data = Csikamea_LWend_stats)
+summary(W.m4)
+
+# Linear mixed model fit by REML. t-tests use Satterthwaite's  method
+#[lmerModLmerTest]
+#Formula: W ~ MHW + (1 | Tank)
+#Data: Csikamea_LWend_stats
+#
+#REML criterion at convergence: -476.1
+#
+#Scaled residuals: 
+#  Min      1Q  Median      3Q     Max 
+#-4.3354 -0.6602  0.0241  0.6741  2.7629 
+#
+#Random effects:
+#  Groups   Name        Variance Std.Dev.
+#Tank     (Intercept) 0.001017 0.03188 
+#Residual             0.029911 0.17295 
+#Number of obs: 764, groups:  Tank, 20
+#
+#Fixed effects:
+#  Estimate Std. Error       df t value Pr(>|t|)    
+#(Intercept)  1.85968    0.01899 16.03752  97.908   <2e-16 ***
+#  MHW18       -0.04361    0.02680 15.89340  -1.627    0.123    
+#MHW21       -0.02397    0.02692 16.18822  -0.890    0.386    
+#MHW24       -0.04108    0.02680 15.89340  -1.533    0.145    
+# ---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#
+# Correlation of Fixed Effects:
+#  (Intr) MHW18  MHW21 
+# MHW18 -0.709              
+# MHW21 -0.705  0.500       
+# MHW24 -0.709  0.502  0.500
 
 #### AIC/BIC Scores ===============
-AIC(W.m_null, W.m1, W.m2, W.m3)
-BIC(W.m_null, W.m1, W.m2, W.m3)
+AIC(W.m_null, W.m1, W.m2, W.m3, W.m4)
+BIC(W.m_null, W.m1, W.m2, W.m3, W.m4)
 
 #### Test Assumptions ===============
 #### Pairwise Plot of Residuals ===============
@@ -892,6 +922,5 @@ plot(density(resid(W.m4)))
 tbl.Wm4 <- tbl_regression(W.m4, exponentiate = TRUE) ## table!
 tbl.Wm4
 inline_text(tbl.Wm4,  variable = MHW, level = "21") ##in-line text
-# "0.77 (95% CI 0.42, 1.43; p=0.4)"
-
+# "0.98 (95% CI 0.92, 1.03; p=0.4)"
 

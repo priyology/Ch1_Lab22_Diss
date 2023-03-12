@@ -1,0 +1,13 @@
+Species,Temp,Tide,total,mean
+C_sikamea,15,No Tide,2,0.16666666666666666
+C_sikamea,15,Tide,2,0.13333333333333333
+C_sikamea,21,No Tide,3,0.23333333333333334
+C_sikamea,21,Tide,3,0.3
+M_gigas,15,No Tide,1,0
+M_gigas,15,Tide,1,0
+M_gigas,21,No Tide,1,0
+M_gigas,21,Tide,1,0
+O_lurida,15,No Tide,2,0.12
+O_lurida,15,Tide,2,0.12
+O_lurida,21,No Tide,2,0.1111111111111111
+O_lurida,21,Tide,4,0.36

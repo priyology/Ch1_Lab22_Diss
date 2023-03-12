@@ -1,0 +1,5 @@
+Species,SH_Temp,SH_Tide,Mortality
+O_lurida,15,No Tide,2
+O_lurida,15,Tide,2
+O_lurida,21,No Tide,2
+O_lurida,21,Tide,4

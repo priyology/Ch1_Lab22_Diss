@@ -5,16 +5,16 @@ library(ggdark)
 
 #### Stress Hardening ==============
 
-SH_mort <- read_csv("data/SH_mortality.csv")
+SH_mort <- read_csv("data/Mortality/SH_mortality.csv")
 str(SH_mort)
 head(SH_mort)
 tail(SH_mort)
 
 
 ## Dealing with NAs
-is.na(SH_mort) #are there NAs = yes
-sum(is.na(SH_mort)) # how many NAs = 858
-sapply(SH_mort, function(x) sum(is.na(x))) #NAs by columns
+colSums(is.na(SH_mort)) # how many NAs per column, photo + notes 460
+# SH_mort1 <- SH_mort %>% 
+#  filter(!is.na(c("Photo, Notes")))
 
 summarize(SH_mort)
 View(SH_mort)
@@ -27,6 +27,8 @@ SH_mort_summ <- SH_mort %>%
     mean = mean(Mortality, na.rm = TRUE))
 SH_mort_summ
 
+write_csv(SH_mort_summ, file = "data/Mortality/SH_Dead_Trtmt.csv")
+
 ## Graphs
 ggplot(SH_mort_summ, aes(x = Tide, y = total, fill = Species)) +
 geom_bar(stat = "identity") +
@@ -36,18 +38,19 @@ labs(
     y = "Mortality during Stress Hardening",
     title = "Oyster Mortality During Stress Hardening"
     ) +
-theme_classic()
+dark_theme_classic()
 
 #### MHW =============
 
-MHW_mort <- read_csv("data/MHW_Mortality.csv")
+MHW_mort <- read_csv("data/Mortality/MHW_Mortality.csv")
 str(MHW_mort)
 head(MHW_mort)
 tail(MHW_mort)
 
-is.na(MHW_mort) #are there NAs = yes
-sum(is.na(MHW_mort)) # how many NAs = 478
-sapply(MHW_mort, function(x) sum(is.na(x))) #NAs by columns
+###NAs
+colSums(is.na(MHW_mort)) # how many NAs = 239, Notes
+# SH_mort1 <- SH_mort %>% 
+#  filter(!is.na("Notes"))
 
 ## Summarize Post-Marine Heatwave Morts
 MHW_mort_summ <- MHW_mort %>% 
@@ -55,8 +58,12 @@ MHW_mort_summ <- MHW_mort %>%
   summarize(
     total = n_distinct(Mortality, na.rm = TRUE),
     mean = mean(Mortality, na.rm = TRUE))
+
 MHW_mort_summ
+
 print(MHW_mort_summ, n = 48)
+
+write_csv(MHW_mort_summ, file = "data/Mortality/MHW_Dead_Trtmt.csv")
 
 ## Graphs
 ggplot(MHW_mort_summ, aes(x = SH_tide, y = total, fill = Species, group = SH_Temp)) +
@@ -69,16 +76,15 @@ ggplot(MHW_mort_summ, aes(x = SH_tide, y = total, fill = Species, group = SH_Tem
   ) +
   theme_classic()
 
+
 #### O. lurida outplanting =========
-Outplant_mort <- read_csv("data/Olurida_OutplantingMortality.csv")
+Outplant_mort <- read_csv("data/O_lurida/Mortality_Olurida_Outplanting.csv")
 str(Outplant_mort)
 Outplant_mort$SH_Temp <- as.character(Outplant_mort$SH_Temp) #make a character
 head(Outplant_mort)
 tail(Outplant_mort)
 
-is.na(Outplant_mort) #are there NAs = no
-sum(is.na(Outplant_mort)) # how many NAs = 0
-sapply(Outplant_mort, function(x) sum(is.na(x))) #NAs by columns
+colSums(is.na(Outplant_mort)) # how many NAs = 0
 
 ## Graphs
 

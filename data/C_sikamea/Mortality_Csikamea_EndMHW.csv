@@ -1,0 +1,17 @@
+Species,Bag_Color,SH_Temp,SH_Tide,MHW,Expt_Count,CI_Count,Mort_Total
+Crassostrea sikamea,Red,15,No Tide,15,1,2,3
+Crassostrea sikamea,Red,15,No Tide,18,1,5,6
+Crassostrea sikamea,Red,15,No Tide,21,1,2,3
+Crassostrea sikamea,Red,15,No Tide,24,2,4,6
+Crassostrea sikamea,Red,15,Tide,15,1,6,7
+Crassostrea sikamea,Red,15,Tide,18,1,2,3
+Crassostrea sikamea,Red,15,Tide,21,1,2,3
+Crassostrea sikamea,Red,15,Tide,24,2,6,8
+Crassostrea sikamea,Red,21,No Tide,15,1,2,3
+Crassostrea sikamea,Red,21,No Tide,18,1,1,2
+Crassostrea sikamea,Red,21,No Tide,21,1,3,4
+Crassostrea sikamea,Red,21,No Tide,24,1,5,6
+Crassostrea sikamea,Red,21,Tide,15,1,1,2
+Crassostrea sikamea,Red,21,Tide,18,1,5,6
+Crassostrea sikamea,Red,21,Tide,21,1,1,2
+Crassostrea sikamea,Red,21,Tide,24,1,5,6

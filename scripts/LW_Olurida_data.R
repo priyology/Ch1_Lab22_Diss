@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #### ~ O. LURIDA LENGTH & WIDTH DATA ~ =====
-=======
-#### ~ O. LURIDA L/W ~ =====
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
 
 ## load libraries
 library(tidyverse)
@@ -24,11 +20,7 @@ Olurida_LWd1
 
 #### Omit NAs=========
 
-<<<<<<< HEAD
-colSums(is.na(Olurida_LWd1)) ## find NAs in each column, 400 under Date, which isn't necessary for analysis
-=======
 colSums(is.na(Olurida_LWd1)) ## find NAs in each column, 400 under Date
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
 
 #### LENGTHS histogram ====
 ggplot(Olurida_LWd1, aes(L)) +

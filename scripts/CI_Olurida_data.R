@@ -49,15 +49,15 @@ nrow(DEAD_Olurida_CI)
 glimpse(DEAD_Olurida_CI)
 summary(DEAD_Olurida_CI)
 
-### CSV of dead oysters
-write_csv(DEAD_Olurida_CI , file = "data/O_lurida/CI_Olurida_Dead.csv") #Dead Oysters
+### CSV of dead oysters (Note: going into data_output)
+write_csv(DEAD_Olurida_CI , file = "data_output/O_lurida/CI_Olurida_Dead.csv") #Dead Oysters
 
 DEAD_count <- DEAD_Olurida_CI %>% group_by(SH_Temp, SH_Tide, MHW) %>% 
   summarize("Numb_Dead" = n())
 DEAD_count
 
-## CSV of counts dead oysters (NOTE: going into data_output)
-write_csv(DEAD_count, file = "data_output/O_lurida/DEAD_Olurida_CI.csv")
+## CSV of counts dead oysters
+write_csv(DEAD_count, file = "data/O_lurida/DEAD_Olurida_CI.csv")
 
 #### Omit NAs=========
 

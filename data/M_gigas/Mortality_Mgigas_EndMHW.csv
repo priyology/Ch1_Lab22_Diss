@@ -1,0 +1,17 @@
+Species,Bag_Color,SH_Temp,SH_Tide,MHW,Expt_Count,CI_Count,Mort_Total
+Magallana gigas,Green,15,No Tide,15,0,0,0
+Magallana gigas,Green,15,No Tide,18,1,0,1
+Magallana gigas,Green,15,No Tide,21,0,0,0
+Magallana gigas,Green,15,No Tide,24,1,0,1
+Magallana gigas,Green,15,Tide,15,0,0,0
+Magallana gigas,Green,15,Tide,18,1,0,1
+Magallana gigas,Green,15,Tide,21,1,0,1
+Magallana gigas,Green,15,Tide,24,0,0,0
+Magallana gigas,Green,21,No Tide,15,0,0,0
+Magallana gigas,Green,21,No Tide,18,1,0,1
+Magallana gigas,Green,21,No Tide,21,1,0,1
+Magallana gigas,Green,21,No Tide,24,1,0,1
+Magallana gigas,Green,21,Tide,15,2,0,2
+Magallana gigas,Green,21,Tide,18,1,0,1
+Magallana gigas,Green,21,Tide,21,0,0,0
+Magallana gigas,Green,21,Tide,24,0,0,0

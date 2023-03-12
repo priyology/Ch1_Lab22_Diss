@@ -23,21 +23,20 @@ Mgigas_CI1$MHW <- as.character(Mgigas_CI1$MHW) ## character
 is.character(Mgigas_CI1$MHW)
 
 #### Check for DEAD oysters =========
-DEAD_Mgigas_CI <- filter(Mgigas_CI1, DEAD == "DEAD")
+DEAD_Mgigas_CI <- filter(Mgigas_CI1, Notes == "*DEAD*")
 nrow(DEAD_Mgigas_CI)
 glimpse(DEAD_Mgigas_CI)
 summary(DEAD_Mgigas_CI)
 
-### CSV of dead oysters
-write_csv(DEAD_Mgigas_CI , file = "data/M_gigas/CI_Mgigas_Dead.csv") #Dead Oysters
+### CSV of dead oysters (Note: going into data_output)
+write_csv(DEAD_Mgigas_CI , file = "data_output/M_gigas/CI_Mgigas_Dead.csv") #Dead Oysters
 
 DEAD_count <- DEAD_Mgigas_CI %>% group_by(SH_Temp, SH_Tide, MHW) %>% 
   summarize("Numb_Dead" = n())
 DEAD_count
 
-## CSV of counts dead oysters (NOTE: going into data_output)
-write_csv(DEAD_count, file = "data_output/M_gigas/DEAD_Mgigas_CI.csv")
-
+## CSV of counts dead oysters
+write_csv(DEAD_count, file = "data/M_gigas/DEAD_Mgigas_CI.csv")
 
 #### Omit NAs=========
 

@@ -745,9 +745,9 @@ ggsave(filename = "fig_output/DARKmodel_Olurida_Length-SH_Temp.png",Width (mm) =
 #### WIDTHS ========
 
 #### W.m_null: W ~ 1 ===============
-#W.m_null <- glm(W ~ 1, family = gaussian(link = "identity"), data = Olurida_LWend_stats)
-#summary(W.m_null)
-#
+W.m_null <- glm(W ~ 1, family = gaussian(link = "identity"), data = Olurida_LWend_stats)
+summary(W.m_null)
+
 #Call:
 #  glm(formula = W ~ 1, family = gaussian(link = "identity"), data = Olurida_LWend_stats)
 #

@@ -23,25 +23,20 @@ Csikamea_CI1$MHW <- as.character(Csikamea_CI1$MHW) ## character
 is.character(Csikamea_CI1$MHW)
 
 #### Check for DEAD oysters =========
-DEAD_Csikamea_CI <- filter(Csikamea_CI1, DEAD == "DEAD")
+DEAD_Csikamea_CI <- filter(Csikamea_CI1, Notes == "*DEAD*")
 nrow(DEAD_Csikamea_CI)
 glimpse(DEAD_Csikamea_CI)
 summary(DEAD_Csikamea_CI)
 
-### CSV of dead oysters
-write_csv(DEAD_Csikamea_CI , file = "data/C_sikamea/CI_Csikamea_Dead.csv") #Dead Oysters
+### CSV of dead oysters (Note: going into data_output)
+write_csv(DEAD_Csikamea_CI , file = "data_output/C_sikamea/CI_Csikamea_Dead.csv") #Dead Oysters
 
-## Total Dead
-DEAD_Csikamea_CI %>% summarize("Numb_Dead" = n()) #52
-
-## Numb Dead by treatment
 DEAD_count <- DEAD_Csikamea_CI %>% group_by(SH_Temp, SH_Tide, MHW) %>% 
   summarize("Numb_Dead" = n())
 DEAD_count
 
-## CSV of counts dead oysters (NOTE: going into data_output)
-write_csv(DEAD_count, file = "data_output/C_sikamea/DEAD_Csikamea_CI.csv")
-
+## CSV of counts dead oysters
+write_csv(DEAD_count, file = "data/C_sikamea/DEAD_Csikamea_CI.csv")
 
 #### Omit NAs=========
 
