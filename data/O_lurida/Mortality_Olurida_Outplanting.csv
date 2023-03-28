@@ -1,5 +1,5 @@
 ﻿SH_Treatment,SH_Tide,SH_Temp,SH-mortality,MHW-mortality,Outplant_Date,Survival_Date,Outplanted_Numb,Survival_Numb
-15-T,Tide,15˚C,2,6,17-Mar-22,20-Dec-22,792,0
-21-T,Tide,21˚C,4,7,17-Mar-22,20-Dec-22,789,0
-15-NT,No Tide,15˚C,2,6,17-Mar-22,20-Dec-22,792,52
-21-NT,No Tide,21˚C,2,5,17-Mar-22,20-Dec-22,793,210
+15-T,Tide,15˚C,2,6,17-Mar-22,20-Dec-22,392,0
+21-T,Tide,21˚C,4,7,17-Mar-22,20-Dec-22,389,0
+15-NT,No Tide,15˚C,2,6,17-Mar-22,20-Dec-22,392,52
+21-NT,No Tide,21˚C,2,5,17-Mar-22,20-Dec-22,393,210
