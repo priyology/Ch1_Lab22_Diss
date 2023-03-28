@@ -101,6 +101,105 @@ outplantsurvival.plot <- ggplot(Outplant_mort, aes(x = SH_Temp, y = Survival_Num
 
 outplantsurvival.plot
 
+
+#### ~ SH_Mortality by Species ~ =====
+
+### load data sheet
+SH_Morts <- read_csv("data/Mortality/SH_Mortality.csv")
+glimpse(SH_Morts)
+summary(SH_Morts)
+View(SH_Morts)
+
+### change attributes about statistical factors
+SH_Morts$SH_Temp <- as.factor(SH_Morts$SH_Temp) ## factor
+is.factor(SH_Morts$SH_Temp) ## TRUE
+SH_Morts$SH_Tide <- as.factor(SH_Morts$SH_Tide) ## factor
+is.factor(SH_Morts$SH_Tide) ## TRUE
+#SH_Morts$MHW <- as.factor(SH_Morts$MHW) ## character
+#is.factor(SH_Morts$MHW) ## TRUE
+
+#species labels
+unique(SH_Morts$Species)
+
+
+#### Ostrea lurida SH Mortality ===========
+Olurida_SHmorts <- SH_Morts %>% 
+  filter(Species == "O_lurida")
+
+Olurida_SHmorts
+
+### CSV of O.lurida stress hardening morts
+write_csv(Olurida_SHmorts, file = "data/O_lurida/Olurida_SHmorts.csv")
+
+
+#### Crassostrea sikamea SH Mortality ===========
+Csikamea_SHmorts <- SH_Morts %>% 
+  filter(Species == "C_sikamea")
+
+Csikamea_SHmorts
+
+### CSV of C. sikamea stress hardening morts
+write_csv(Csikamea_SHmorts, file = "data/C_sikamea/Csikamea_SHmorts.csv")
+
+#### Magallana gigas SH Mortality ===========
+Mgigas_SHmorts <- SH_Morts %>% 
+  filter(Species == "M_gigas")
+
+Mgigas_SHmorts
+
+### CSV of M,. gigas stress hardening morts
+write_csv(Mgigas_SHmorts, file = "data/M_gigas/Mgigas_SHmorts.csv")
+
+
+#### ~ MHW_Mortality by Species ~ =====
+
+### load data sheet
+MHW_Morts <- read_csv("data/Mortality/MHW_Mortality.csv")
+glimpse(MHW_Morts)
+summary(MHW_Morts)
+View(MHW_Morts)
+
+### change attributes about statistical factors
+MHW_Morts$SH_Temp <- as.factor(MHW_Morts$SH_Temp) ## factor
+is.factor(MHW_Morts$SH_Temp) ## TRUE
+MHW_Morts$SH_Tide <- as.factor(MHW_Morts$SH_Tide) ## factor
+is.factor(MHW_Morts$SH_Tide) ## TRUE
+MHW_Morts$MHW <- as.factor(MHW_Morts$MHW) ## character
+is.factor(MHW_Morts$MHW) ## TRUE
+
+#species labels
+unique(MHW_Morts$Species)
+
+
+#### Ostrea lurida MHW Mortality ===========
+Olurida_MHWmorts <- MHW_Morts %>% 
+  filter(Species == "O_lurida")
+
+Olurida_MHWmorts
+
+### CSV of O.lurida post-MHW morts
+write_csv(Olurida_MHWmorts, file = "data/O_lurida/Olurida_MHWmorts.csv")
+
+
+#### Crassostrea sikamea MHW Mortality ===========
+Csikamea_MHWmorts <- MHW_Morts %>% 
+  filter(Species == "C_sikamea")
+
+Csikamea_MHWmorts
+
+### CSV of C.sikamea post-MHW morts
+write_csv(Csikamea_MHWmorts, file = "data/C_sikamea/Csikamea_MHWmorts.csv")
+
+#### Magallana gigas MHW Mortality ===========
+Mgigas_MHWmorts <- MHW_Morts %>% 
+  filter(Species == "M_gigas")
+
+Mgigas_MHWmorts
+
+### CSV of M. gigas post-MHW morts
+write_csv(Mgigas_MHWmorts, file = "data/M_gigas/Mgigas_MHWmorts.csv")
+
+
 #### PowerPoint Editing Prep: Outplanting Plot ==============
 
 #### officeR directly exports the plot to your desired file into a powerpoint slide-shaped image ===== 

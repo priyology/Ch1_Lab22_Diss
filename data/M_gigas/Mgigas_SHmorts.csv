@@ -1,0 +1,121 @@
+Species,Experiment_Day,Date,Tank,SH_Temp,SH_Tide,MHW_Set,Mortality,Photo,Notes
+M_gigas,2,2/25/2022,1,15,No Tide,15_21,0,N,NA
+M_gigas,2,2/25/2022,2,15,No Tide,15_21,0,N,NA
+M_gigas,2,2/25/2022,3,15,No Tide,15_21,0,Y,NA
+M_gigas,2,2/25/2022,4,15,No Tide,15_21,0,N,NA
+M_gigas,2,2/25/2022,5,15,No Tide,15_21,0,Y,NA
+M_gigas,2,2/25/2022,6,15,Tide,15_21,0,N,NA
+M_gigas,2,2/25/2022,7,15,Tide,15_21,0,Y,NA
+M_gigas,2,2/25/2022,8,15,Tide,15_21,0,N,NA
+M_gigas,2,2/25/2022,9,15,Tide,15_21,0,Y,NA
+M_gigas,2,2/25/2022,10,15,Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,11,21,Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,12,21,Tide,15_21,0,N,NA
+M_gigas,3,2/26/2022,13,21,Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,14,21,Tide,15_21,0,N,NA
+M_gigas,3,2/26/2022,15,21,Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,16,21,No Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,17,21,No Tide,15_21,0,N,NA
+M_gigas,3,2/26/2022,18,21,No Tide,15_21,0,Y,NA
+M_gigas,3,2/26/2022,19,21,No Tide,15_21,0,N,NA
+M_gigas,3,2/26/2022,20,21,No Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,1,15,No Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,2,15,No Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,3,15,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,4,15,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,5,15,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,6,15,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,7,15,Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,8,15,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,9,15,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,10,15,Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,11,21,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,12,21,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,13,21,Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,14,21,Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,15,21,Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,16,21,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,17,21,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,18,21,No Tide,15_21,0,Y,NA
+M_gigas,12,3/7/2022,19,21,No Tide,15_21,0,N,NA
+M_gigas,12,3/7/2022,20,21,No Tide,15_21,0,Y,NA
+M_gigas,15,3/10/2022,1,15,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,2,15,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,3,15,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,4,15,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,5,15,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,6,15,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,7,15,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,8,15,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,9,15,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,10,15,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,11,21,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,12,21,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,13,21,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,14,21,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,15,21,Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,16,21,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,17,21,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,18,21,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,19,21,No Tide,15_21,0,NA,NA
+M_gigas,15,3/10/2022,20,21,No Tide,15_21,0,NA,NA
+M_gigas,0,2/25/2022,1,15,No Tide,18_24,0,N,NA
+M_gigas,0,2/25/2022,2,15,No Tide,18_24,0,N,NA
+M_gigas,0,2/25/2022,3,15,No Tide,18_24,0,Y,NA
+M_gigas,0,2/25/2022,4,15,No Tide,18_24,0,N,NA
+M_gigas,0,2/25/2022,5,15,No Tide,18_24,0,Y,NA
+M_gigas,0,2/25/2022,6,15,Tide,18_24,0,N,NA
+M_gigas,0,2/25/2022,7,15,Tide,18_24,0,Y,NA
+M_gigas,0,2/25/2022,8,15,Tide,18_24,0,N,NA
+M_gigas,0,2/25/2022,9,15,Tide,18_24,0,Y,NA
+M_gigas,0,2/25/2022,10,15,Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,11,21,Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,12,21,Tide,18_24,0,N,NA
+M_gigas,0,2/26/2022,13,21,Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,14,21,Tide,18_24,0,N,NA
+M_gigas,0,2/26/2022,15,21,Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,16,21,No Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,17,21,No Tide,18_24,0,N,NA
+M_gigas,0,2/26/2022,18,21,No Tide,18_24,0,Y,NA
+M_gigas,0,2/26/2022,19,21,No Tide,18_24,0,N,NA
+M_gigas,0,2/26/2022,20,21,No Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,1,15,No Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,2,15,No Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,3,15,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,4,15,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,5,15,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,6,15,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,7,15,Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,8,15,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,9,15,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,10,15,Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,11,21,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,12,21,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,13,21,Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,14,21,Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,15,21,Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,16,21,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,17,21,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,18,21,No Tide,18_24,0,Y,NA
+M_gigas,9,3/7/2022,19,21,No Tide,18_24,0,N,NA
+M_gigas,9,3/7/2022,20,21,No Tide,18_24,0,Y,NA
+M_gigas,15,3/13/2022,1,15,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,2,15,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,3,15,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,4,15,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,5,15,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,6,15,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,7,15,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,8,15,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,9,15,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,10,15,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,11,21,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,12,21,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,13,21,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,14,21,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,15,21,Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,16,21,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,17,21,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,18,21,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,19,21,No Tide,18_24,0,NA,NA
+M_gigas,15,3/13/2022,20,21,No Tide,18_24,0,NA,NA

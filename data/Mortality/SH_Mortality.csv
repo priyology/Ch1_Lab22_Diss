@@ -1,4 +1,4 @@
-Species,Experiment_Day,Date,Tank,Temp,Tide,MHW_Set,Mortality,Photo,Notes
+Species,Experiment_Day,Date,Tank,SH_Temp,SH_Tide,MHW_Set,Mortality,Photo,Notes
 C_sikamea,2,2/25/2022,1,15,No Tide,15_21,0,N,
 C_sikamea,2,2/25/2022,2,15,No Tide,15_21,0,N,
 C_sikamea,2,2/25/2022,3,15,No Tide,15_21,0,N,
