@@ -200,6 +200,58 @@ Mgigas_MHWmorts
 write_csv(Mgigas_MHWmorts, file = "data/M_gigas/Mgigas_MHWmorts.csv")
 
 
+#### Mortality Stack Barplot ==============
+All_Morts <- read_csv("data/Mortality/StackedBar_Morts.csv")
+glimpse(All_Morts)
+
+Plot_Morts.Plot <- All_Morts %>% 
+  select(Species, SH_Morts, MHW_CI_Morts) %>%
+  pivot_longer(cols=c('SH_Morts', 'MHW_CI_Morts'),
+               names_to='Timepoint',
+               values_to='Morts') %>% 
+  ggplot(aes(y = Morts, x = Species, fill = Timepoint)) + 
+  geom_bar(position='stack', stat='identity') +
+  theme_classic() +
+  scale_fill_manual(values=c("#FB9A99", "#A6CEE3")) + #, direction = -1)
+  labs(title = "Total Mortality During Experiment",
+      subtitle = "Mortality out of 1,600 oysters per species",
+       x = "Stress Hardening Temp (°C)", 
+       y = "Length")
+
+Plot_Morts.Plot
+
+library(ggdark)
+DARKPlot_Morts.Plot <- All_Morts %>% 
+  select(Species, SH_Morts, MHW_CI_Morts) %>%
+  pivot_longer(cols=c('SH_Morts', 'MHW_CI_Morts'),
+               names_to='Timepoint',
+               values_to='Morts') %>% 
+  ggplot(aes(y = Morts, x = Species, fill = Timepoint)) + 
+  geom_bar(position='stack', stat='identity') +
+  dark_theme_classic() +
+  scale_fill_manual(values=c("#FB9A99", "#A6CEE3")) + #, direction = -1)
+  labs(title = "Total Mortality During Experiment",
+       subtitle = "Mortality out of 1,600 oysters per species",
+       x = "Stress Hardening Temp (°C)", 
+       y = "Length")
+
+DARKPlot_Morts.Plot
+
+#### Hex Codes for Color Brewer Palettes =====
+
+library("RColorBrewer")
+brewer.pal(11, "RdYlBu")
+
+#[1] "#A50026" "#D73027" "#F46D43" "#FDAE61"
+#[5] "#FEE090" "#FFFFBF" "#E0F3F8" "#ABD9E9"
+#[9] "#74ADD1" "#4575B4" "#313695"
+
+brewer.pal(12, "Paired")
+
+#[1] "#A6CEE3" "#1F78B4" "#B2DF8A" "#33A02C"
+#[5] "#FB9A99" "#E31A1C" "#FDBF6F" "#FF7F00"
+#[9] "#CAB2D6" "#6A3D9A" "#FFFF99" "#B15928"
+
 #### PowerPoint Editing Prep: Outplanting Plot ==============
 
 #### officeR directly exports the plot to your desired file into a powerpoint slide-shaped image ===== 
