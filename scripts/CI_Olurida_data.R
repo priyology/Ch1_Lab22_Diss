@@ -190,6 +190,7 @@ Stats_SHTemp <- Olurida_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_SHTemp
+View(Stats_SHTemp)
 
 ## plot
 ggplot(Olurida_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
@@ -220,7 +221,7 @@ ggplot(Olurida_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
   theme_classic() +
   scale_fill_manual(values=c("#4575B4", "#FDAE61"))
 
-#### SIGNIFICANT: Grouped by SH_Temp,MHW ====
+#### Grouped by SH_Temp,MHW ====
 Stats_SHTempMHW <- Olurida_CI2 %>%
   group_by(SH_Temp, MHW) %>% 
   summarize(
