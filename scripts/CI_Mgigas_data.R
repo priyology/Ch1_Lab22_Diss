@@ -103,6 +103,7 @@ Stats_MHW <- Mgigas_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_MHW
+View(Stats_MHW)
 
 ## plot
 ggplot(Mgigas_CI2, aes(x=MHW, y=CI, fill = MHW)) + #factor MHW
@@ -125,6 +126,7 @@ Stats_SH_Tide <- Mgigas_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_SH_Tide
+View(Stats_SH_Tide)
 
 ## plot
 ggplot(Mgigas_CI2, aes(x=SH_Tide, y = CI, fill = SH_Tide)) +
