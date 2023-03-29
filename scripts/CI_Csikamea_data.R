@@ -103,6 +103,7 @@ Stats_MHW <- Csikamea_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_MHW
+View(Stats_MHW)
 
 ## plot
 ggplot(Csikamea_CI2, aes(x=MHW, y=CI, fill = MHW)) + #factor MHW
@@ -148,6 +149,7 @@ Stats_SHTemp <- Csikamea_CI2 %>%
     SE_CI = SD_CI/sqrt(n()))
 
 Stats_SHTemp
+View(Stats_SHTemp)
 
 ## plot
 ggplot(Csikamea_CI2, aes(x=SH_Temp, y=CI, fill = SH_Temp)) +
