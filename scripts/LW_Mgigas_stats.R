@@ -11,7 +11,7 @@ library(pbkrtest) ## to use with emmeans
 library(ggeffects) ## another model plotting option
 
 
-#### XXXXXXXXXx =================
+#### XXXXXXXXX =================
 
 
 #### DAY 1 =====
@@ -22,6 +22,8 @@ Mgigas_LWd1 <- read_csv("data/M_gigas/LWd1_stats.csv")
 glimpse(Mgigas_LWd1)
 summary(Mgigas_LWd1)
 View(Mgigas_LWd1)
+
+
 
 #### Model selection ====
 m.LWd1 <- lm(L ~ W, data = Mgigas_LWd1)
@@ -199,9 +201,9 @@ summary(L.m2)
 
 
 #### L.m3: L ~ MHW ===============
-#L.m3 <- glm(L ~ MHW, family = gaussian(link = "identity"), data = Mgigas_LWend_stats)
-#summary(L.m3)
-#
+L.m3 <- glm(L ~ MHW, family = gaussian(link = "identity"), data = Mgigas_LWend_stats)
+summary(L.m3)
+
 #Call:
 #  glm(formula = L ~ MHW, family = gaussian(link = "identity"), 
 #      data = Mgigas_LWend_stats)
@@ -288,7 +290,7 @@ summary(L.m5)
 #Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### FINAL MODEL: L.m6: SH_Temp + SH_Tide + (1|Tank) ===============
+#### L.m6: SH_Temp + SH_Tide + (1|Tank) ===============
 L.m6 <- lmer(L ~ SH_Temp + SH_Tide + (1|Tank), data = Mgigas_LWend_stats)
 summary(L.m6)
 

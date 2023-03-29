@@ -220,6 +220,8 @@ Plot_Morts.Plot <- All_Morts %>%
 
 Plot_Morts.Plot
 
+ggsave(filename = "fig_output/AllMorts_BarPlot.png",width = 5.10, height = 5.77, dpi = 300)
+
 library(ggdark)
 DARKPlot_Morts.Plot <- All_Morts %>% 
   select(Species, SH_Morts, MHW_CI_Morts) %>%
@@ -236,6 +238,8 @@ DARKPlot_Morts.Plot <- All_Morts %>%
        y = "Length")
 
 DARKPlot_Morts.Plot
+ggsave(filename = "fig_output/DARKAllMorts_BarPlot.png",width = 5.10, height = 5.77, dpi = 300)
+
 
 #### Hex Codes for Color Brewer Palettes =====
 

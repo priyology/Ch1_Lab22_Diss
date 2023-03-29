@@ -82,7 +82,7 @@ is.character(Csikamea_LWend_og$Tank) ## True
 
 #### Omit NAs
 
-colSums(is.na(Csikameaa_LWend_og)) ## find NAs in each column, 400 under Date, 8 under Size_cm
+colSums(is.na(Csikamea_LWend_og)) ## find NAs in each column, 400 under Date, 8 under Size_cm
 
 ## omit Size_mm column which is all NAs / info
 Csikamea_LWend.1 <- Csikamea_LWend_og %>% 
@@ -120,7 +120,7 @@ write_csv(Csikamea_LWend.2, "data/C_sikamea/LW_EndMHW_stats.csv")
 #### Figures: Mean, SD, SE =====
 
 #### No Grouping ====
-Stats_ALL <- Csikamea_LWend.2 %>%
+EndStats_ALL <- Csikamea_LWend.2 %>%
   summarize(
     Mean_L = mean(L),
     SD_L = sd(L),
@@ -129,7 +129,7 @@ Stats_ALL <- Csikamea_LWend.2 %>%
     SD_W = sd(W),
     SE_W = SD_W/sqrt(n()))
 
-Stats_ALL
+EndStats_ALL
 
 #### Grouped by SH_Temp ====
 

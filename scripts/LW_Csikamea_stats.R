@@ -499,7 +499,7 @@ summary(L.m11)
 #Number of Fisher Scoring iterations: 2
 
 #### Random Factor: (1|Tank), lmer ===============
-#### FINAL MODEL: L.m12: SH_Temp + SH_Tide + MHW + SH_Tide*MHW + (1|Tank) ===============
+#### L.m12: SH_Temp + SH_Tide + MHW + SH_Tide*MHW + (1|Tank) ===============
 L.m12 <- lmer(L ~ SH_Temp + SH_Tide + MHW + SH_Tide*MHW + (1|Tank), data = Csikamea_LWend_stats)
 summary(L.m12)
 

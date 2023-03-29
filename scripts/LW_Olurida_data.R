@@ -17,6 +17,7 @@ Olurida_LWd1 <- Olurida_LWd1_og %>%
   pivot_wider(names_from = L_W, values_from = Size_mm)
 
 Olurida_LWd1
+View(Olurida_LWd1)
 
 #### Omit NAs=========
 
@@ -55,11 +56,8 @@ Stats_ALL <- Olurida_LWd1 %>%
 Stats_ALL
 
 #### Grouped by Batch ====
-<<<<<<< HEAD
-Stats_Batch <- Olurida_LWd1 %>%
-=======
+
 Stats_MHW <- Olurida_LWd1 %>%
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
   group_by(Batch) %>% 
   summarize(
     Mean_L = mean(L),
@@ -69,12 +67,9 @@ Stats_MHW <- Olurida_LWd1 %>%
     SD_W = sd(W),
     SE_W = SD_W/sqrt(n()))
 
-<<<<<<< HEAD
-Stats_Batch
-=======
 Stats_MHW
+
 View(Stats_MHW)
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
 
 ## plot - L
 L.plot <- ggplot(Olurida_LWd1, aes(x = Batch, y = L)) +
@@ -92,11 +87,10 @@ plot_grid(L.plot, W.plot, labels = c('L', 'W'), label_size = 12)
 ggsave(filename = "fig_output/Olurida_LWd1.png",width = 5.10, height = 5.77, dpi = 300)
 
 
-<<<<<<< HEAD
 ## create datasheet
 
 write_csv(Olurida_LWd1, "data/O_lurida/LWd1_stats.csv")
-=======
+
 #### models: difference between batches? ====
 library(lme4) ##glm
 Lm.null <- lm(L ~ 1, data = Olurida_LWd1)
@@ -189,9 +183,6 @@ summary(Wm.1)
 #
 #Number of Fisher Scoring iterations: 2
 
-
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
-
 #### END MHW =====
 
 ### load data sheet
@@ -200,7 +191,6 @@ glimpse(Olurida_LWend_og)
 summary(Olurida_LWend_og)
 View(Olurida_LWend_og)
 
-<<<<<<< HEAD
 ## setting these SH_Temp, MHW, Tank as.character
 
 Olurida_LWend_og$SH_Temp <- as.character(Olurida_LWend_og$SH_Temp) ## make SH_Temp a character
@@ -214,7 +204,6 @@ is.character(Olurida_LWend_og$Tank) ## True
 
 
 #### Omit NAs
-
 
 colSums(is.na(Olurida_LWend_og)) ## find NAs in each column, 400 under Date, 8 under Size_mm
 
@@ -230,8 +219,8 @@ Olurida_LWend.2 <- Olurida_LWend.1 %>%
 glimpse(Olurida_LWend.2)
 
 #### LENGTHS histogram ====
-ggplot(Olurida_LWend.2, aes(L)) +
-=======
+#ggplot(Olurida_LWend.2, aes(L)) +
+
 #### Put Length(L) & Width(W) in its own columns ==========
 Olurida_LWend.1 <- Olurida_LWend_og %>%
   pivot_wider(names_from = L_W, values_from = Size_mm)
@@ -243,8 +232,7 @@ Olurida_LWend.1
 colSums(is.na(Olurida_LWd1)) ## find NAs in each column, 400 under Date
 
 #### LENGTHS histogram ====
-ggplot(Olurida_LWend.1, aes(L)) +
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
+ggplot(Olurida_LWend.2, aes(L)) +
   geom_histogram() +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
@@ -253,11 +241,10 @@ ggplot(Olurida_LWend.1, aes(L)) +
        y = "Counts of L")
 
 #### WIDTHS histogram ====
-<<<<<<< HEAD
+
+#ggplot(Olurida_LWend.2, aes(W)) +
+
 ggplot(Olurida_LWend.2, aes(W)) +
-=======
-ggplot(Olurida_LWend.1, aes(W)) +
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
   geom_histogram() +
   theme_classic() +
   scale_fill_brewer(palette = "RdYlBu", direction = -1) +
@@ -265,7 +252,6 @@ ggplot(Olurida_LWend.1, aes(W)) +
        x = "W",
        y = "Counts of W")
 
-<<<<<<< HEAD
 ## create datasheet
 
 write_csv(Olurida_LWend.2, "data/O_lurida/LW_EndMHW_stats.csv")
@@ -273,7 +259,7 @@ write_csv(Olurida_LWend.2, "data/O_lurida/LW_EndMHW_stats.csv")
 #### Figures: Mean, SD, SE =====
 
 #### No Grouping ====
-Stats_ALL <- Olurida_LWend.2 %>%
+EndStats_ALL <- Olurida_LWend.2 %>%
   summarize(
     Mean_L = mean(L),
     SD_L = sd(L),
@@ -281,31 +267,14 @@ Stats_ALL <- Olurida_LWend.2 %>%
     Mean_W = mean(W),
     SD_W = sd(W),
     SE_W = SD_W/sqrt(n()))
-=======
+
+EndStats_ALL
+
 #### Figures, Mean, SD, SE =====
-
-#### PRIYA PICK UP HERE ====
-
-#### No Grouping ====
-Stats_ALL <- Olurida_LWend.1 %>% 
-  summarize(
-  Mean_L = mean(L),
-  SD_L = sd(L),
-  SE_L = SD_L/sqrt(n()),
-  Mean_W = mean(W),
-  SD_W = sd(W),
-  SE_W = SD_W/sqrt(n()))
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
-
-Stats_ALL
 
 #### Grouped by SH_Temp ====
 
-<<<<<<< HEAD
 Stats_SHTemp <- Olurida_LWend.2 %>%
-=======
-Stats_SHTemp <- Olurida_LWend.1 %>%
->>>>>>> 01c5761e3c780d182318757893e0ed0d8c5eb99c
   group_by(SH_Temp) %>% 
   summarize(
     Mean_L = mean(L),
@@ -317,7 +286,6 @@ Stats_SHTemp <- Olurida_LWend.1 %>%
 
 Stats_SHTemp
 
-<<<<<<< HEAD
 ## L plot
 L.Temp <- ggplot(Olurida_LWend.2, aes(x=SH_Temp, y=L, fill = SH_Temp)) +
   geom_boxplot() +

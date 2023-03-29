@@ -254,15 +254,15 @@ summary(m3a)
 
 
 #### Pairwise Comparisons ===============
-## pairwise comparison for m12
-emm_m6 <-  emmeans(m6, specs = ~ MHW)
-emm_m6
-pairwise_m6 <- contrast(emm_m6, interaction = "pairwise")
-pairwise_m6
+# pairwise comparison for m12
+#emm_m6 <-  emmeans(m6, specs = ~ MHW)
+#emm_m6
+#pairwise_m6 <- contrast(emm_m6, interaction = "pairwise")
+#pairwise_m6
 
 #### AIC/BIC Scores ===============
-AIC(m_null2, m3, m4, m5, m6)
-BIC(m_null2, m3, m4, m5, m6)
+AIC(m_null, m1a, m2a, m3a)
+BIC(m_null, m1a, m2a, m3a)
 
 #### Test Assumptions: m9 ===============
 #???

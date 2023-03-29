@@ -118,7 +118,7 @@ write_csv(Mgigas_LWend.2, "data/M_gigas/LW_EndMHW_stats.csv")
 #### Figures: Mean, SD, SE =====
 
 #### No Grouping ====
-Stats_ALL <- Mgigas_LWend.2 %>%
+EndStats_ALL <- Mgigas_LWend.2 %>%
   summarize(
     Mean_L = mean(L),
     SD_L = sd(L),
@@ -127,7 +127,7 @@ Stats_ALL <- Mgigas_LWend.2 %>%
     SD_W = sd(W),
     SE_W = SD_W/sqrt(n()))
 
-Stats_ALL
+EndStats_ALL
 
 #### Grouped by SH_Temp ====
 
