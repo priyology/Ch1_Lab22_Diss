@@ -521,24 +521,24 @@ O_lurida,15,Tide,18,7,19,0,Alive
 O_lurida,15,Tide,18,7,20,0,Alive
 O_lurida,21,Tide,18,7,1,1,Dead
 O_lurida,21,Tide,18,7,2,0,Alive
-O_lurida,21,Tide,18,7,3,1,Alive
-O_lurida,21,Tide,18,7,4,2,Alive
-O_lurida,21,Tide,18,7,5,3,Alive
-O_lurida,21,Tide,18,7,6,4,Alive
-O_lurida,21,Tide,18,7,7,5,Alive
-O_lurida,21,Tide,18,7,8,6,Alive
-O_lurida,21,Tide,18,7,9,7,Alive
-O_lurida,21,Tide,18,7,10,8,Alive
-O_lurida,21,Tide,18,7,11,9,Alive
-O_lurida,21,Tide,18,7,12,10,Alive
-O_lurida,21,Tide,18,7,13,11,Alive
-O_lurida,21,Tide,18,7,14,12,Alive
-O_lurida,21,Tide,18,7,15,13,Alive
-O_lurida,21,Tide,18,7,16,14,Alive
-O_lurida,21,Tide,18,7,17,15,Alive
-O_lurida,21,Tide,18,7,18,16,Alive
-O_lurida,21,Tide,18,7,19,17,Alive
-O_lurida,21,Tide,18,7,20,18,Alive
+O_lurida,21,Tide,18,7,3,0,Alive
+O_lurida,21,Tide,18,7,4,0,Alive
+O_lurida,21,Tide,18,7,5,0,Alive
+O_lurida,21,Tide,18,7,6,0,Alive
+O_lurida,21,Tide,18,7,7,0,Alive
+O_lurida,21,Tide,18,7,8,0,Alive
+O_lurida,21,Tide,18,7,9,0,Alive
+O_lurida,21,Tide,18,7,10,0,Alive
+O_lurida,21,Tide,18,7,11,0,Alive
+O_lurida,21,Tide,18,7,12,0,Alive
+O_lurida,21,Tide,18,7,13,0,Alive
+O_lurida,21,Tide,18,7,14,0,Alive
+O_lurida,21,Tide,18,7,15,0,Alive
+O_lurida,21,Tide,18,7,16,0,Alive
+O_lurida,21,Tide,18,7,17,0,Alive
+O_lurida,21,Tide,18,7,18,0,Alive
+O_lurida,21,Tide,18,7,19,0,Alive
+O_lurida,21,Tide,18,7,20,0,Alive
 O_lurida,21,No Tide,18,7,1,0,Alive
 O_lurida,21,No Tide,18,7,2,0,Alive
 O_lurida,21,No Tide,18,7,3,0,Alive
