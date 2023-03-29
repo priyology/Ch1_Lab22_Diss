@@ -663,6 +663,7 @@ BIC(m_null3, m7, m8, m9, m10)
 #### Test Assumptions: m9 ===============
 #???
 
+#### Plot Model ========
 tbl.m9 <- tbl_regression(m9, exponentiate = TRUE) ## table!
 tbl.m9
 
