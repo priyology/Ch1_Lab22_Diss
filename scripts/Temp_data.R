@@ -37,7 +37,9 @@ Temps_Sump15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #15.6
             SD_Temp = sd(Temp_C), #0.611
             SE_Temp = SD_Temp/sqrt(n()), #0.0180
-            variance = var(Temp_C)) #0.373
+            variance = var(Temp_C), #0.373
+            max = max(Temp_C), #17.5
+            min = min(Temp_C)) #14.5
 
 ### MHW: 15°C
 ## 2022-03-11 to 2022-03-13
@@ -55,7 +57,9 @@ Temps_Sump15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #16.3
             SD_Temp = sd(Temp_C), #0.845
             SE_Temp = SD_Temp/sqrt(n()), #0.0862
-            variance = var(Temp_C)) #0.714
+            variance = var(Temp_C), #0.714
+            max = max(Temp_C), #17.3
+            min = min(Temp_C)) #14.3
             
 ### Stress Hardening 1: 15°C
 ## 2022-02-27 to 2022-03-12
@@ -73,7 +77,9 @@ Temps_Sump15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #15.6
             SD_Temp = sd(Temp_C), #0.633
             SE_Temp = SD_Temp/sqrt(n()), #0.0186
-            variance = var(Temp_C)) #0.400
+            variance = var(Temp_C),  #0.400
+            max = max(Temp_C), #17.5
+            min = min(Temp_C)) #14.9
             
 ### MHW: 18°C
 ## 2022-03-14 to 2022-03-16
@@ -91,7 +97,9 @@ Temps_Sump15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #19.3
             SD_Temp = sd(Temp_C), #0.549
             SE_Temp = SD_Temp/sqrt(n()), #0.0561
-            variance = var(Temp_C)) #0.302
+            variance = var(Temp_C), #0.302
+            max = max(Temp_C), #20.1
+            min = min(Temp_C)) #18.3
 
 #### Sump 21°C =====
 
@@ -127,12 +135,14 @@ Temps_Sump21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #21.3
             SD_Temp = sd(Temp_C), #0.350
             SE_Temp = SD_Temp/sqrt(n()), #0.0103
-            variance = var(Temp_C)) #0.122
-            
+            variance = var(Temp_C), #0.122
+            max = max(Temp_C), #22.4
+            min = min(Temp_C)) #20.6
+
 ### MHW: 21°C
 ## 2022-03-11 to 2022-03-13
 
-Temps_Sump21_v2 %>% 
+Temps_Sump21_v2 %>% ,
   filter(date > "2022-03-11" & date < "2022-03-13") %>% 
   ggplot(aes(Date_Time, Temp_C)) +
   geom_path(color = "black") +
@@ -145,7 +155,9 @@ Temps_Sump21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #21.4
             SD_Temp = sd(Temp_C), #0.344
             SE_Temp = SD_Temp/sqrt(n()), #0.0351
-            variance = var(Temp_C)) #0.119
+            variance = var(Temp_C), #0.119
+            max = max(Temp_C), #22.1
+            min = min(Temp_C)) #20.8
             
 ### Stress Hardening 1: 21°C
 ## 2022-02-27 to 2022-03-12
@@ -163,8 +175,10 @@ Temps_Sump21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #21.3
             SD_Temp = sd(Temp_C), #0.353
             SE_Temp = SD_Temp/sqrt(n()), #0.0104
-            variance = var(Temp_C)) #0.125
-            
+            variance = var(Temp_C), #0.125
+            max = max(Temp_C), #22.4
+            min = min(Temp_C)) #20.7
+
 ### MHW: 24°C
 ## 2022-03-14 to 2022-03-16
 
@@ -181,7 +195,9 @@ Temps_Sump21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #26.0
             SD_Temp = sd(Temp_C), #0.388
             SE_Temp = SD_Temp/sqrt(n()), #0.0397
-            variance = var(Temp_C)) #0.151
+            variance = var(Temp_C), #0.151
+            max = max(Temp_C), #26.8
+            min = min(Temp_C)) #25.3
 
 #### Tide 15°C =====
 
@@ -216,7 +232,9 @@ Temps_Tide15_v2 %>%
   filter(date > "2022-02-24" & date < "2022-03-09") %>% 
   summarize(mean_Temp = mean(Temp_C), #16.2
             SD_Temp = sd(Temp_C), #0.732
-            SE_Temp = SD_Temp/sqrt(n())) #0.0216
+            SE_Temp = SD_Temp/sqrt(n()), #0.0216
+            max = max(Temp_C), #17.9
+            min = min(Temp_C)) #15.0
 
 ### MHW: 15°C
 ## 2022-03-11 to 2022-03-13
@@ -234,7 +252,9 @@ Temps_Tide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #16.6
             SD_Temp = sd(Temp_C), #0.817
             SE_Temp = SD_Temp/sqrt(n()), #0.0834
-            variance = var(Temp_C)) #0.668
+            variance = var(Temp_C), #0.668
+            max = max(Temp_C), #17.8
+            min = min(Temp_C)) #14.5
 
 ### Stress Hardening 1: 15°C
 ## 2022-02-27 to 2022-03-12
@@ -252,8 +272,9 @@ Temps_Tide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #16.2
             SD_Temp = sd(Temp_C), #0.753
             SE_Temp = SD_Temp/sqrt(n()), #0.0222
-            variance = var(Temp_C)) #0.567
-
+            variance = var(Temp_C), #0.567
+            max = max(Temp_C), #17.9
+            min = min(Temp_C)) #15.0
 ### MHW: 18°C
 ## 2022-03-14 to 2022-03-16
 
@@ -270,7 +291,9 @@ Temps_Tide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #19.4
             SD_Temp = sd(Temp_C), #0.545
             SE_Temp = SD_Temp/sqrt(n()), #0.0556
-            variance = var(Temp_C)) #0.297
+            variance = var(Temp_C), #0.297
+            max = max(Temp_C), #20.1
+            min = min(Temp_C)) #18.4
 
 #### No Tide 15°C =====
 
@@ -306,7 +329,9 @@ Temps_NoTide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #15.7
             SD_Temp = sd(Temp_C), #0.602
             SE_Temp = SD_Temp/sqrt(n()), #0.0177
-            variance = var(Temp_C)) #0.362
+            variance = var(Temp_C), #0.362
+            max = max(Temp_C), #17.6
+            min = min(Temp_C)) #15.0
 
 ### MHW: 15°C
 ## 2022-03-11 to 2022-03-13
@@ -324,7 +349,9 @@ Temps_NoTide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #16.4
             SD_Temp = sd(Temp_C), #0.830
             SE_Temp = SD_Temp/sqrt(n()), #0.0847
-            variance = var(Temp_C)) #0.689
+            variance = var(Temp_C), #0.689
+            max = max(Temp_C), #17.4
+            min = min(Temp_C)) #15.0
 
 ### Stress Hardening 1: 15°C
 ## 2022-02-27 to 2022-03-12
@@ -342,8 +369,10 @@ Temps_NoTide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #15.7
             SD_Temp = sd(Temp_C), #0.623
             SE_Temp = SD_Temp/sqrt(n()), #0.0183
-            variance = var(Temp_C)) #0.388
-            
+            variance = var(Temp_C), #0.388
+            max = max(Temp_C), #17.6
+            min = min(Temp_C)) #15.0
+
 ### MHW: 18°C
 ## 2022-03-14 to 2022-03-16
 
@@ -360,7 +389,10 @@ Temps_NoTide15_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #19.4
             SD_Temp = sd(Temp_C), #0.462
             SE_Temp = SD_Temp/sqrt(n()), #0.0472
-            variance = var(Temp_C)) #0.214 
+            variance = var(Temp_C), #0.214 
+            max = max(Temp_C), #20.0
+            min = min(Temp_C)) #18.6
+
 #### Tide 21°C =====
 
 ### load data sheet
@@ -395,7 +427,9 @@ Temps_Tide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #20.5
             SD_Temp = sd(Temp_C), #1.13
             SE_Temp = SD_Temp/sqrt(n()),#0.03338
-            variance = var(Temp_C)) #1.28
+            variance = var(Temp_C), #1.28
+            max = max(Temp_C), #22.3
+            min = min(Temp_C)) #18.0
 
 ### MHW: 21°C
 ## 2022-03-11 to 2022-03-13
@@ -413,7 +447,9 @@ Temps_Tide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #20.5
             SD_Temp = sd(Temp_C), #1.24
             SE_Temp = SD_Temp/sqrt(n()), #0.126
-            variance = var(Temp_C)) #1.53
+            variance = var(Temp_C), #1.53
+            max = max(Temp_C), #22.0
+            min = min(Temp_C)) #18.5
 
 ### Stress Hardening 1: 21°C
 ## 2022-02-27 to 2022-03-12
@@ -431,7 +467,9 @@ Temps_Tide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #20.5
             SD_Temp = sd(Temp_C), #1.18
             SE_Temp = SD_Temp/sqrt(n()), #0.0348
-            variance = var(Temp_C)) #1.40
+            variance = var(Temp_C), #1.40
+            max = max(Temp_C), #22.3
+            min = min(Temp_C)) #18.2
 
 ### MHW: 24°C
 ## 2022-03-14 to 2022-03-16
@@ -449,7 +487,9 @@ Temps_Tide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #26.0
             SD_Temp = sd(Temp_C), #0.350
             SE_Temp = SD_Temp/sqrt(n()), #0.0357
-            variance = var(Temp_C)) #0.122
+            variance = var(Temp_C), #0.122
+            max = max(Temp_C), #26.7
+            min = min(Temp_C)) #25.4
 
 #### No Tide 21°C =====
 
@@ -485,7 +525,9 @@ Temps_NoTide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #21.3
             SD_Temp = sd(Temp_C), #0.290
             SE_Temp = SD_Temp/sqrt(n()), #0.00855
-            variance = var(Temp_C)) #0.0842
+            variance = var(Temp_C), #0.0842
+            max = max(Temp_C), #22.2
+            min = min(Temp_C)) #20.7
 
 ### MHW: 21°C
 ## 2022-03-11 to 2022-03-13
@@ -503,7 +545,9 @@ Temps_NoTide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #21.1
             SD_Temp = sd(Temp_C), #0.138
             SE_Temp = SD_Temp/sqrt(n()), #0.0141
-            variance = var(Temp_C)) #0.0190
+            variance = var(Temp_C), #0.0190
+            max = max(Temp_C), #21.5
+            min = min(Temp_C)) #20.9
 
 ### Stress Hardening 1: 21°C
 ## 2022-02-27 to 2022-03-12
@@ -539,7 +583,8 @@ Temps_NoTide21_v2 %>%
   summarize(mean_Temp = mean(Temp_C), #24.0
             SD_Temp = sd(Temp_C), #0.251
             SE_Temp = SD_Temp/sqrt(n()), #0.0256
-            variance = var(Temp_C)) #0.0629
-
+            variance = var(Temp_C), #0.0629
+            max = max(Temp_C), #24.5
+            min = min(Temp_C)) #23.5
 
 
