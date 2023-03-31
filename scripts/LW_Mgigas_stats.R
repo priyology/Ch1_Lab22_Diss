@@ -341,7 +341,7 @@ qqline(resid(L.m6))
 plot(density(resid(L.m6)))
 
 #### Pairwise Comparisons ===============
-## pairwise comparison for m12
+## pairwise comparison for m6
 emm_Lm6a <-  emmeans(L.m6, specs = ~ SH_Tide|SH_Temp)
 emm_Lm6a
 pairwise_Lm6a <- contrast(emm_Lm6a, interaction = "pairwise")
