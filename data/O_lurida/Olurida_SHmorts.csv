@@ -1,103 +1,103 @@
-Species,Experiment_Day,Date,Tank,SH_Temp,SH_Tide,MHW_Set,Mortality,Photo,Notes
-O_lurida,2,2/25/2022,18,21,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,1,15,No Tide,15_21,1,Y,NA
-O_lurida,6,3/1/2022,2,15,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,3,15,No Tide,15_21,1,Y,NA
-O_lurida,6,3/1/2022,4,15,No Tide,15_21,1,Y,NA
-O_lurida,6,3/1/2022,5,15,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,6,15,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,7,15,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,8,15,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,9,15,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,10,15,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,11,21,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,12,21,Tide,15_21,2,Y,NA
-O_lurida,6,3/1/2022,13,21,Tide,15_21,1,Y,NA
-O_lurida,6,3/1/2022,14,21,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,15,21,Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,16,21,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,17,21,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,18,21,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,19,21,No Tide,15_21,0,Y,NA
-O_lurida,6,3/1/2022,20,21,No Tide,15_21,0,Y,NA
-O_lurida,15,3/10/2022,1,15,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,2,15,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,3,15,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,4,15,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,5,15,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,6,15,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,7,15,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,8,15,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,9,15,Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,10,15,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,11,21,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,12,21,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,13,21,Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,14,21,Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,15,21,Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,16,21,No Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,17,21,No Tide,15_21,0,NA,NA
-O_lurida,15,3/10/2022,18,21,No Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,19,21,No Tide,15_21,1,NA,NA
-O_lurida,15,3/10/2022,20,21,No Tide,15_21,0,NA,NA
-O_lurida,0,2/25/2022,18,21,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,1,15,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,2,15,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,3,15,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,4,15,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,5,15,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,6,15,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,7,15,Tide,18_24,1,Y,NA
-O_lurida,3,3/1/2022,8,15,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,9,15,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,10,15,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,11,21,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,12,21,Tide,18_24,1,Y,NA
-O_lurida,3,3/1/2022,13,21,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,14,21,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,15,21,Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,16,21,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,17,21,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,18,21,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,19,21,No Tide,18_24,0,Y,NA
-O_lurida,3,3/1/2022,20,21,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,1,15,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,2,15,No Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,3,15,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,4,15,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,5,15,No Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,6,15,Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,7,15,Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,8,15,Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,9,15,Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,10,15,Tide,18_24,1,Y,crushed
-O_lurida,10,3/8/2022,11,21,Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,12,21,Tide,18_24,3,Y,crushed
-O_lurida,10,3/8/2022,13,21,Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,14,21,Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,15,21,Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,16,21,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,17,21,No Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,18,21,No Tide,18_24,0,N,NA
-O_lurida,10,3/8/2022,19,21,No Tide,18_24,0,Y,NA
-O_lurida,10,3/8/2022,20,21,No Tide,18_24,0,Y,NA
-O_lurida,15,3/13/2022,1,15,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,2,15,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,3,15,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,4,15,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,5,15,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,6,15,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,7,15,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,8,15,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,9,15,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,10,15,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,11,21,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,12,21,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,13,21,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,14,21,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,15,21,Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,16,21,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,17,21,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,18,21,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,19,21,No Tide,18_24,0,NA,NA
-O_lurida,15,3/13/2022,20,21,No Tide,18_24,0,NA,NA
+Species,Experiment_Day,Date,Tank,SH_Temp,SH_Tide,MHW_Set,Mortality,Photo,Notes,...11
+O_lurida,2,2/25/2022,18,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,2,15,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,5,15,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,6,15,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,7,15,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,8,15,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,9,15,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,10,15,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,11,21,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,14,21,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,15,21,Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,16,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,17,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,18,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,19,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,6,3/1/2022,20,21,No Tide,15_21,0,Y,NA,NA
+O_lurida,15,3/10/2022,1,15,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,2,15,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,3,15,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,4,15,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,5,15,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,6,15,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,7,15,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,8,15,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,10,15,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,11,21,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,12,21,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,13,21,Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,17,21,No Tide,15_21,0,NA,NA,NA
+O_lurida,15,3/10/2022,20,21,No Tide,15_21,0,NA,NA,NA
+O_lurida,0,2/25/2022,18,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,1,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,2,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,3,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,4,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,5,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,6,15,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,8,15,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,9,15,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,10,15,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,11,21,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,13,21,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,14,21,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,15,21,Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,16,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,17,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,18,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,19,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,3,3/1/2022,20,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,1,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,2,15,No Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,3,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,4,15,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,5,15,No Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,6,15,Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,7,15,Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,8,15,Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,9,15,Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,11,21,Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,13,21,Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,14,21,Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,15,21,Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,16,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,17,21,No Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,18,21,No Tide,18_24,0,N,NA,NA
+O_lurida,10,3/8/2022,19,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,10,3/8/2022,20,21,No Tide,18_24,0,Y,NA,NA
+O_lurida,15,3/13/2022,1,15,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,2,15,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,3,15,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,4,15,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,5,15,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,6,15,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,7,15,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,8,15,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,9,15,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,10,15,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,11,21,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,12,21,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,13,21,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,14,21,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,15,21,Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,16,21,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,17,21,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,18,21,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,19,21,No Tide,18_24,0,NA,NA,NA
+O_lurida,15,3/13/2022,20,21,No Tide,18_24,0,NA,NA,NA
+O_lurida,6,3/1/2022,1,15,No Tide,15_21,1,Y,NA,NA
+O_lurida,6,3/1/2022,3,15,No Tide,15_21,1,Y,NA,NA
+O_lurida,6,3/1/2022,4,15,No Tide,15_21,1,Y,NA,NA
+O_lurida,6,3/1/2022,13,21,Tide,15_21,1,Y,NA,NA
+O_lurida,15,3/10/2022,9,15,Tide,15_21,1,NA,NA,NA
+O_lurida,15,3/10/2022,14,21,Tide,15_21,1,NA,NA,NA
+O_lurida,15,3/10/2022,15,21,Tide,15_21,1,NA,NA,NA
+O_lurida,15,3/10/2022,16,21,No Tide,15_21,1,NA,NA,NA
+O_lurida,15,3/10/2022,18,21,No Tide,15_21,1,NA,NA,NA
+O_lurida,15,3/10/2022,19,21,No Tide,15_21,1,NA,NA,NA
+O_lurida,3,3/1/2022,7,15,Tide,18_24,1,Y,NA,NA
+O_lurida,3,3/1/2022,12,21,Tide,18_24,1,Y,NA,NA
+O_lurida,10,3/8/2022,10,15,Tide,18_24,1,Y,crushed,NA
+O_lurida,6,3/1/2022,12,21,Tide,15_21,2,Y,NA,NA
+O_lurida,10,3/8/2022,12,21,Tide,18_24,3,Y,crushed,18

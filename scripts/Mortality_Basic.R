@@ -86,6 +86,7 @@ tail(Outplant_mort)
 
 colSums(is.na(Outplant_mort)) # how many NAs = 0
 
+
 ## Graphs
 
 outplantsurvival.plot <- ggplot(Outplant_mort, aes(x = SH_Temp, y = Survival_Numb, fill = SH_Temp)) +
@@ -100,6 +101,44 @@ outplantsurvival.plot <- ggplot(Outplant_mort, aes(x = SH_Temp, y = Survival_Num
   dark_theme_classic()
 
 outplantsurvival.plot
+
+#### ** PPT: AOutplanting Plot ==============
+
+#### officeR directly exports the plot to your desired file into a powerpoint slide-shaped image ===== 
+library(officer)
+
+## initialize R object representing .pptx file. 
+Morts.DARKPlot_fig <- read_pptx()
+Morts.DARKPlot_fig <- add_slide(Morts.DARKPlot_fig , layout = "Title and Content", master = "Office Theme")
+Morts.DARKPlot_fig <-  ph_with(x = Morts.DARKPlot_fig, value = Morts.DARKPlot, location = ph_location_fullsize() )
+Morts.DARKPlot_fig  <- ph_with(x = Morts.DARKPlot_fig , "Experiment Mortality", location = ph_location_type(type = "title") )
+print(Morts.DARKPlot_fig, target = "presentations/OluridaOutplantingSurvival.pptx")
+
+#### R2PPT / RDCOMClient =====
+
+#install.packages("devtools", dependencies = TRUE)
+
+library(RDCOMClient)
+library(R2PPT)
+
+## Step 1: Save as a temporary file
+TEMP_FILE <- paste(tempfile(), ".wmf", sep="")
+ggsave(TEMP_FILE, plot = Morts.DARKPlot) # Saving the plot to the temporary file
+
+
+## Step 2: Open a blank PPT slide
+mkppt <- PPT.Init (method = "RDCOMClient")
+mkppt <- PPT.AddBlankSlide(mkppt)
+
+## Step 3: Export graph to PPT slide
+mkppt <- PPT.AddGraphicstoSlide(mkppt, file = TEMP_FILE)
+
+unlink(TEMP_FILE)
+
+## once in PPT, right-click on image and select "edit picture" to futz with individual components of the graph
+
+
+
 
 
 #### ~ SH_Mortality by Species ~ =====
@@ -215,29 +254,29 @@ Plot_Morts.Plot <- All_Morts %>%
   scale_fill_manual(values=c("#FB9A99", "#A6CEE3")) + #, direction = -1)
   labs(title = "Total Mortality During Experiment",
       subtitle = "Mortality out of 1,600 oysters per species",
-       x = "Stress Hardening Temp (°C)", 
-       y = "Length")
+      x = "Species", 
+      y = "Mortality (#)")
 
 Plot_Morts.Plot
 
 ggsave(filename = "fig_output/AllMorts_BarPlot.png",width = 5.10, height = 5.77, dpi = 300)
 
 library(ggdark)
-DARKPlot_Morts.Plot <- All_Morts %>% 
+Morts.DARKPlot <- All_Morts %>% 
   select(Species, SH_Morts, MHW_CI_Morts) %>%
   pivot_longer(cols=c('SH_Morts', 'MHW_CI_Morts'),
                names_to='Timepoint',
                values_to='Morts') %>% 
-  ggplot(aes(y = Morts, x = Species, fill = Timepoint)) + 
+  ggplot(aes(y = Morts, x = factor(Species,c("Magallana gigas", "Crassostrea sikamea", "Ostrea lurida")), fill = Timepoint)) + 
   geom_bar(position='stack', stat='identity') +
   dark_theme_classic() +
   scale_fill_manual(values=c("#FB9A99", "#A6CEE3")) + #, direction = -1)
   labs(title = "Total Mortality During Experiment",
        subtitle = "Mortality out of 1,600 oysters per species",
-       x = "Stress Hardening Temp (°C)", 
-       y = "Length")
+       x = "Species", 
+       y = "Mortality (#)")
 
-DARKPlot_Morts.Plot
+Morts.DARKPlot
 ggsave(filename = "fig_output/DARKAllMorts_BarPlot.png",width = 5.10, height = 5.77, dpi = 300)
 
 
@@ -256,17 +295,17 @@ brewer.pal(12, "Paired")
 #[5] "#FB9A99" "#E31A1C" "#FDBF6F" "#FF7F00"
 #[9] "#CAB2D6" "#6A3D9A" "#FFFF99" "#B15928"
 
-#### PowerPoint Editing Prep: Outplanting Plot ==============
+#### ** PPT: All Morts Plot ==============
 
 #### officeR directly exports the plot to your desired file into a powerpoint slide-shaped image ===== 
 library(officer)
 
 ## initialize R object representing .pptx file. 
-OutplantingSurvival_fig <- read_pptx()
-OutplantingSurvival_fig <- add_slide(OutplantingSurvival_fig, layout = "Title and Content", master = "Office Theme")
-OutplantingSurvival_fig <- ph_with(x = OutplantingSurvival_fig, value = outplantsurvival.plot, location = ph_location_fullsize() )
-OutplantingSurvival_fig <- ph_with(x = OutplantingSurvival_fig, "O. lurida Survival", location = ph_location_type(type = "title") )
-print(OutplantingSurvival_fig, target = "presentations/OluridaOutplantingSurvival.pptx")
+Morts.DARKPlot_fig <- read_pptx()
+Morts.DARKPlot_fig <- add_slide(Morts.DARKPlot_fig , layout = "Title and Content", master = "Office Theme")
+Morts.DARKPlot_fig <-  ph_with(x = Morts.DARKPlot_fig, value = Morts.DARKPlot, location = ph_location_fullsize() )
+Morts.DARKPlot_fig  <- ph_with(x = Morts.DARKPlot_fig , "Experiment Mortality", location = ph_location_type(type = "title") )
+print(Morts.DARKPlot_fig, target = "presentations/OluridaOutplantingSurvival.pptx")
 
 #### R2PPT / RDCOMClient =====
 
@@ -277,7 +316,8 @@ library(R2PPT)
 
 ## Step 1: Save as a temporary file
 TEMP_FILE <- paste(tempfile(), ".wmf", sep="")
-ggsave(TEMP_FILE, plot = outplantsurvival.plot) # Saving the plot to the temporary file
+ggsave(TEMP_FILE, plot = Morts.DARKPlot) # Saving the plot to the temporary file
+
 
 ## Step 2: Open a blank PPT slide
 mkppt <- PPT.Init (method = "RDCOMClient")
