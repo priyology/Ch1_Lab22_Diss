@@ -1,0 +1,49 @@
+﻿Species,SH_Temp,SH_Tide,MHW,Mean_L,SD,SE
+Crassostrea sikamea,15˚C,No Tide,15˚C,2.63696,0.2806432,0.03968894
+Crassostrea sikamea,15˚C,No Tide,18˚C,2.68674,0.3193987,0.04516979
+Crassostrea sikamea,15˚C,No Tide,21˚C,2.84796,0.3136246,0.04435322
+Crassostrea sikamea,15˚C,No Tide,24˚C,2.7527,0.2759079,0.03901927
+Crassostrea sikamea,21˚C,No Tide,15˚C,2.749292,0.2976536,0.04296259
+Crassostrea sikamea,21˚C,No Tide,18˚C,2.78498,0.2175781,0.03108259
+Crassostrea sikamea,21˚C,No Tide,21˚C,2.794792,0.259022,0.0373866
+Crassostrea sikamea,21˚C,No Tide,24˚C,2.822265,0.2914314,0.04163306
+Crassostrea sikamea,15˚C,Tide,15˚C,2.636375,0.3436316,0.04959895
+Crassostrea sikamea,15˚C,Tide,18˚C,2.521109,0.2823886,0.04163592
+Crassostrea sikamea,15˚C,Tide,21˚C,2.705696,0.2635126,0.03885281
+Crassostrea sikamea,15˚C,Tide,24˚C,2.619872,0.2572833,0.03752862
+Crassostrea sikamea,21˚C,Tide,15˚C,2.661136,0.2710147,0.040857
+Crassostrea sikamea,21˚C,Tide,18˚C,2.549306,0.2728532,0.03897902
+Crassostrea sikamea,21˚C,Tide,21˚C,2.791976,0.2887626,0.04455703
+Crassostrea sikamea,21˚C,Tide,24˚C,2.615104,0.2651904,0.03827693
+Magallana gigas,15˚C,No Tide,15˚C,2.87396,0.3867149,0.05468974
+Magallana gigas,15˚C,No Tide,18˚C,2.816239,0.365765,0.05392911
+Magallana gigas,15˚C,No Tide,21˚C,2.79798,0.3769084,0.0533029
+Magallana gigas,15˚C,No Tide,24˚C,2.781449,0.4316478,0.06166397
+Magallana gigas,21˚C,No Tide,15˚C,2.83542,0.3795135,0.05367132
+Magallana gigas,21˚C,No Tide,18˚C,2.967667,0.388524,0.0560786
+Magallana gigas,21˚C,No Tide,21˚C,2.8745,0.3727193,0.05271047
+Magallana gigas,21˚C,No Tide,24˚C,2.978857,0.4268566,0.06097952
+Magallana gigas,15˚C,Tide,15˚C,2.61994,0.3660441,0.05176646
+Magallana gigas,15˚C,Tide,18˚C,2.62252,0.3074343,0.04347778
+Magallana gigas,15˚C,Tide,21˚C,2.605449,0.3670608,0.05243726
+Magallana gigas,15˚C,Tide,24˚C,2.612571,0.3548534,0.05069335
+Magallana gigas,21˚C,Tide,15˚C,2.66022,0.3358642,0.04749838
+Magallana gigas,21˚C,Tide,18˚C,2.656408,0.3821874,0.0545982
+Magallana gigas,21˚C,Tide,21˚C,2.72662,0.3107763,0.04395041
+Magallana gigas,21˚C,Tide,24˚C,2.751511,0.3939422,0.05746237
+Ostrea lurida,15˚C,No Tide,15˚C,7.0591,1.1465002,0.1621396
+Ostrea lurida,15˚C,No Tide,18˚C,6.26968,1.52364,0.2154752
+Ostrea lurida,15˚C,No Tide,21˚C,6.39522,1.1559901,0.1634817
+Ostrea lurida,15˚C,No Tide,24˚C,6.25806,1.153768,0.1631674
+Ostrea lurida,21˚C,No Tide,15˚C,6.5348,1.1574542,0.1636887
+Ostrea lurida,21˚C,No Tide,18˚C,6.44936,1.3255651,0.1874632
+Ostrea lurida,21˚C,No Tide,21˚C,6.637612,1.1506726,0.1643818
+Ostrea lurida,21˚C,No Tide,24˚C,6.01272,1.1925413,0.1686508
+Ostrea lurida,15˚C,Tide,15˚C,6.69764,1.2487427,0.1765989
+Ostrea lurida,15˚C,Tide,18˚C,6.1995,1.0520146,0.1487773
+Ostrea lurida,15˚C,Tide,21˚C,6.305813,1.0659298,0.1538537
+Ostrea lurida,15˚C,Tide,24˚C,6.2125,0.9927972,0.1404027
+Ostrea lurida,21˚C,Tide,15˚C,6.19038,1.3597032,0.1922911
+Ostrea lurida,21˚C,Tide,18˚C,6.027816,1.1830736,0.1690105
+Ostrea lurida,21˚C,Tide,21˚C,6.18602,0.9889317,0.1398561
+Ostrea lurida,21˚C,Tide,24˚C,5.94466,1.1386986,0.1610363
